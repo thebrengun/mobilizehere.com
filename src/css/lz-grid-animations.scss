@@ -1,0 +1,21 @@
+.drawer-enter {
+	max-height: 0px;
+	overflow: hidden;
+}
+
+.drawer-enter.drawer-enter-active {
+	max-height: 1000px;
+	overflow: hidden;
+	transition: max-height 1000ms ease-in;
+}
+
+.drawer-leave {
+	overflow: hidden;
+	max-height: 1000px;
+}
+
+.drawer-leave.drawer-leave-active {
+	max-height: 0px;
+	overflow: hidden;
+	transition: max-height 300ms ease-in;
+}

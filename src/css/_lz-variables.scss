@@ -1,0 +1,29 @@
+/* Color Definitions */
+
+$light-blue: #fafeff;
+$darker-blue: #2096c3;
+$dark-gray: #222222;
+$med-gray: #4d4d4d;
+$black: #000000;
+
+/* Breakpoints */
+
+$break-small: 750px;
+
+$mobile-logo-height: 25px;
+
+$lz-container-max-width: 700px;
+
+$lz-padding: 30px;
+
+@mixin hide-mobile() {
+	@media screen and (max-width: $break-small) {
+    	display: none;
+    }
+}
+
+@mixin hide-desktop() {
+	@media screen and (min-width: $break-small) {
+		display: none;
+	}
+}

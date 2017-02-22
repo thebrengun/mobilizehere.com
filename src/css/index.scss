@@ -1,0 +1,206 @@
+@import 'lz-variables';
+
+body {
+	background: $light-blue;
+	color: $dark-gray;
+	padding: 0;
+	margin: 0;
+	/*font-family: 'Lato', sans-serif;*/
+	font-family: 'Montserrat', sans-serif;
+	font-size: medium;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif;
+	color: $darker-blue;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+p {
+	margin: $lz-padding;
+	line-height: 1.66;
+}
+
+button {
+	background: $darker-blue;
+	color: #fff;
+	border: 0;
+	font-size: 1em;
+	padding: .25em 1em;
+	border-radius: .1em;
+
+	&:hover {
+		background: darken($darker-blue, 10%);
+	}
+}
+
+.hidden {
+	display: none;
+}
+
+.img-responsive {
+	max-width: 100%;
+	display: block;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.pull-left {
+	float: left;
+}
+
+.lz-padding {
+	margin: $lz-padding 0;
+}
+
+.lz-dbl-padding {
+	margin: (2 * $lz-padding) 0;
+}
+
+.lz-container {
+	width: 90%;
+	max-width: $lz-container-max-width;
+	margin: $lz-padding auto;
+}
+
+.lz-header {
+	background: #f00;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-content: center;
+}
+
+.lz-footer {
+	font-family: 'Montserrat', sans-serif;
+	clear: both;
+}
+
+.hamburger {
+	position: absolute;
+	top: $lz-padding + ($mobile-logo-height / 2) - 16px;
+	display: inline-block;
+	z-index: 999;
+	cursor: pointer;
+	max-width: 19px;
+	user-select: none;
+	@include hide-desktop();
+
+	img {
+		width: 18px;
+		margin: 8px 7px;
+	}
+}
+
+.hamburger-line {
+	border-bottom: solid 1px $med-gray;
+	width: 18px;
+	margin: 8px 7px;
+}
+
+.logo {
+	display: block;
+	margin: 0 auto;
+}
+
+.mobile-logo {
+	height: $mobile-logo-height;
+	@include hide-desktop();
+}
+
+.desktop-logo {
+	width: 100px;
+	height: 100px;
+	@include hide-mobile();
+}
+
+.lz-nav {
+	font-family: 'Montserrat', sans-serif;
+
+	a {
+		color: $dark-gray;
+		text-decoration: none;
+	}
+
+	a.nav-active {
+		color: $darker-blue;
+		@media screen and (max-width: $break-small) {
+			color: $dark-gray;
+		}
+	}
+
+	a:hover {
+		color: $darker-blue;
+	}
+
+	@media screen and (max-width: $break-small) {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 50%;
+    	background: $light-blue;
+    	display: flex;
+    	flex-direction: column;
+    	height: 100vh;
+    	align-items: stretch;
+    	justify-content: center;
+    	margin: 0;
+    	box-shadow: 0px 0px 15px 0px rgba($dark-gray, .3);
+    	transition: all .5s;
+
+    	a {
+    		color: $darker-blue;
+    	}
+
+    	a:hover {
+			color: $dark-gray;
+		}
+
+    }
+}
+
+.hide-nav {
+	@media screen and (max-width: $break-small) {
+		left: -55%;
+		transition: all .25s;
+	}
+}
+
+.lz-nav nav {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: space-between;
+	text-transform: uppercase;
+
+	@media screen and (max-width: $break-small) {
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		height: 60%;
+	}
+}
+
+.nav-disabled {
+	color: lighten($med-gray, 30%);
+}
+
+/* ########################       Split these into separate files      ######################## */
+
+/* About */
+
+.about-img {
+	width: 290px;
+	max-width: 50%;
+	margin: $lz-padding;
+
+	@media screen and (max-width: $break-small) {
+		float: none;
+		display: block;
+		max-width: 100%;
+		margin: ($lz-padding / 2) auto;
+	}
+}

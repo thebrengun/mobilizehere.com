@@ -1,0 +1,50 @@
+@import 'lz-variables';
+
+.contact-info {
+	display: flex;
+	flex-direction: row;
+	@media screen and (max-width: $break-small) {
+		flex-direction: column;
+	}
+}
+
+.contact-info > div {
+	padding: 0 8px;
+	flex-basis: 50%;
+}
+
+.map-wrap {
+	background: $darker-blue;
+	width: 100%;
+}
+
+.map-wrap iframe {
+	width: 100%;
+	height: 335px;
+	border: 0;
+	frame-border: 0;
+	display: block;
+}
+
+.address {
+	@media screen and (max-width: $break-small) {
+		text-align: center;
+		margin: $lz-padding 0;
+	}
+}
+
+.donate-form {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: center;
+}
+
+.donate-form > div {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	margin: ($lz-padding / 2) 0;
+}

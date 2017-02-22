@@ -1,0 +1,98 @@
+@import 'lz-variables';
+
+@mixin ThumbnailShadow() {
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+	&:hover {
+		box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.75);
+	}
+}
+
+.lz-grid {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.lz-grid-wrap {
+	flex-basis: 25%;
+	flex-wrap: wrap;
+
+	@media screen and (max-width: $break-small) {
+		flex-basis: 50%;
+	}
+}
+
+.lz-col {
+	margin-top: $lz-padding;
+	width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
+	@media screen and (max-width: $break-small) {
+		width: 47.5%;
+	}
+
+	img {
+		@include ThumbnailShadow();
+	}
+
+}
+
+.lz-modal-col-side {
+	flex-basis: '25%'; 
+	text-align: 'center';
+}
+
+.lz-modal-col-center {
+	flex-basis: '50%';
+}
+
+.lz-modal-img {
+	width: '600px';
+	max-width: '100%';
+}
+
+.lz-grid-with-drawer-mobile {
+	@include hide-desktop();
+}
+
+.lz-grid-with-drawer-desktop {
+	@include hide-mobile();
+}
+
+.lz-drawer {
+	width: 100%;
+	background: $dark-gray;
+	padding: $lz-padding / 2;
+	@include ThumbnailShadow();
+}
+
+.lz-modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(#000, .9);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.5em;
+	color: #fff;
+
+	a {
+		background: rgba(#fff, .85);
+		color: $dark-gray;
+		border-radius: .1em;
+		padding: .25em;
+		text-decoration: none;
+	}
+
+	.a-disabled {
+		background: rgba(#fff, .85);
+		color: $dark-gray;
+		border-radius: .1em;
+		padding: .25em;
+		text-decoration: none;
+		opacity: .2;
+	}
+}
