@@ -1,10 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ReactStaticPlugin = require('react-static-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 //const publicPath = 'http://127.0.0.1:3000/';
-const publicPath = 'http://www.mobilizehere.com/';
+const publicPath = 'https://mobilizehere.com/';
 
 module.exports = {
   devtool: 'source-map',
@@ -25,7 +27,7 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
-        //postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
+        postcss: [autoprefixer({ browsers: ['last 2 versions'] })]
       },
     }),
     new ExtractTextPlugin({
@@ -42,12 +44,20 @@ module.exports = {
       sourceMap: true,
       compressor: { warnings: false },
     }),
+    new ManifestPlugin({
+      fileName: 'manifest.json',
+      cache: {
+        "short_name": "Mobilize",
+        "name": "Mobilize Here",
+        "start_url": "/"
+      }
+    }),
     new ReactStaticPlugin({
       routes: './src/components/Routes.js',
       template: './src/Html.js',
       reduxStore: './src/reducers/store.js',
       publicPath: publicPath
-    }),
+    })
   ],
 
   module: {
@@ -107,7 +117,14 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|ico)$/,
         use: [
-          { loader: 'file-loader', options: { name: '[name].[ext]' } },
+          {
+            loader: 'file-loader', 
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/',
+              publicPath: `${publicPath}images/`
+            }
+          },
         ],
       },
     ],

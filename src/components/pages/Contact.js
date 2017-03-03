@@ -1,9 +1,11 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import contactStyles from '../../css/contact.scss'
 
-function Contact() {
+function Contact({route}) {
 	return (
 		<div>
+			<Helmet title={route.title} />
 			<h2>Contact</h2>
 			<div className="contact-info">
 				<div>
@@ -16,10 +18,19 @@ function Contact() {
 					</div>
 				</div>
 				<div className="address">
-					<div>28 W 27th Street</div>
-					<div>(212) 757-5147</div>
-					<div>info@mobilizehere.com</div>
-					<div>Fax: (212) 757-5147</div>
+					<div>
+						<div>28 W 27th Street Suite 906</div>
+						<div>New York, NY 10001</div>
+					</div>
+					<div className="lz-padding">
+						Call Us: <a href="tel:12127575147">1 (212) 757-5147</a>
+					</div>
+					<div className="lz-padding">
+						<div>Share your story with us: </div>
+						<a href="mailto:mobilizehere@gmail.com">
+							mobilizehere@gmail.com
+						</a>
+					</div>
 				</div>
 			</div>
 			{

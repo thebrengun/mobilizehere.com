@@ -1,11 +1,23 @@
 import React from 'react'
+import Helmet from 'react-helmet'
+import { connect } from 'react-redux'
+import ResourcesPage from './ResourcesPage'
+import Paginate from '../Paginate'
 
-function TakeAction() {
+function TakeAction({data, location, route}) {
 	return (
-		<div className="row">
-				<h2 className="mobilize-heading">Take Action</h2>
+		<div>
+			<Helmet title={route.title} />
+			<h2>Take Action</h2>
+			<ResourcesPage {...Paginate(data, location)} />
 		</div>
 	);
 }
 
-export default TakeAction
+const mapStateToProps = ({resources}) => ({
+	data: resources
+});
+
+const mapDispatchToProps = (dispatch) => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TakeAction)

@@ -32,8 +32,7 @@ function Nav({showNav}) {
 				<IndexLink to="/" activeClassName="nav-active">Home</IndexLink>
 				<NavLink to="/podcast/">Podcast</NavLink>
 				<NavLink to="/take-action/">Take Action</NavLink>
-				<NavLink to="/resources/">Resources</NavLink>
-				<NavLink to="/gallery/">Gallery</NavLink>
+				<span className="disabled">Gallery</span>
 				<NavLink to="/about/">About</NavLink>
 				<NavLink to="/contact/">Contact</NavLink>
 			</nav>

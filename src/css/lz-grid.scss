@@ -7,6 +7,13 @@
 	}
 }
 
+@mixin ThumbnailInnerShadow() {
+	box-shadow: inset 2px 2px 5px 0px rgba(0,0,0,0.75);
+	&:hover {
+		box-shadow: inset 4px 4px 5px 0px rgba(0,0,0,0.75);
+	}
+}
+
 .lz-grid {
 	display: flex;
 	flex-direction: row;
@@ -24,8 +31,10 @@
 }
 
 .lz-col {
+	$col-width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
 	margin-top: $lz-padding;
-	width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
+	width: $col-width;
+	height: $col-width;
 	@media screen and (max-width: $break-small) {
 		width: 47.5%;
 	}
@@ -60,9 +69,8 @@
 
 .lz-drawer {
 	width: 100%;
-	background: $dark-gray;
+	background: desaturate(darken($light-blue, 20%), 50%);
 	padding: $lz-padding / 2;
-	@include ThumbnailShadow();
 }
 
 .lz-modal {

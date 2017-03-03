@@ -37,10 +37,10 @@
     "react-static-webpack-plugin": "^2.1.0",
     "redux": "^3.6.0",
     "sass-loader": "^4.1.1",
-    "soundcloud-widget": "^0.2.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.3.0"
+    "webpack-dev-server": "^2.3.0",
+    "webpack-manifest-plugin": "^1.1.0"
   }
 }

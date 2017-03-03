@@ -11,9 +11,10 @@ function ResourcesPage(props) {
 		<div>
 			<div className="lz-grid lz-grid-wrap">
 				{pageData.map(
-					({url, img}, i) => 
+					({url, img, color}, i) => 
 						<div 
 							className="lz-col" 
+							style={{background: color}} 
 							key={'resource' + i} 
 						>
 							<a href={url} target="_blank">

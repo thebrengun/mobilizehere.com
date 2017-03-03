@@ -1,5 +1,4 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import { IndexLink, Link, withRouter } from 'react-router'
 
@@ -24,37 +23,17 @@ class Template extends React.Component {
 	render() {
 		const { children, toggleNav, showNav } = this.props;
 		return (
-			<div>
-				<Helmet 
-					htmlAttributes={{lang: "en", amp: undefined}} // amp takes no value
-	                titleTemplate="Mobilize - %s"
-	                defaultTitle="Mobilize"
-	                titleAttributes={{itemprop: "name", lang: "en"}}
-	                //base={{target: "_blank", href: "http://mysite.com/"}}
-	                meta={[
-	                	{charset: "utf-8"},
-	                	{httpEquiv: "x-ua-compatible", content: "ie=edge"},
-	                    {name: "description", content: ""},
-	                    {name: "viewport", content: "width=device-width,initial-scale=1"}
-	                ]}
-	                link={[
-	                    {rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Montserrat"}
-	                    //{rel: "apple-touch-icon", href: "http://mysite.com/img/apple-touch-icon-57x57.png"},
-	                    //{rel: "apple-touch-icon", sizes: "72x72", href: "http://mysite.com/img/apple-touch-icon-72x72.png"}
-	                ]}
-				/>
-				<div className="lz-container">
-					<div className="lz-padding">
-						<Link to="/">
-							<img src={desktopLogo} className="logo desktop-logo" />
-							<img src={mobileLogo} className="logo mobile-logo" />
-						</Link>
-						<ToggleNav showNav={showNav} toggleNav={toggleNav} />
-					</div>
-					<Nav showNav={showNav} />
-					{children}
-					<div className="lz-footer lz-padding text-center">2017 &copy; Reserved to Mobilize</div>
+			<div className="lz-container">
+				<div className="lz-padding">
+					<Link to="/">
+						<img src={desktopLogo} className="logo desktop-logo" alt="Mobilize" />
+						<img src={mobileLogo} className="logo mobile-logo" alt="Mobilize" />
+					</Link>
+					<ToggleNav showNav={showNav} toggleNav={toggleNav} />
 				</div>
+				<Nav showNav={showNav} />
+				{children}
+				<div className="lz-footer lz-padding text-center">2017 &copy; Reserved to Mobilize</div>
 			</div>
 		);
 	}
