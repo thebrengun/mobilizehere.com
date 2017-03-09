@@ -4,7 +4,7 @@ import { IndexLink, Link, withRouter } from 'react-router'
 
 import styles from '../css/index.scss'
 
-import desktopLogo from '../assets/images/template/mobilize-logo-desktop.jpg'
+import desktopLogo from '../assets/images/template/mobilize-logo-desktop.png'
 import mobileLogo from '../assets/images/template/mobilize-logo-mobile.jpg'
 
 import {Nav, ToggleNav} from './Nav'

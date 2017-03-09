@@ -5,11 +5,11 @@ import mobilizeLogoBig from '../../assets/images/about/mobilize-logo-big.jpg'
 
 function About({about, route}) {
 	return (
-		<div className="row">
+		<div>
 			<Helmet title={route.title} />
-			<div className="col-xs-12 col-sm-6 col-sm-offset-3">
-				<h2 className="mobilize-heading">About</h2>
-				<img src={mobilizeLogoBig} className="pull-left about-img" alt="Mobilize Logo" />
+			<h2 className="mobilize-heading">About</h2>
+			<div className="about-container">
+				<img src={mobilizeLogoBig} className="about-img" alt="Mobilize Logo" />
 				<AboutText />
 			</div>
 		</div>
