@@ -3,14 +3,14 @@
 @mixin ThumbnailShadow() {
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.15);
 	&:hover {
-		box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.5);
+		box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.25);
 	}
 }
 
 @mixin ThumbnailInnerShadow() {
 	box-shadow: inset 2px 2px 5px 0px rgba(0,0,0,0.15);
 	&:hover {
-		box-shadow: inset 4px 4px 5px 0px rgba(0,0,0,0.5);
+		box-shadow: inset 4px 4px 5px 0px rgba(0,0,0,0.25);
 	}
 }
 
