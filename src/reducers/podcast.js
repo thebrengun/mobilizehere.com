@@ -8,7 +8,7 @@ const defaultState = {
 			trackId: 311602489,
 			artwork: coverArt,
 			title: 'Episode 2: We\'re His Problem Now',
-			notes: <p>Mobilize producer Matt Bockelman tracks down and interviews Kara, author of the famous "We\'re His Problem Now" online spreadsheet.</p>
+			notes: <p>Mobilize producer Matt Bockelman tracks down and interviews Kara, author of the famous "We're His Problem Now" online spreadsheet.</p>
 		},
 		{
 			trackId: 310319933,

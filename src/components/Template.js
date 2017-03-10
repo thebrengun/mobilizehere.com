@@ -24,11 +24,13 @@ class Template extends React.Component {
 		const { children, toggleNav, showNav } = this.props;
 		return (
 			<div className="lz-container">
-				<div className="lz-padding">
-					<Link to="/">
-						<img src={desktopLogo} className="logo desktop-logo" alt="Mobilize" />
-						<img src={mobileLogo} className="logo mobile-logo" alt="Mobilize" />
-					</Link>
+				<div className="lz-header lz-padding">
+					<div className="logo">
+						<Link to="/">
+							<img src={desktopLogo} className="desktop-logo" alt="Mobilize" />
+							<img src={mobileLogo} className="mobile-logo" alt="Mobilize" />
+						</Link>
+					</div>
 					<ToggleNav showNav={showNav} toggleNav={toggleNav} />
 				</div>
 				<Nav showNav={showNav} />
