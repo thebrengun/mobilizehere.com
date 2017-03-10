@@ -23,12 +23,11 @@ function Contact({route}) {
 						<div>New York, NY 10001</div>
 					</div>
 					<div className="lz-padding">
-						Call Us: <a href="tel:12127575147">1 (212) 757-5147</a>
-					</div>
-					<div className="lz-padding">
-						<div>Share your story with us: </div>
-						<a href="mailto:mobilizehere@gmail.com">
-							mobilizehere@gmail.com
+						<a 
+							href="https://goo.gl/forms/HW42SVHuKsa8AO0k2" 
+							target="_blank" 
+						>
+							Share Your Story
 						</a>
 					</div>
 				</div>
