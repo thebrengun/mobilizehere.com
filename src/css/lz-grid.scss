@@ -2,15 +2,16 @@
 
 @mixin ThumbnailShadow() {
 	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.15);
-	&:hover {
-		box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.25);
-	}
 }
 
-@mixin ThumbnailInnerShadow() {
-	box-shadow: inset 2px 2px 5px 0px rgba(0,0,0,0.15);
+@mixin ThumbnailDark() {
+	box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.25);
+}
+
+@mixin ThumbnailShadowHover() {
+	@include ThumbnailShadow();
 	&:hover {
-		box-shadow: inset 4px 4px 5px 0px rgba(0,0,0,0.25);
+		@include ThumbnailDark();
 	}
 }
 
@@ -29,9 +30,8 @@
 		flex-basis: 50%;
 	}
 }
-
+$col-width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
 .lz-col {
-	$col-width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
 	margin-top: $lz-padding;
 	width: $col-width;
 	height: $col-width;
@@ -41,9 +41,18 @@
 	}
 
 	img {
-		@include ThumbnailShadow();
+		@include ThumbnailShadowHover();
 	}
 
+	img.selected {
+		@include ThumbnailDark();
+	}
+
+}
+
+.filler {
+	background: red;
+	height: 0;
 }
 
 .lz-modal-col-side {
@@ -69,9 +78,60 @@
 }
 
 .lz-drawer {
+	$pinch-width: 15px;
 	width: 100%;
-	background: desaturate(darken($light-blue, 20%), 50%);
-	padding: $lz-padding / 2;
+	background: $light-blue;
+	margin-top: $lz-padding;
+	box-shadow: 0px 0px $pinch-width ($pinch-width / 3) rgba(0,0,0,0.25);
+
+	.pinch-row {
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		justify-content: space-between;
+		position: relative;
+		top: -1 * $pinch-width;
+	}
+
+	.lz-col {
+		height: $pinch-width;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 0;
+	}
+
+	.pinch-arrow {
+		width: 0;
+		height: 0;
+		border-left: solid $pinch-width transparent;
+		border-right: solid $pinch-width transparent;
+		border-bottom: solid $pinch-width $light-blue;
+	}
+
+	.inner-drawer {
+		padding-top: $lz-padding - $pinch-width;
+		padding-bottom: $lz-padding / 2;
+		display: flex;
+		flex-direction: row;
+		@media screen and (max-width: $break-small) {
+			flex-direction: column;
+		}
+
+		& > div {
+			padding: 0 ($lz-padding / 2);
+			flex-basis: 50%;
+		}
+
+		h4 {
+			margin: 0;
+			text-align: left;
+		}
+
+		p {
+			margin: ($lz-padding / 2) 0;
+		}
+	}
 }
 
 .lz-modal {

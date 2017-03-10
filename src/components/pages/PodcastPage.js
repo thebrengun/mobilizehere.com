@@ -10,9 +10,6 @@ import animations from '../../css/lz-grid-animations.scss'
 
 import SoundCloudEmbed from '../SoundCloudEmbed'
 
-import podcastEmbed from '../../assets/images/podcast/podcast-embed-placeholder.jpg'
-import img from '../../assets/images/about/mobilize-logo-big.jpg'
-
 class PodcastPage extends React.Component {
 
 	constructor() {
@@ -22,8 +19,7 @@ class PodcastPage extends React.Component {
 	render() {
 		const props = this.props;
 		const { itemIsActive, itemsPerPage, makePath, page, pageData, PaginateNav, search} = props;
-		const play = search.play ? Math.min(parseInt(search.play, 10), itemsPerPage) : -1;
-
+		const play = search.play ? Math.min(parseInt(search.play, 10), pageData.length - 1) : -1;
 		return (
 			<div>
 				<MakeGrid wrapperClassName="lz-grid-with-drawer-mobile" columnWrap={2} play={play} {...this.props} />
@@ -41,6 +37,9 @@ class MakeGrid extends React.Component {
 
 	render() {
 		const {columnWrap, itemIsActive, makePath, page, pageData, play, wrapperClassName} = this.props;
+		const playRow = Math.floor(play / columnWrap);
+		const playCol = (play + 1) - (playRow * columnWrap);
+		const emptyCells = new Array(Math.max((Math.ceil(pageData.length / columnWrap) * columnWrap) - pageData.length, 0)).fill({});
 		let order = 0;
 		return (
 			<TransitionGroup 
@@ -49,21 +48,59 @@ class MakeGrid extends React.Component {
 				transitionLeaveTimeout={300}
 				className={`lz-grid lz-grid-wrap ${wrapperClassName}`}
 			>
-				{pageData.map(
-					({trackId}, i) => 
-						<div 
-							className="lz-col" 
-							key={'podcast' + i} 
-							style={{order: (i + 1) % columnWrap === 0 ? order++ : order}}
-						>
-							<Link to={makePath({page, play: i})}>
-								<img src={img} className="img-responsive" />
-							</Link>
-						</div>
+				{pageData.concat(emptyCells).map(
+					({trackId, artwork}, i) => 
+						trackId ? 
+							<div 
+								className="lz-col" 
+								key={'podcast' + i} 
+								style={{order: (i + 1) % columnWrap === 0 ? order++ : order}}
+							>
+								<Link to={makePath({page, play: i})}>
+									<img 
+										src={artwork} 
+										className={[
+											'img-responsive', 
+											play === i ? 
+												'selected' : ''
+										].join(' ')}  
+									/>
+								</Link>
+							</div> : 
+							<div 
+								className="lz-col filler" 
+								key={'podcast' + i} 
+								style={{order: (i + 1) % columnWrap === 0 ? order++ : order}}
+							>
+							</div>
 				)}
 				{itemIsActive(play) ? 
 					<div className="lz-drawer" style={{order: Math.floor(play / columnWrap)}} key="drawer">
-						<SoundCloudEmbed trackId={pageData[play].trackId} />
+						<div className="pinch-row">
+							<div className="lz-col" style={{order: playCol - 1}}>
+								<div className="pinch-arrow"></div>
+							</div>
+							{new Array(columnWrap - 1).fill('').map(
+								(empty, fillerIndex) => 
+									<div 
+										className="lz-col" 
+										style={{
+											order: fillerIndex
+										}} 
+										key={`pinch-arrow-empty-${fillerIndex}`}
+									>
+									</div>
+							)}
+						</div>
+						<div className="inner-drawer">
+							<div>
+								<SoundCloudEmbed trackId={pageData[play].trackId} />
+							</div>
+							<div>
+								<h4>{pageData[play].title}</h4>
+								<p>{pageData[play].notes}</p>
+							</div>
+						</div>
 					</div> : ''
 				}
 			</TransitionGroup>

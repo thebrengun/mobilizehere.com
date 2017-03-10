@@ -8,12 +8,12 @@ import SoundCloudEmbed from '../SoundCloudEmbed'
 
 import takeAction from '../../assets/images/index/take-action-graphic.png'
 
-function Home({route, data}) {
+function Home({route, featuredEpisode}) {
 	return (
 		<div>
 			<Helmet title={route.title} />
 			<div className="lz-dbl-padding">
-				<SoundCloudEmbed trackId={data[0].trackId} />
+				<SoundCloudEmbed trackId={featuredEpisode.trackId} />
 			</div>
 			<div className="lz-dbl-padding">
 				<Link to={'/take-action/'}>
@@ -27,7 +27,7 @@ function Home({route, data}) {
 }
 
 const mapStateToProps = ({podcast}) => ({
-	data: podcast
+	featuredEpisode: podcast.episodes[0]
 });
 
 const mapDispatchToProps = (dispatch) => ({});

@@ -41,7 +41,8 @@ function Paginate(data, location, itemsPerPage = 8) {
 		return function(page) {
 			const startItem = (page - 1) * itemsPerPage;
 			const endItem = startItem + itemsPerPage;
-			return data.slice(startItem, endItem);
+			const truncatedData = data.slice(startItem, endItem);
+			return truncatedData;
 		};
 	}
 

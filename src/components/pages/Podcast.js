@@ -9,16 +9,19 @@ function Podcast({data, location, route}) {
 	return (
 		<div>
 			<Helmet title={route.title} />
+			<h2>Podcast</h2>
+			<h3>Featured Episode</h3>
 			<div>
 				<SoundCloudEmbed trackId={data[0].trackId} />
 			</div>
+			<h3>Episodes</h3>
 			<PodcastPage {...Paginate(data, location)} />
 		</div>
 	);
 }
 
 const mapStateToProps = ({podcast}) => ({
-	data: podcast
+	data: podcast.episodes
 });
 
 const mapDispatchToProps = (dispatch) => ({});
