@@ -116,11 +116,13 @@ module.exports = {
       },
       {
         test: /\.(pdf)$/,
-        use: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'pdfs/',
-          publicPath: `${publicPath}pdfs/`
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'pdfs/',
+            publicPath: `${publicPath}pdfs/`
+          }
         }
       },
       {
