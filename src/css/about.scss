@@ -1,0 +1,45 @@
+@import 'lz-variables';
+
+.about-container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+
+	@media screen and (max-width: $break-small) {
+		flex-direction: column;
+	}
+
+	div {
+		flex-basis: 50%;
+		flex-shrink: 0;
+	}
+}
+
+.about-img {
+	width: 290px;
+	max-width: 50%;
+	margin: $lz-padding;
+
+	@media screen and (max-width: $break-small) {
+		display: block;
+		max-width: 100%;
+		margin: ($lz-padding / 2) auto;
+	}
+}
+
+.credits {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+	span {
+		text-align: center;
+		padding-bottom: $lz-padding / 2;
+		flex-basis: 33%;
+		@media screen and (max-width: $break-small) {
+			flex-basis: 50%;
+		}
+	}
+}

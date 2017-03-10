@@ -200,34 +200,3 @@ a {
 .nav-disabled {
 	color: lighten($med-gray, 30%);
 }
-
-/* ########################       Split these into separate files      ######################## */
-
-/* About */
-
-.about-container {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-
-	@media screen and (max-width: $break-small) {
-		flex-direction: column;
-	}
-
-	div {
-		flex-basis: 50%;
-		flex-shrink: 0;
-	}
-}
-
-.about-img {
-	width: 290px;
-	max-width: 50%;
-	margin: $lz-padding;
-
-	@media screen and (max-width: $break-small) {
-		display: block;
-		max-width: 100%;
-		margin: ($lz-padding / 2) auto;
-	}
-}
