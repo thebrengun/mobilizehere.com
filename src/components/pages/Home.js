@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import AboutText from '../AboutText'
+import Paragraphs from '../Paragraphs'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
@@ -8,7 +8,7 @@ import SoundCloudEmbed from '../SoundCloudEmbed'
 
 import takeAction from '../../assets/images/index/take-action-graphic.png'
 
-function Home({route, featuredEpisode}) {
+function Home({route, featuredEpisode, aboutText}) {
 	return (
 		<div>
 			<Helmet title={route.title} />
@@ -21,13 +21,14 @@ function Home({route, featuredEpisode}) {
 				</Link>
 			</div>
 			<h2>About Mobilize</h2>
-			<AboutText />
+			<Paragraphs paragraphs={aboutText} />
 		</div>
 	);
 }
 
-const mapStateToProps = ({podcast}) => ({
-	featuredEpisode: podcast.episodes[0]
+const mapStateToProps = ({podcast, about}) => ({
+	featuredEpisode: podcast.episodes[0],
+	aboutText: about.aboutText
 });
 
 const mapDispatchToProps = (dispatch) => ({});
