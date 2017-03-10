@@ -36,7 +36,7 @@
 
 	span {
 		text-align: center;
-		padding-bottom: $lz-padding / 2;
+		margin: ($lz-padding / 2) 0;
 		flex-basis: 33%;
 		@media screen and (max-width: $break-small) {
 			flex-basis: 50%;
