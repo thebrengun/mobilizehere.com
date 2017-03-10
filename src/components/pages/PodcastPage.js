@@ -9,6 +9,7 @@ import styles from '../../css/lz-grid.scss'
 import animations from '../../css/lz-grid-animations.scss'
 
 import SoundCloudEmbed from '../SoundCloudEmbed'
+import closeDrawer from '../../assets/images/template/nav-close.jpg'
 
 class PodcastPage extends React.Component {
 
@@ -94,11 +95,14 @@ class MakeGrid extends React.Component {
 						</div>
 						<div className="inner-drawer">
 							<div>
-								<SoundCloudEmbed trackId={pageData[play].trackId} />
-							</div>
-							<div>
+								<Link to={makePath({page, play: -1})} className="close-drawer">
+									<img src={closeDrawer} alt="Close Podcast Details" />
+								</Link>
 								<h4>{pageData[play].title}</h4>
-								<p>{pageData[play].notes}</p>
+								{pageData[play].notes}
+							</div>
+							<div className="player">
+								<SoundCloudEmbed trackId={pageData[play].trackId} />
 							</div>
 						</div>
 					</div> : ''

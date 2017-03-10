@@ -111,7 +111,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        test: /\.(ttf|eot|svg|pdf)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         use: 'file-loader',
       },
       {

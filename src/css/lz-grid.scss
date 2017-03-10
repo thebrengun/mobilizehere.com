@@ -110,8 +110,9 @@ $col-width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
 	}
 
 	.inner-drawer {
-		padding-top: $lz-padding - $pinch-width;
-		padding-bottom: $lz-padding / 2;
+		$drawer-padding: $lz-padding / 2;
+		padding-top: $drawer-padding - $pinch-width;
+		padding-bottom: $drawer-padding;
 		display: flex;
 		flex-direction: row;
 		@media screen and (max-width: $break-small) {
@@ -119,8 +120,15 @@ $col-width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
 		}
 
 		& > div {
-			padding: 0 ($lz-padding / 2);
+			padding: 0 $drawer-padding;
 			flex-basis: 50%;
+		}
+
+		.player {
+			order: -1;
+			@media screen and (max-width: $break-small) {
+				order: 1;
+			}
 		}
 
 		h4 {
@@ -129,7 +137,12 @@ $col-width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
 		}
 
 		p {
-			margin: ($lz-padding / 2) 0;
+			margin: $drawer-padding 0;
+		}
+
+		.close-drawer {
+			float: right;
+			margin-left: $drawer-padding;
 		}
 	}
 }
