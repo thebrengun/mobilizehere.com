@@ -1,24 +1,26 @@
 import React from 'react'
 import sheetMusic from '../assets/pdfs/Rise-Up-Choir-Sheet-Music-(Sibelius).pdf'
-import coverArt from '../assets/images/about/mobilize-logo-big.jpg'
+import coverEp1 from '../assets/images/podcast/cover-ep-1.jpg'
+import coverEp2 from '../assets/images/podcast/cover-ep-2.jpg'
+import riseUp from '../assets/images/podcast/rise-up.jpg'
 
 const defaultState = {
 	episodes: [
 		{
 			trackId: 311602489,
-			artwork: coverArt,
+			artwork: coverEp2,
 			title: 'Episode 2: We\'re His Problem Now',
 			notes: <p>Mobilize producer Matt Bockelman tracks down and interviews Kara, author of the famous "We're His Problem Now" online spreadsheet.</p>
 		},
 		{
 			trackId: 310319933,
-			artwork: coverArt,
+			artwork: coverEp1,
 			title: 'Episode 1: Why We Fight',
 			notes: <p>Sound engineer Cory Choy recounts the Mobilize origin story, undocumented DREAMer and DACA holder Cristina tells us why she is fighting and musician Charlottle Littlehales talks about the process of writing and meaning behind our theme song Rise Up.</p>
 		},
 		{
 			trackId: 305459487,
-			artwork: coverArt,
+			artwork: riseUp,
 			title: 'Mobilize - Rise Up by Charlotte Littlehales',
 			notes: <p>Rise Up, written and performed by Charlotte Littlehales and Phil Pardell, is a call for community, unity, and action. Want to sing it in your local choir? <a href={sheetMusic} target="_blank">Click here for sheet music!</a></p>
 		}
