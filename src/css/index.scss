@@ -74,6 +74,12 @@ a {
 	margin: $lz-padding auto;
 }
 
+.lz-container-nav-open {
+	max-height: 100vh;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
 .lz-header {
 	
 }
@@ -148,16 +154,32 @@ a {
     	position: absolute;
     	top: 0;
     	left: 0;
-    	width: 50%;
-    	background: $light-blue;
+    	width: 100vw;
     	display: flex;
-    	flex-direction: column;
+    	flex-direction: row;
     	height: 100vh;
     	align-items: stretch;
     	justify-content: center;
     	margin: 0;
-    	box-shadow: 0px 0px 15px 0px rgba($dark-gray, .3);
-    	transition: all .5s;
+
+    	& > div {
+    		width: 50%;
+    		flex-basis: 50%;
+    	}
+
+    	.nav-column {
+    		background: $light-blue;
+    		display: flex;
+    		flex-direction: column;
+    		align-items: center;
+    		justify-content: center;
+    		box-shadow: 0px 0px 15px 0px rgba($dark-gray, .3);
+    		transition: all .5s;
+    	}
+
+    	.nav-modal {
+    		background: rgba(0,0,0, .1);
+    	}
 
     	a {
     		color: $darker-blue;
@@ -172,8 +194,12 @@ a {
 
 .hide-nav {
 	@media screen and (max-width: $break-small) {
-		left: -55%;
+		left: -110%;
 		transition: all .25s;
+
+		.nav-modal {
+			background: transparent;
+		}
 	}
 }
 
@@ -188,7 +214,7 @@ a {
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
-		height: 60%;
+		height: 60vh;
 	}
 }
 

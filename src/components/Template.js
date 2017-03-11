@@ -23,7 +23,7 @@ class Template extends React.Component {
 	render() {
 		const { children, toggleNav, showNav } = this.props;
 		return (
-			<div className="lz-container">
+			<div className={['lz-container', showNav ? 'lz-container-nav-open' : ''].join(' ')}>
 				<div className="lz-header lz-padding">
 					<div className="logo">
 						<Link to="/">
@@ -33,7 +33,7 @@ class Template extends React.Component {
 					</div>
 					<ToggleNav showNav={showNav} toggleNav={toggleNav} />
 				</div>
-				<Nav showNav={showNav} />
+				<Nav showNav={showNav} toggleNav={toggleNav} />
 				{children}
 				<div className="lz-footer lz-padding text-center">2017 &copy; Reserved to Mobilize</div>
 			</div>

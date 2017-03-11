@@ -25,17 +25,20 @@ function NavLink({children, to}) {
 	return <Link to={to} activeClassName="nav-active">{children}</Link>
 }
 
-function Nav({showNav}) {
+function Nav({showNav, toggleNav}) {
 	return (
 		<div className={['lz-padding', 'lz-nav', !showNav ? 'hide-nav' : ''].join(' ')}>
-			<nav>
-				<IndexLink to="/" activeClassName="nav-active">Home</IndexLink>
-				<NavLink to="/podcast/">Podcast</NavLink>
-				<NavLink to="/take-action/">Take Action</NavLink>
-				<span className="disabled">Gallery</span>
-				<NavLink to="/about/">About</NavLink>
-				<NavLink to="/contact/">Contact</NavLink>
-			</nav>
+			<div className="nav-column">
+				<nav>
+					<IndexLink to="/" activeClassName="nav-active">Home</IndexLink>
+					<NavLink to="/podcast/">Podcast</NavLink>
+					<NavLink to="/take-action/">Take Action</NavLink>
+					<span className="disabled">Gallery</span>
+					<NavLink to="/about/">About</NavLink>
+					<NavLink to="/contact/">Contact</NavLink>
+				</nav>
+			</div>
+			<div className="hide-desktop nav-modal" onClick={toggleNav}></div>
 		</div>
 	);
 }
