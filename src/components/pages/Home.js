@@ -6,7 +6,9 @@ import { Link } from 'react-router'
 
 import SoundCloudEmbed from '../SoundCloudEmbed'
 
-import takeAction from '../../assets/images/index/take-action-graphic.png'
+import sheetMusic from '../../assets/pdfs/Rise-Up-Choir-Sheet-Music-(Sibelius).pdf'
+import takeAction from '../../assets/images/index/take-action-graphic-2.png'
+import downloadSheetMusic from '../../assets/images/index/download-sheet-music.png'
 
 function Home({route, featuredEpisode, aboutText}) {
 	return (
@@ -14,6 +16,11 @@ function Home({route, featuredEpisode, aboutText}) {
 			<Helmet title={route.title} />
 			<div className="lz-dbl-padding">
 				<SoundCloudEmbed trackId={featuredEpisode.trackId} />
+			</div>
+			<div className="lz-dbl-padding">
+				<a href={sheetMusic} target="_blank">
+					<img src={downloadSheetMusic} className="img-responsive" alt="Download Rise Up Sheet Music" />
+				</a>
 			</div>
 			<div className="lz-dbl-padding">
 				<Link to={'/take-action/'}>
