@@ -56,17 +56,20 @@ $col-width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
 }
 
 .lz-modal-col-side {
-	flex-basis: '25%'; 
-	text-align: 'center';
+	flex-basis: 15%; 
+	text-align: center;
 }
 
 .lz-modal-col-center {
-	flex-basis: '50%';
+	flex-basis: 70%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .lz-modal-img {
-	width: '600px';
-	max-width: '100%';
+	max-width: 100%;
+	max-height: 90vh;
 }
 
 .lz-grid-with-drawer-mobile {

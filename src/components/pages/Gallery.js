@@ -4,12 +4,16 @@ import { connect } from 'react-redux'
 import GalleryPage from './GalleryPage'
 import Paginate from '../Paginate'
 
-function Gallery({data, location, route}) {
+function Gallery({data, disableScroll, enableScroll, location, route}) {
 	return (
 		<div>
 			<Helmet title={route.title} />
 			<h2>Gallery</h2>
-			<GalleryPage {...Paginate(data, location)} />
+			<GalleryPage 
+				{...Paginate(data, location)} 
+				disableScroll={disableScroll} 
+				enableScroll={enableScroll} 
+			/>
 		</div>
 	);
 }

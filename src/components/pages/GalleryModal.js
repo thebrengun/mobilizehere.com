@@ -23,7 +23,7 @@ function GalleryModal({img, itemIsFirst, itemIsLast, itemsPerPage, makePath, pag
 						</div>
 						<div className="lz-modal-col-center">
 							<img 
-								src={pageData[view].img} 
+								src={pageData[view].full} 
 								className="img-responsive lz-modal-img" 
 							/>
 						</div>

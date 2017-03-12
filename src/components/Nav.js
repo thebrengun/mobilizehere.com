@@ -33,7 +33,7 @@ function Nav({showNav, toggleNav}) {
 					<IndexLink to="/" activeClassName="nav-active">Home</IndexLink>
 					<NavLink to="/podcast/">Podcast</NavLink>
 					<NavLink to="/take-action/">Take Action</NavLink>
-					<span className="disabled">Gallery</span>
+					<NavLink to="/gallery/">Gallery</NavLink>
 					<NavLink to="/about/">About</NavLink>
 					<NavLink to="/contact/">Contact</NavLink>
 				</nav>

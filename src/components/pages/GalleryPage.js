@@ -6,22 +6,22 @@ import styles from '../../css/lz-grid.scss'
 
 function GalleryPage(props) {
 
-	const { itemIsActive, itemsPerPage, makePath, page, pageData, PaginateNav, search} = props;
+	const { enableScroll, disableScroll, itemIsActive, itemsPerPage, makePath, page, pageData, PaginateNav, search} = props;
 
-	const view = search.view ? Math.min(parseInt(search.view, 10), itemsPerPage) : -1;
+	const view = search.view ? Math.min(parseInt(search.view, 10), pageData.length - 1) : -1;
 
 	return (
 		<div>
 			{itemIsActive(view) ? <GalleryModal {...props} view={view} /> : '' }
 			<div className="lz-grid lz-grid-wrap">
 				{pageData.map(
-					({img}, i) => 
+					({thumb}, i) => 
 						<div 
 							className="lz-col" 
 							key={'gallery-img-' + i} 
 						>
 							<Link to={makePath({page, view: i})}>
-								<img src={img} className="img-responsive" />
+								<img src={thumb} className="img-responsive" />
 							</Link>
 						</div>
 				)}

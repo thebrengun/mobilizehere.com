@@ -18,12 +18,18 @@ class Template extends React.Component {
 		if(nextProps.location.pathname !== this.props.location.pathname) {
 			this.props.hideNav();
 		}
+
+		if(parseInt(nextProps.location.query.view, 10) > -1) {
+			this.props.disableScroll();
+		} else {
+			this.props.enableScroll();
+		}
 	}
 
 	render() {
-		const { children, toggleNav, showNav } = this.props;
+		const { children, toggleNav, showNav, scroll } = this.props;
 		return (
-			<div className={['lz-container', showNav ? 'lz-container-nav-open' : ''].join(' ')}>
+			<div className={['lz-container', showNav || !scroll ? 'lz-container-no-scroll' : ''].join(' ')}>
 				<div className="lz-header lz-padding">
 					<div className="logo">
 						<Link to="/">
@@ -41,10 +47,12 @@ class Template extends React.Component {
 	}
 }
 
-const mapStateToProps = ({nav}) => ({showNav: nav.showNav});
+const mapStateToProps = ({nav, scroll}) => ({showNav: nav.showNav, scroll});
 const mapDispatchToProps = (dispatch) => ({
 	toggleNav: () => dispatch({type: 'TOGGLE_NAV'}),
-	hideNav: () => dispatch({type: 'HIDE_NAV'})
+	hideNav: () => dispatch({type: 'HIDE_NAV'}),
+	disableScroll: () => dispatch({type: 'NO_SCROLL'}),
+	enableScroll: () => dispatch({type: 'SCROLL'})
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Template))
