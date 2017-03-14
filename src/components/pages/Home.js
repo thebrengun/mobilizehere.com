@@ -19,12 +19,10 @@ function Home({route, featuredEpisode, aboutText}) {
 			</div>
 			<div className="lz-dbl-padding">
 				<a href={sheetMusic} target="_blank">
-					<img src={downloadSheetMusic} className="img-responsive" alt="Download Rise Up Sheet Music" />
+					<img src={downloadSheetMusic} className="img-responsive lz-padding" alt="Download Rise Up Sheet Music" />
 				</a>
-			</div>
-			<div className="lz-dbl-padding">
 				<Link to={'/take-action/'}>
-					<img src={takeAction} className="img-responsive" alt="Take Action" />
+					<img src={takeAction} className="img-responsive lz-padding" alt="Take Action" />
 				</Link>
 			</div>
 			<h2>About Mobilize</h2>
