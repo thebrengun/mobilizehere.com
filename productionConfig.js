@@ -5,8 +5,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ReactStaticPlugin = require('react-static-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
-// For running http-server to test dist directory
-//const publicPath = 'http://127.0.0.1:8080/';
 const publicPath = 'https://mobilizehere.com/';
 
 module.exports = {
@@ -47,7 +45,8 @@ module.exports = {
           keep_fnames: true
       },
       compress: {
-          screw_ie8: true
+          screw_ie8: true,
+          warnings: false
       },
       comments: false,
       sourceMap: true
