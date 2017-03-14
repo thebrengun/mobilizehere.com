@@ -21,6 +21,7 @@ const T = React.PropTypes;
 const Html = ({
   title = 'Mobilize Here',
   bundle = 'app.js',
+  autotracker = 'autotracker.js',
   body = '',
   favicon = 'favicon.ico',
   stylesheet = 'app.css',
@@ -60,6 +61,8 @@ const Html = ({
     <body>
       <div id='root' dangerouslySetInnerHTML={{ __html: body }} />
       <script src={publicPath + bundle} defer />
+      <script src='https://www.google-analytics.com/analytics.js' async />
+      <script src={publicPath + autotracker} async />
     </body>
   </html>
 );

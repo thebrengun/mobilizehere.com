@@ -5,16 +5,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ReactStaticPlugin = require('react-static-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
-//const publicPath = 'http://127.0.0.1:3000/';
+// For running http-server to test dist directory
+//const publicPath = 'http://127.0.0.1:8080/';
 const publicPath = 'https://mobilizehere.com/';
 
 module.exports = {
   devtool: 'source-map',
+  target: 'web',
   context: __dirname,
   entry: {
-    app: [
-      './src/index.js'
-    ],
+    app: './src/index.js',
+    autotracker: './src/autotracker.js'
   },
 
   output: {
@@ -40,9 +41,16 @@ module.exports = {
       },
     }),
     new webpack.optimize.UglifyJsPlugin({
-      screw_ie8: true,
-      sourceMap: true,
-      compressor: { warnings: false },
+      beautify: false,
+      mangle: {
+          screw_ie8: true,
+          keep_fnames: true
+      },
+      compress: {
+          screw_ie8: true
+      },
+      comments: false,
+      sourceMap: true
     }),
     new ManifestPlugin({
       fileName: 'manifest.json',
@@ -64,7 +72,8 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: path.join(__dirname, 'node_modules'),
+        exclude: /node_modules\/(?!(autotrack|dom-utils))/,
+        //exclude: path.join(__dirname, ),
         use: 'babel-loader',
       },
       {
