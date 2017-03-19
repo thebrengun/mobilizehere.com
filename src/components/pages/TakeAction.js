@@ -9,7 +9,7 @@ function TakeAction({data, location, route}) {
 		<div>
 			<Helmet title={route.title} />
 			<h2>Take Action</h2>
-			<ResourcesPage {...Paginate(data, location)} />
+			<ResourcesPage {...Paginate(data, location, 12)} />
 		</div>
 	);
 }

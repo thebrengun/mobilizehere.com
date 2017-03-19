@@ -6,6 +6,7 @@ import swingLeft from '../assets/images/resources/swing-left.jpg'
 import townHallProject from '../assets/images/resources/town-hall-project.jpg'
 import countable from '../assets/images/resources/countable.jpg'
 import faxZero from '../assets/images/resources/faxZero.jpg'
+import resistbot from '../assets/images/resources/resistbot.png'
 
 const defaultState = [
 	{color: '#164768', img: townHallProject, url: "https://townhallproject.com"},
@@ -15,7 +16,8 @@ const defaultState = [
 	{color: '#d0383c', img: resistHere, url: "http://resisthere.org"},
 	{color: '#08192a', img: resistanceRecess, url: "https://resistancerecess.com"},
 	{color: '#eb0627', img: countable, url: "https://www.countable.us"},
-	{color: '#b8d860', img: faxZero, url: "https://faxzero.com/fax_congress.php"}
+	{color: '#b8d860', img: faxZero, url: "https://faxzero.com/fax_congress.php"},
+	{color: '#11374e', img: resistbot, url: "https://www.resistbot.io"}
 ];
 
 const resources = (state = defaultState, action) => {
