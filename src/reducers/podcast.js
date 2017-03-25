@@ -3,9 +3,16 @@ import sheetMusic from '../assets/pdfs/Rise-Up-Choir-Sheet-Music-(Sibelius).pdf'
 import coverEp1 from '../assets/images/podcast/cover-ep-1.jpg'
 import coverEp2 from '../assets/images/podcast/cover-ep-2.jpg'
 import riseUp from '../assets/images/podcast/rise-up.jpg'
+import defaultArt from '../assets/images/about/mobilize-logo-big.jpg'
 
 const defaultState = {
 	episodes: [
+		{
+			trackId: 314037649,
+			artwork: defaultArt,
+			title: 'Episode 3: Going Out to Cannon Ball',
+			notes: <p>Nick Panken of Spirit Family Reunion gives a thoughtful interview about resistance, vulnerability and honesty, and his protest song Going Out To Cannon Ball.</p>
+		},
 		{
 			trackId: 311602489,
 			artwork: coverEp2,
