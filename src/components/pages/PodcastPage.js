@@ -1,7 +1,7 @@
 import React from 'react'
 import TransitionGroup from 'react-addons-css-transition-group'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
+import Link from 'react-router/lib/Link'
 
 import Paginate from '../Paginate'
 

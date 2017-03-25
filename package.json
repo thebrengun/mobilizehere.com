@@ -4,8 +4,8 @@
   "description": "Mobilize Here Podcast Website",
   "main": "./index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "dist": "webpack -p --env production",
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "dist": "NODE_ENV=production webpack -p --progress --config webpack.config.production.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { IndexLink, Link, withRouter } from 'react-router'
+
+import IndexLink from 'react-router/lib/IndexLink'
+import Link from 'react-router/lib/Link'
+import withRouter from 'react-router/lib/withRouter'
 
 import styles from '../css/index.scss'
 

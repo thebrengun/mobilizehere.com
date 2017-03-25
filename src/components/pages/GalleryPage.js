@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import Link from 'react-router/lib/Link'
 import GalleryModal from './GalleryModal'
 
 import styles from '../../css/lz-grid.scss'

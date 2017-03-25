@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Paragraphs from '../Paragraphs'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
+import Link from 'react-router/lib/Link'
 
 import SoundCloudEmbed from '../SoundCloudEmbed'
 

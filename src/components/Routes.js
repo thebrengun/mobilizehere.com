@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { IndexRoute, Route } from 'react-router'
+import IndexRoute from 'react-router/lib/IndexRoute'
+import Route from 'react-router/lib/Route'
 
 import Template from './Template'
 import Home from './pages/Home'
