@@ -13,7 +13,7 @@ const defaultState = {
 			trackId: 315175699,
 			artwork: coverEp4,
 			title: 'Episode 4: Protest at JFK',
-			notes: <p></p>
+			notes: <p>How Audrey Sage, a self-described newbie organizer, led thousands of protesters to JFK airport.</p>
 		},
 		{
 			trackId: 314037649,
