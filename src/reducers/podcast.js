@@ -2,14 +2,22 @@ import React from 'react'
 import sheetMusic from '../assets/pdfs/Rise-Up-Choir-Sheet-Music-(Sibelius).pdf'
 import coverEp1 from '../assets/images/podcast/cover-ep-1.jpg'
 import coverEp2 from '../assets/images/podcast/cover-ep-2.jpg'
+import coverEp3 from '../assets/images/podcast/cover-ep-3.jpg'
+import coverEp4 from '../assets/images/podcast/cover-ep-4.jpg'
 import riseUp from '../assets/images/podcast/rise-up.jpg'
 import defaultArt from '../assets/images/about/mobilize-logo-big.jpg'
 
 const defaultState = {
 	episodes: [
 		{
+			trackId: 315175699,
+			artwork: coverEp4,
+			title: 'Episode 4: Protest at JFK',
+			notes: <p></p>
+		},
+		{
 			trackId: 314037649,
-			artwork: defaultArt,
+			artwork: coverEp3,
 			title: 'Episode 3: Going Out to Cannon Ball',
 			notes: <p>Nick Panken of Spirit Family Reunion gives a thoughtful interview about resistance, vulnerability and honesty, and his protest song Going Out To Cannon Ball.</p>
 		},
