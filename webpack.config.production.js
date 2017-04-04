@@ -4,7 +4,6 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ReactStaticPlugin = require('react-static-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const publicPath = 'https://mobilizehere.com/';
 
@@ -24,7 +23,6 @@ module.exports = {
   },
 
   plugins: [
-    new BundleAnalyzerPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
