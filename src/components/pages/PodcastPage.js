@@ -50,7 +50,7 @@ class MakeGrid extends React.Component {
 				className={`lz-grid lz-grid-wrap ${wrapperClassName}`}
 			>
 				{pageData.concat(emptyCells).map(
-					({trackId, artwork, title}, i) => 
+					({trackId, image, title}, i) => 
 						trackId ? 
 							<div 
 								className="lz-col" 
@@ -60,7 +60,7 @@ class MakeGrid extends React.Component {
 								<Link to={makePath({page, play: i})}>
 									<img 
 										alt={`Cover Art for ${title}`}
-										src={artwork} 
+										src={image} 
 										className={[
 											'img-responsive', 
 											play === i ? 
@@ -100,10 +100,9 @@ class MakeGrid extends React.Component {
 									<img src={closeDrawer} alt="Close Podcast Details" />
 								</Link>
 								<h4>{pageData[play].title}</h4>
-								{pageData[play].notes}
-							</div>
-							<div className="player">
-								<SoundCloudEmbed trackId={pageData[play].trackId} />
+								<div>
+									<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />
+								</div>
 							</div>
 						</div>
 					</div> : ''
