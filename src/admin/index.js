@@ -1,2 +1,4 @@
 import config from './config.yml'
-//import CMS from 'netlify-cms'
+import isEpisodeConfig from './widgets/IsEpisode/IsEpisode.js'
+
+CMS.registerWidget(...isEpisodeConfig);
