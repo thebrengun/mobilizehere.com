@@ -96,6 +96,9 @@ class MakeGrid extends React.Component {
 						</div>
 						<div className="inner-drawer">
 							<div>
+								<SoundCloudEmbed trackId={pageData[play].trackId} />
+							</div>
+							<div>
 								<Link to={makePath({page, play: -1})} className="close-drawer">
 									<img src={closeDrawer} alt="Close Podcast Details" />
 								</Link>

@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "markdown-with-front-matter-loader": "^0.1.0",
-    "netlify-cms": "^0.3.16"
+    "netlify-cms": "^0.3.16",
+    "react-player": "^0.15.0"
   }
 }

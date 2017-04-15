@@ -26,7 +26,7 @@ function splitEpisodesAndExtras(formatted, podcast) {
 }
 
 function addRootToImagePath(podcast) {
-	if(process.env.NODE_ENV === 'production') {
+	if(process.env.NODE_ENV !== 'dev') {
 		const {image} = podcast;
 		return {...podcast, image: 'https://www.mobilizehere.com' + image};
 	} else {

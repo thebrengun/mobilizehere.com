@@ -39,5 +39,5 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Global title", name: "name", widget: "string"}
           - {label: "Contact Email", name: "email", widget: "string"}
           - {label: "Site Url", name: "website", widget: "string"}
-          - {label: "Contributors", name: "contributors", widget: "string"}
           - {label: "Mission Statement", name: "body", widget: "markdown"}
+          - {label: "Contributors", name: "contributors", widget: "list"}

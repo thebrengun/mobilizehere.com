@@ -1,6 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Paragraphs from '../Paragraphs'
 import { connect } from 'react-redux'
 import Link from 'react-router/lib/Link'
 
@@ -25,14 +24,14 @@ function Home({route, featuredEpisode, aboutText}) {
 				</Link>
 			</div>
 			<h2>About Mobilize</h2>
-			<Paragraphs paragraphs={aboutText} />
+			<div dangerouslySetInnerHTML={{__html: aboutText}} />
 		</div>
 	);
 }
 
 const mapStateToProps = ({podcast, about}) => ({
 	featuredEpisode: podcast.episodes[0],
-	aboutText: about.aboutText
+	aboutText: about.__content
 });
 
 const mapDispatchToProps = (dispatch) => ({});
