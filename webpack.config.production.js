@@ -4,16 +4,19 @@ const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ReactStaticPlugin = require('react-static-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const publicPath = 'https://mobilizehere.com/';
+const publicPath = 'https://www.mobilizehere.com/';
 
 module.exports = {
   devtool: 'source-map',
   target: 'web',
   context: __dirname,
   entry: {
-    app: './src/index.js',
-    autotracker: './src/autotracker.js'
+    'app': './src/index.js',
+    'admin/cms': './src/admin/index.js',
+    'autotracker': './src/autotracker.js'
   },
 
   output: {
@@ -61,12 +64,26 @@ module.exports = {
         "start_url": "/"
       }
     }),
+    new HtmlWebpackPlugin({
+      chunks: ['admin/cms'],
+      template: './src/admin/index.html',
+      filename: 'admin/index.html'
+    }),
     new ReactStaticPlugin({
       routes: './src/components/Routes.js',
       template: './src/Html.js',
       reduxStore: './src/reducers/store.js',
       publicPath: publicPath
-    })
+    }),
+    new CopyWebpackPlugin(
+      [
+        {
+          from: './src/assets/static/',
+          to: 'assets'
+        }
+      ], 
+      {debug: 'warning'}
+    )
   ],
 
   module: {
@@ -152,6 +169,22 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.md$/, 
+        use: 'markdown-with-front-matter-loader'
+      },
+      {
+        test: /\.(yml)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'admin/'
+            }
+          }
+        ]
+      }
     ],
   },
 };

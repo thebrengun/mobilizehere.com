@@ -1,12 +1,10 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import Paragraphs from '../Paragraphs'
 import { connect } from 'react-redux'
 import Link from 'react-router/lib/Link'
 
 import SoundCloudEmbed from '../SoundCloudEmbed'
 
-import sheetMusic from '../../assets/pdfs/Rise-Up-Choir-Sheet-Music-(Sibelius).pdf'
 import takeAction from '../../assets/images/index/take-action-graphic-2.png'
 import downloadSheetMusic from '../../assets/images/index/download-sheet-music.png'
 
@@ -18,7 +16,7 @@ function Home({route, featuredEpisode, aboutText}) {
 				<SoundCloudEmbed trackId={featuredEpisode.trackId} />
 			</div>
 			<div className="lz-dbl-padding">
-				<a href={sheetMusic} target="_blank">
+				<a href="https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf" target="_blank">
 					<img src={downloadSheetMusic} className="img-responsive lz-padding" alt="Download Rise Up Sheet Music" />
 				</a>
 				<Link to={'/take-action/'}>
@@ -26,14 +24,14 @@ function Home({route, featuredEpisode, aboutText}) {
 				</Link>
 			</div>
 			<h2>About Mobilize</h2>
-			<Paragraphs paragraphs={aboutText} />
+			<div dangerouslySetInnerHTML={{__html: aboutText}} />
 		</div>
 	);
 }
 
 const mapStateToProps = ({podcast, about}) => ({
 	featuredEpisode: podcast.episodes[0],
-	aboutText: about.aboutText
+	aboutText: about.__content
 });
 
 const mapDispatchToProps = (dispatch) => ({});

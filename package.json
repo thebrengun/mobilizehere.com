@@ -20,6 +20,7 @@
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-2": "^6.22.0",
     "bootstrap-sass": "^3.3.7",
+    "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.10.0",
@@ -44,5 +45,10 @@
     "webpack-bundle-analyzer": "^2.3.1",
     "webpack-dev-server": "^2.3.0",
     "webpack-manifest-plugin": "^1.1.0"
+  },
+  "dependencies": {
+    "markdown-with-front-matter-loader": "^0.1.0",
+    "netlify-cms": "^0.3.16",
+    "react-player": "^0.15.0"
   }
 }

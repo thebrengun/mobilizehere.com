@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: thebrengun/mobilizehere
+  branch: master # Branch to update (master by default)
+
+media_folder: "src/assets/static" # Folder where user uploaded files should go
+public_folder: "/assets"
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "podcast" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Podcast Episode" # Used in the UI, ie.: "New Post"
+    folder: "site/content/podcast" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Artwork", name: "image", widget: "image"}
+      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Is Episode", name: "isEpisode", widget: "isEpisode", default: true}
+      - {label: "Media URL", name: "url", widget: "string"}
+  - name: "resource"
+    label: "Resource"
+    folder: "site/content/resource"
+    create: true
+    fields: 
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Color", name: "color", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Link", name: "url", widget: "string"}
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "general"
+        label: "General Info"
+        file: "site/settings/info.md"
+        description: "General Site Settings"
+        fields:
+          - {label: "Global title", name: "name", widget: "string"}
+          - {label: "Contact Email", name: "email", widget: "string"}
+          - {label: "Site Url", name: "website", widget: "string"}
+          - {label: "Mission Statement", name: "body", widget: "markdown"}
+          - {label: "Contributors", name: "contributors", widget: "list"}
