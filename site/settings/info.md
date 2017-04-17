@@ -7,7 +7,7 @@ contributors: >-
   Lily Hamburger, Brian Herman, Thomas Johnson, Alexander Juhan, Kyle Haglund,
   Jason Katz, Donny Kim, Charlotte Littlehales, Nick Long, Brennan McVicar,
   Kristin Mink, Betsy Nagler, Claudio Santos, Aaron Schillinger, Jon Selby, Eric
-  Shansby, Fletcher Wolfe, Rachel Yood, Test
+  Shansby, Fletcher Wolfe, Rachel Yood
 ---
 
 Mobilize is a podcast that puts a spotlight on and is a resource for people, friends, communities, and activists who have decided to stand up, resist, fight back -- mobilize.
