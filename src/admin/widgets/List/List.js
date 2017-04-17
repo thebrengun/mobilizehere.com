@@ -14,32 +14,39 @@ const styles = {
 	}	
 };
 
-function ListControl({value, onChange}) {
-	return (
-		<input 
-			type="text" 
-			value={value}
-			onChange={(e) => onChange(e.target.value)} 
-		/>
-	);
+class ListControl extends React.Component {
+	render() {
+		const { value, onChange } = this.props;
+		return (
+			<input 
+				type="text" 
+				value={value}
+				onChange={(e) => onChange(e.target.value)} 
+			/>
+		);
+	}
 }
 
-function ListPreview({value}) {
-	const list = value.split(',').map(name => name.trim());
+class ListPreview extends React.Component {
+	render() {
+		
+		const { value } = this.props;
+		const list = value.split(',').map(name => name.trim());
 
-	return (
-		<div>
-			<strong>Contributors:</strong>
-			<ul style={styles.ul}>
-				{list.map(
-					(name, i) => 
-						<li style={styles.test} key={`podcast-contrib-${i}`}>
-							{name}
-						</li>
-				)}
-			</ul>
-		</div>
-	);
+		return (
+			<div>
+				<strong>Contributors:</strong>
+				<ul style={styles.ul}>
+					{list.map(
+						(name, i) => 
+							<li style={styles.test} key={`podcast-contrib-${i}`}>
+								{name}
+							</li>
+					)}
+				</ul>
+			</div>
+		);
+	}
 }
 
 const listConfig = [ "list", ListControl, ListPreview ];

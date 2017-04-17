@@ -16,7 +16,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Artwork", name: "image", widget: "image"}
       - {label: "Description", name: "body", widget: "markdown"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Is Episode", name: "isEpisode", widget: "isEpisode", default: true}
+      - {label: "Is Episode", name: "isEpisode", widget: "isEpisode", default: true, required: false}
       - {label: "Media URL", name: "url", widget: "string"}
   - name: "resource"
     label: "Resource"

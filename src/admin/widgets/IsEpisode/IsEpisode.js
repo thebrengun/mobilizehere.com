@@ -9,18 +9,28 @@ const styles = {
 	}
 };
 
-function IsEpisodeControl({value, onChange}) {
-	return (
-		<input 
-			type="checkbox" 
-			checked={value} 
-			onChange={(e) => onChange(e.target.checked)} 
-		/>
-	);
+class IsEpisodeControl extends React.Component {
+	render() {
+		const {value, onChange} = this.props;
+		return (
+			<input 
+				type="checkbox" 
+				checked={value} 
+				onChange={(e) => onChange(e.target.checked)} 
+			/>
+		);
+	}
 }
 
-function IsEpisodePreview({value}) {
-	return <span style={styles.preview}>Type: {value ? 'Full Episode' : 'Extra'}</span>
+class IsEpisodePreview extends React.Component {
+	render() {
+		const {value} = this.props;
+		return (
+			<span style={styles.preview}>
+				Type: {value ? 'Full Episode' : 'Extra'}
+			</span>
+		);
+	}
 }
 
 const isEpisodeConfig = [ "isEpisode", IsEpisodeControl, IsEpisodePreview ];
