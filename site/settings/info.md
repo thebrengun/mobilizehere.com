@@ -1,8 +1,13 @@
 ---
-name: "Mobilize"
-email: "mobilizehere@gmail.com"
-website: "https://www.mobilizehere.com"
-contributors: "Luke Allen, Matt Bockelman, Zoe Brock, Jiyoon Cha, Cory Choy, Justin Frankel, Lily Hamburger, Brian Herman, Thomas Johnson, Alexander Juhan, Kyle Haglund, Jason Katz, Donny Kim, Charlotte Littlehales, Nick Long, Brennan McVicar, Kristin Mink, Betsy Nagler, Claudio Santos, Aaron Schillinger, Jon Selby, Eric Shansby, Fletcher Wolfe, Rachel Yood"
+name: Mobilize
+email: mobilizehere@gmail.com
+website: 'https://www.mobilizehere.com'
+contributors: >-
+  Luke Allen, Matt Bockelman, Zoe Brock, Jiyoon Cha, Cory Choy, Justin Frankel,
+  Lily Hamburger, Brian Herman, Thomas Johnson, Alexander Juhan, Kyle Haglund,
+  Jason Katz, Donny Kim, Charlotte Littlehales, Nick Long, Brennan McVicar,
+  Kristin Mink, Betsy Nagler, Claudio Santos, Aaron Schillinger, Jon Selby, Eric
+  Shansby, Fletcher Wolfe, Rachel Yood, Test
 ---
 
 Mobilize is a podcast that puts a spotlight on and is a resource for people, friends, communities, and activists who have decided to stand up, resist, fight back -- mobilize.
