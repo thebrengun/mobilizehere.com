@@ -1,6 +1,8 @@
 import about from './providers/about.provider'
 import podcast from './providers/podcast.provider'
 
+const htmlExp = /<[^>]*>/g;
+
 export default createFeed({...about, podcast});
 
 function createFeed({ name, email, website, image, __content, podcast }) {
@@ -14,14 +16,10 @@ function createFeed({ name, email, website, image, __content, podcast }) {
     <copyright>&#x2117; &amp; &#xA9; 2017 ${name}</copyright>
     <itunes:author>${name}</itunes:author>
     <itunes:summary>
-    	<![CDATA[
-    		${__content}
-    	]]>
+    	${__content.replace(htmlExp, '').replace('\n', ' ')}
     </itunes:summary>
     <description>
-    	<![CDATA[
-    		${__content}
-    	]]>
+    	${__content.replace(htmlExp, '').replace('\n', ' ')}
     </description>
     <itunes:owner>
     	<itunes:name>${name}</itunes:name>
@@ -41,19 +39,17 @@ function createFeed({ name, email, website, image, __content, podcast }) {
     `<item>
       <title>${title}</title>
       <description>
-      	<![CDATA[
-      		${description}
-      	]]>
+        ${description.replace(htmlExp, '')}
       </description>
       <itunes:summary>
       	<![CDATA[
       		${description}
       	]]>
       </itunes:summary>
-      <itunes:image href="${website}${image}" />
+      <itunes:image href="${image}" />
       <enclosure length="${length}" type="audio/mpeg" url="${url}" />
       <guid>${url}</guid>
-      <pubDate>${new Date(date).toDateString()}</pubDate>
+      <pubDate>${new Date(date).toUTCString()}</pubDate>
       <itunes:duration>${duration}</itunes:duration>
       <itunes:explicit>${explicit}</itunes:explicit>
     </item>`
