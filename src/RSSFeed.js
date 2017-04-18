@@ -13,8 +13,16 @@ function createFeed({ name, email, website, image, __content, podcast }) {
     <language>en-us</language>
     <copyright>&#x2117; &amp; &#xA9; 2017 ${name}</copyright>
     <itunes:author>${name}</itunes:author>
-    <itunes:summary><![CDATA[${__content}]]</itunes:summary>
-    <description><![CDATA[${__content}]]</description>
+    <itunes:summary>
+    	<![CDATA[
+    		${__content}
+    	]]>
+    </itunes:summary>
+    <description>
+    	<![CDATA[
+    		${__content}
+    	]]>
+    </description>
     <itunes:owner>
     	<itunes:name>${name}</itunes:name>
     	<itunes:email>${email}</itunes:email>
@@ -32,8 +40,16 @@ function createFeed({ name, email, website, image, __content, podcast }) {
     	({ image, url, title, __content: description, date, length, duration, explicit }) => 
     `<item>
       <title>${title}</title>
-      <description><![CDATA[${description}]]></description>
-      <itunes:summary><![CDATA[${description}]] ></itunes:summary>
+      <description>
+      	<![CDATA[
+      		${description}
+      	]]>
+      </description>
+      <itunes:summary>
+      	<![CDATA[
+      		${description}
+      	]]>
+      </itunes:summary>
       <itunes:image href="${website}${image}" />
       <enclosure length="${length}" type="audio/mpeg" url="${url}" />
       <guid>${url}</guid>
