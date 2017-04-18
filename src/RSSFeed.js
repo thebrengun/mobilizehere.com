@@ -5,7 +5,7 @@ const htmlExp = /<[^>]*>/g;
 
 export default createFeed({...about, podcast});
 
-function createFeed({ name, email, website: websiteHttps, image, __content, podcast }) {
+function createFeed({ name, email, website: websiteHttps, image, itunesArtwork, __content, podcast }) {
 	const website = websiteHttps.replace('https://', 'http://');
 	return (
 `<?xml version="1.0" encoding="utf-8"?>
@@ -26,9 +26,9 @@ function createFeed({ name, email, website: websiteHttps, image, __content, podc
     	<itunes:name>${name}</itunes:name>
     	<itunes:email>${email}</itunes:email>
     </itunes:owner>
-    <itunes:image href="${website}${image}" />
+    <itunes:image href="${itunesArtwork}" />
     <image>
-    	<url>${website}${image}</url>
+    	<url>${itunesArtwork}</url>
     	<link>${website}</link>
     	<title>${name}</title>
     </image>
