@@ -43,5 +43,6 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Contact Email", name: "email", widget: "string"}
           - {label: "Site Url", name: "website", widget: "string"}
           - {label: "Artwork", name: "image", widget: "image"}
+          - {label: "iTunes Artwork (hosted on Amazon)", name: "itunesArtwork", widget: "string"}
           - {label: "Mission Statement", name: "body", widget: "markdown"}
           - {label: "Contributors", name: "contributors", widget: "list"}
