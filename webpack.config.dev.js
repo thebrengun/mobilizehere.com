@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { resolve } = require('path');
 const { DefinePlugin, HotModuleReplacementPlugin, NamedModulesPlugin } = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const RSSPlugin = require('./src/plugins/RSSPlugin/RSSPlugin');
 
 const config = {
   entry: {
@@ -93,6 +94,10 @@ const config = {
     }),
     new HotModuleReplacementPlugin(),
     new NamedModulesPlugin(),
+    new RSSPlugin({
+      entry: './RSSFeed.js',
+      output: 'podcast.rss'
+    }),
     new HtmlWebpackPlugin({
       chunks: ['admin/cms'],
       template: './admin/index.html',

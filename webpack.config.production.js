@@ -6,6 +6,7 @@ const ReactStaticPlugin = require('react-static-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const RSSPlugin = require('./src/plugins/RSSPlugin/RSSPlugin');
 
 const publicPath = 'https://www.mobilizehere.com/';
 
@@ -83,7 +84,11 @@ module.exports = {
         }
       ], 
       {debug: 'warning'}
-    )
+    ),
+    new RSSPlugin({
+      entry: './src/RSSFeed.js',
+      output: 'podcast.rss'
+    })
   ],
 
   module: {

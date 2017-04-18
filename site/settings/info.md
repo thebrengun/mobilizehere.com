@@ -2,6 +2,7 @@
 name: Mobilize
 email: mobilizehere@gmail.com
 website: 'https://www.mobilizehere.com'
+image: /assets/mobilize-logo-big.jpg
 contributors: >-
   Luke Allen, Matt Bockelman, Zoe Brock, Jiyoon Cha, Cory Choy, Justin Frankel,
   Lily Hamburger, Brian Herman, Thomas Johnson, Alexander Juhan, Kyle Haglund,

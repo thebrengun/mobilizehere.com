@@ -18,6 +18,9 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Is Episode", name: "isEpisode", widget: "isEpisode", default: true, required: false}
       - {label: "Media URL", name: "url", widget: "string"}
+      - {label: "File Size (in bytes)", name: "length", widget: "number"}
+      - {label: "Duration (mm:ss)", name: "duration", widget: "string"}
+      - {label: "Explicit (yes/no)", name: "explicit", widget: "string", default: 'no'}
   - name: "resource"
     label: "Resource"
     folder: "site/content/resource"
@@ -39,5 +42,6 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Global title", name: "name", widget: "string"}
           - {label: "Contact Email", name: "email", widget: "string"}
           - {label: "Site Url", name: "website", widget: "string"}
+          - {label: "Artwork", name: "image", widget: "image"}
           - {label: "Mission Statement", name: "body", widget: "markdown"}
           - {label: "Contributors", name: "contributors", widget: "list"}
