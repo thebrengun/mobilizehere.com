@@ -42,9 +42,7 @@ function createFeed({ name, email, website, image, __content, podcast }) {
         ${description.replace(htmlExp, '')}
       </description>
       <itunes:summary>
-      	<![CDATA[
-      		${description}
-      	]]>
+      	${description.replace(htmlExp, '')}
       </itunes:summary>
       <itunes:image href="${image}" />
       <enclosure length="${length}" type="audio/mpeg" url="${url}" />
