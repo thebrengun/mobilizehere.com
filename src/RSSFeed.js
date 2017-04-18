@@ -5,7 +5,8 @@ const htmlExp = /<[^>]*>/g;
 
 export default createFeed({...about, podcast});
 
-function createFeed({ name, email, website, image, __content, podcast }) {
+function createFeed({ name, email, website: websiteHttps, image, __content, podcast }) {
+	const website = websiteHttps.replace('https://', 'http://');
 	return (
 `<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
@@ -44,8 +45,8 @@ function createFeed({ name, email, website, image, __content, podcast }) {
       <itunes:summary>
       	${description.replace(htmlExp, '')}
       </itunes:summary>
-      <itunes:image href="${image}" />
-      <enclosure length="${length}" type="audio/mpeg" url="${url}" />
+      <itunes:image href="${image.replace('https://', 'http://')}" />
+      <enclosure length="${length}" type="audio/mpeg" url="${url.replace('https://', 'http://')}" />
       <guid>${url}</guid>
       <pubDate>${new Date(date).toUTCString()}</pubDate>
       <itunes:duration>${duration}</itunes:duration>
