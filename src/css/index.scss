@@ -30,6 +30,17 @@ button {
 	font-size: 1em;
 	padding: .25em 1em;
 	border-radius: .1em;
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+
+	span {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 
 	&:hover {
 		background: darken($darker-blue, 10%);
@@ -220,4 +231,50 @@ a {
 
 .nav-disabled {
 	color: lighten($med-gray, 30%);
+}
+
+.disabled-btn {
+	background: lighten($dark-gray, 50%);
+	color: lighten($dark-gray, 75%);
+
+	&:hover {
+		background: lighten($dark-gray, 50%);
+		color: lighten($dark-gray, 75%);
+	}
+}
+
+.episode-showcase {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+
+	h4 {
+		margin: 0;
+		text-align: left;
+	}
+
+	p {
+		margin: 0;
+	}
+
+	.art-width {
+		flex-shrink: 0;
+		width: $col-width;
+		@media screen and (max-width: $break-small) {
+			width: 25%;
+		}
+
+		img {
+			@include ThumbnailShadow();
+		}
+	}
+
+	.description {
+		flex-grow: 0;
+		width: ($col-width * 3) + ($gutter-width * 2);
+		@media screen and (max-width: $break-small) {
+			width: 70%;
+		}
+	}
 }

@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import Link from 'react-router/lib/Link'
 
 import Paginate from '../Paginate'
+import PlayerBtn from '../Player/PlayerBtn'
 
 import styles from '../../css/lz-grid.scss'
 import animations from '../../css/lz-grid-animations.scss'
 
-import SoundCloudEmbed from '../SoundCloudEmbed'
 import closeDrawer from '../../assets/images/template/nav-close.jpg'
 
 class PodcastPage extends React.Component {
@@ -37,7 +37,7 @@ class MakeGrid extends React.Component {
 	}
 
 	render() {
-		const {columnWrap, itemIsActive, makePath, page, pageData, play, wrapperClassName} = this.props;
+		const {columnWrap, itemIsActive, makePath, page, pageData, play, player, wrapperClassName} = this.props;
 		const playRow = Math.floor(play / columnWrap);
 		const playCol = (play + 1) - (playRow * columnWrap);
 		const emptyCells = new Array(Math.max((Math.ceil(pageData.length / columnWrap) * columnWrap) - pageData.length, 0)).fill({});
@@ -96,15 +96,13 @@ class MakeGrid extends React.Component {
 						</div>
 						<div className="inner-drawer">
 							<div>
-								<SoundCloudEmbed trackId={pageData[play].trackId} />
-							</div>
-							<div>
 								<Link to={makePath({page, play: -1})} className="close-drawer">
 									<img src={closeDrawer} alt="Close Podcast Details" />
 								</Link>
 								<h4>{pageData[play].title}</h4>
 								<div>
 									<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />
+									<PlayerBtn episode={pageData[play]} />
 								</div>
 							</div>
 						</div>

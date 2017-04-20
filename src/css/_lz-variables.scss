@@ -16,6 +16,9 @@ $lz-container-max-width: 700px;
 
 $lz-padding: 30px;
 
+$col-width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
+$gutter-width: ($lz-container-max-width - ($col-width * 4)) / 3;
+
 @mixin hide-mobile() {
 	@media screen and (max-width: $break-small) {
     	display: none;
@@ -25,5 +28,20 @@ $lz-padding: 30px;
 @mixin hide-desktop() {
 	@media screen and (min-width: $break-small) {
 		display: none;
+	}
+}
+
+@mixin ThumbnailShadow() {
+	box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.15);
+}
+
+@mixin ThumbnailDark() {
+	box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.25);
+}
+
+@mixin ThumbnailShadowHover() {
+	@include ThumbnailShadow();
+	&:hover {
+		@include ThumbnailDark();
 	}
 }

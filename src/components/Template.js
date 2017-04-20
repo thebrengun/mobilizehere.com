@@ -10,6 +10,8 @@ import styles from '../css/index.scss'
 import desktopLogo from '../assets/images/template/mobilize-logo-desktop.png'
 import mobileLogo from '../assets/images/template/mobilize-logo-mobile.jpg'
 
+import MainPlayer from './Player/Player'
+
 import {Nav, ToggleNav} from './Nav'
 
 class Template extends React.Component {
@@ -30,9 +32,9 @@ class Template extends React.Component {
 	}
 
 	render() {
-		const { children, toggleNav, showNav, scroll } = this.props;
+		const { children, toggleNav, showNav, scroll, discovered } = this.props;
 		return (
-			<div className={['lz-container', showNav || !scroll ? 'lz-container-no-scroll' : ''].join(' ')}>
+			<div className={['lz-container', showNav || !scroll ? 'lz-container-no-scroll' : ''].join(' ')} style={discovered ? {marginBottom: '15vh'} : {}}>
 				<div className="lz-header lz-padding">
 					<div className="logo">
 						<Link to="/">
@@ -45,12 +47,13 @@ class Template extends React.Component {
 				<Nav showNav={showNav} toggleNav={toggleNav} />
 				{children}
 				<div className="lz-footer lz-padding text-center">2017 &copy; Reserved to Mobilize</div>
+				<MainPlayer />
 			</div>
 		);
 	}
 }
 
-const mapStateToProps = ({nav, scroll}) => ({showNav: nav.showNav, scroll});
+const mapStateToProps = ({nav, scroll, player}) => ({showNav: nav.showNav, scroll, discovered: player.discovered});
 const mapDispatchToProps = (dispatch) => ({
 	toggleNav: () => dispatch({type: 'TOGGLE_NAV'}),
 	hideNav: () => dispatch({type: 'HIDE_NAV'}),

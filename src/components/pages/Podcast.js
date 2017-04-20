@@ -1,21 +1,23 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import SoundCloudEmbed from '../SoundCloudEmbed'
+import EpisodeShowcase from '../EpisodeShowcase'
 import PodcastPage from './PodcastPage'
 import { connect } from 'react-redux'
 import Paginate from '../Paginate'
 
-function Podcast({data, location, route}) {
+function Podcast({data, player, location, route}) {
 	return (
 		<div>
 			<Helmet title={route.title} />
 			<h2>Podcast</h2>
-			<h3>Featured Episode</h3>
+			<h3>Newest Episode</h3>
 			<div>
-				<SoundCloudEmbed trackId={data[0].trackId} />
+				<EpisodeShowcase 
+					episode={data[0]} 
+				/>
 			</div>
 			<h3>Episodes</h3>
-			<PodcastPage {...Paginate(data, location)} />
+			<PodcastPage {...Paginate(data.slice(1), location)} />
 		</div>
 	);
 }
@@ -24,6 +26,4 @@ const mapStateToProps = ({podcast}) => ({
 	data: podcast.episodes
 });
 
-const mapDispatchToProps = (dispatch) => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Podcast)
+export default connect(mapStateToProps, {})(Podcast)

@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { connect } from 'react-redux'
 import Link from 'react-router/lib/Link'
 
-import SoundCloudEmbed from '../SoundCloudEmbed'
+import EpisodeShowcase from '../EpisodeShowcase'
 
 import takeAction from '../../assets/images/index/take-action-graphic-2.png'
 import downloadSheetMusic from '../../assets/images/index/download-sheet-music.png'
@@ -13,7 +13,7 @@ function Home({route, featuredEpisode, aboutText}) {
 		<div>
 			<Helmet title={route.title} />
 			<div className="lz-dbl-padding">
-				<SoundCloudEmbed trackId={featuredEpisode.trackId} />
+				<EpisodeShowcase episode={featuredEpisode} />
 			</div>
 			<div className="lz-dbl-padding">
 				<a href="https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf" target="_blank">
