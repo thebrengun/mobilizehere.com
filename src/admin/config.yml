@@ -5,7 +5,6 @@ backend:
 
 media_folder: "src/assets/static" # Folder where user uploaded files should go
 public_folder: "/assets"
-publish_mode: editorial_workflow
 
 collections: # A list of collections the CMS should be able to edit
   - name: "podcast" # Used in routes, ie.: /admin/collections/:slug/edit
