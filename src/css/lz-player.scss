@@ -8,6 +8,9 @@
 	background: rgba(darken($darker-blue, 35%), .8);
 	color: lighten($dark-gray, 45%);
 	font-size: 1.2em;
+	@media screen and (max-width: $break-small) {
+		font-size: 1em;
+	}
 }
 
 .player-main {
@@ -38,11 +41,17 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	justify-content: center;
-	white-space: nowrap;
-	overflow: hidden;
+	justify-content: flex-start;
 	flex-grow: 1;
 	margin: 0 ($lz-padding / 2);
+	min-width: 0;
+	max-width: 100%;
+}
+
+.playing-title {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .player-controls {
@@ -117,11 +126,15 @@
 }
 
 .seek-color {
-	background: $darker-blue;
+	background: lighten($dark-gray, 45%);
 	height: 3px;
 	position: relative;
 	left: 0;
 	margin-top: -2px;
+}
+
+.seek-color.playing {
+	background: $darker-blue;
 }
 
 .time {

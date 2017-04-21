@@ -42,7 +42,9 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 					].join(' ')}
 				>
 					<div className="now-playing">
-						<div>{queue[0].title}</div>
+						<div className="playing-title">
+							{queue[0].title}
+						</div>
 						<div className="seek-bar">
 							<div className="seek-wrap">
 								<input 
@@ -59,7 +61,16 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 	              					}}
 	              					className="seek-input"
 								/>
-								<div className="seek-color" style={{width: progress.played * 100 + '%'}}></div>
+								<div 
+									className={[
+										'seek-color', 
+										playing ? 'playing' : ''
+									].join(' ')} 
+									style={{
+										width: progress.played * 100 + '%'
+									}}
+								>
+								</div>
 							</div>
 							<div className="time">
 								-{Math.floor(remaining / 60)}m:{Math.ceil(remaining % 60)}s
