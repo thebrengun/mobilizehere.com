@@ -15,7 +15,7 @@ function sortByDate({ascending = true}) {
 
 	function sort(dateA, dateB) {
 		const dateAObj = new Date(dateA), dateBObj = new Date(dateB);
-		return dateAObj < dateBObj ? -1 : dateBObj > dateAObj ? 1 : 0;
+		return dateAObj < dateBObj ? -1 : dateAObj > dateBObj ? 1 : 0;
 	}
 }
 
