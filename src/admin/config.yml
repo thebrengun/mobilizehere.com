@@ -16,7 +16,6 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Artwork", name: "image", widget: "image", default: "/assets/mobilize_logo.jpg"}
       - {label: "Description", name: "body", widget: "markdown"}
-      - {label: "RSS Footer", name: "footer", widget: "markdown", required: false, default: "www.mobilizehere.com"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Is Episode", name: "isEpisode", widget: "isEpisode", default: true, required: false}
       - {label: "Media URL", name: "url", widget: "string"}
