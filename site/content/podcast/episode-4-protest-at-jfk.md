@@ -10,4 +10,6 @@ url: >-
 duration: '40:05'
 explicit: 'yes'
 ---
-How Audrey Sage, a self-described newbie organizer led thousands of protesters to JFK airport. www.mobilizehere.com
+How Audrey Sage, a self-described newbie organizer led thousands of protesters to JFK airport. 
+
+[www.mobilizehere.com](https://www.mobilizehere.com)
