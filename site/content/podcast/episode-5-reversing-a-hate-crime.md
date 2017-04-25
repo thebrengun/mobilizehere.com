@@ -10,4 +10,6 @@ url: >-
 duration: '23:13'
 explicit: 'yes'
 ---
-When Kristin Mink heard about a hate crime at a church in her community, she decided to do something about it. [www.mobilizehere.com](https://www.mobilizehere.com)
+When Kristin Mink heard about a hate crime at a church in her community, she decided to do something about it. 
+
+[www.mobilizehere.com](https://www.mobilizehere.com)
