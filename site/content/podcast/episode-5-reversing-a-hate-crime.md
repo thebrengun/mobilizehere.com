@@ -7,6 +7,7 @@ url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+Episode+5+-+Reversing+a+Hate+Crime.mp3
 length: '33498874'
 duration: '23:13'
+trackId: '319027387'
 explicit: 'yes'
 ---
 When Kristin Mink heard about a hate crime at a church in her community, she decided to do something about it. [www.mobilizehere.com](https://www.mobilizehere.com)

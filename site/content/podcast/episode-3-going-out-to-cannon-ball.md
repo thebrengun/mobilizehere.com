@@ -3,7 +3,7 @@ title: 'Episode 3: Going Out to Cannon Ball'
 image: /assets/cover-ep-3.jpg
 date: '2017-03-23T03:11:13.716Z'
 isEpisode: true
-length: 40143744
+length: '40143744'
 trackId: '314037649'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+Episode+3+-+Going+Out+To+Cannon+Ball.mp3

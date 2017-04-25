@@ -7,7 +7,7 @@ isEpisode: true
 url: 'https://s3.amazonaws.com/mobilize-podcast/Mobilize+Episode+1+-+Why+We+Fight.mp3'
 duration: '18:39'
 explicit: 'no'
-length: 17917491
+length: '17917491'
 ---
 
 Sound engineer Cory Choy recounts the Mobilize origin story, undocumented DREAMer and DACA holder Cristina tells us why she is fighting and musician Charlottle Littlehales talks about the process of writing and meaning behind our theme song Rise Up.

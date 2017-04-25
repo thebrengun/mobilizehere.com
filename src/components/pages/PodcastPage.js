@@ -51,7 +51,7 @@ class MakeGrid extends React.Component {
 			>
 				{pageData.concat(emptyCells).map(
 					({trackId, image, title}, i) => 
-						trackId ? 
+						trackId || image || title ? 
 							<div 
 								className="lz-col" 
 								key={'podcast' + i} 
