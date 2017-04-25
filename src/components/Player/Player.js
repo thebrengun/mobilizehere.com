@@ -24,7 +24,8 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 	const noop = () => {};
 	const playingFirstTrack = played.length === 0;
 	const playingLastTrack = queue.length <= 1;
-	const remaining = duration - progress.playedSeconds;
+	const playedSeconds = progress.playedSeconds || 0;
+	const remaining = duration ? duration - playedSeconds : 0;
 	return (
 		<div className={['player', !discovered ? 'hidden' : ''].join(' ')}>
 			<div className="lz-container player-main">
@@ -73,7 +74,7 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 								</div>
 							</div>
 							<div className="time">
-								-{Math.floor(remaining / 60)}m:{Math.ceil(remaining % 60)}s
+								{playing ? '-' : ''}{Math.floor(remaining / 60)}m:{Math.ceil(remaining % 60)}s
 							</div>
 						</div>
 					</div>
@@ -114,7 +115,7 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 			<ReactPlayer 
 				ref={player => {playerRef = player}}
 				url={queue[0].url || null} 
-				playing={playing} 
+				playing={false} 
 				hidden={true} 
 				controls={false} 
 				onProgress={updateProgress}
