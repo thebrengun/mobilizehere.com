@@ -1,6 +1,6 @@
 ---
 title: 'Episode 5: Reversing a Hate Crime'
-image: /assets/artworks-000219287490-b5zwuw-t500x500.jpg
+image: /assets/mobilize_logo.jpg
 date: 2017-04-25T17:25:04.419Z
 isEpisode: true
 url: >-
@@ -10,3 +10,4 @@ duration: '23:13'
 explicit: 'yes'
 ---
 When Kristin Mink heard about a hate crime at a church in her community, she decided to do something about it.
+
