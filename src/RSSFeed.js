@@ -34,7 +34,7 @@ function createFeed({ name, email, website: websiteHttps, image, itunesArtwork, 
     </image>
     <itunes:category text="News &amp; Politics" />
     <itunes:category text="Society &amp; Culture" />
-    <itunes:explicit>yes</itunes:explicit>
+    <itunes:explicit>no</itunes:explicit>
     ${[...podcast.episodes, ...podcast.extras].map(
     	({ image, url, title, __content: description, date, length, duration, explicit }) => 
     `<item>
