@@ -5,6 +5,7 @@ import about from './about'
 import podcast from './podcast'
 import gallery from './gallery'
 import resources from './resources'
+import drawer from './drawer'
 
 const reducers = combineReducers({
 	nav, 
@@ -12,7 +13,8 @@ const reducers = combineReducers({
 	about,
 	podcast,
 	gallery,
-	resources
+	resources,
+	drawer
 });
 
 const store = createStore(reducers);

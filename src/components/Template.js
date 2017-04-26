@@ -20,6 +20,7 @@ class Template extends React.Component {
 	componentWillReceiveProps(nextProps) {
 		if(nextProps.location.pathname !== this.props.location.pathname) {
 			this.props.hideNav();
+			this.props.closeDrawer();
 		}
 
 		if(parseInt(nextProps.location.query.view, 10) > -1) {
@@ -55,7 +56,8 @@ const mapDispatchToProps = (dispatch) => ({
 	toggleNav: () => dispatch({type: 'TOGGLE_NAV'}),
 	hideNav: () => dispatch({type: 'HIDE_NAV'}),
 	disableScroll: () => dispatch({type: 'NO_SCROLL'}),
-	enableScroll: () => dispatch({type: 'SCROLL'})
+	enableScroll: () => dispatch({type: 'SCROLL'}),
+	closeDrawer: () => dispatch({type: 'CLOSE_DRAWER'})
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Template))

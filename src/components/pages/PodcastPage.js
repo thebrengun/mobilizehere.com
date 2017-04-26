@@ -9,7 +9,10 @@ import styles from '../../css/lz-grid.scss'
 import animations from '../../css/lz-grid-animations.scss'
 
 import SoundCloudEmbed from '../SoundCloudEmbed'
-import closeDrawer from '../../assets/images/template/nav-close.jpg'
+import closeDrawerImg from '../../assets/images/template/nav-close.jpg'
+
+import linkIconSm from '../../assets/md-icons/ic_link_black_24dp_1x.png'
+import linkIconLg from '../../assets/md-icons/ic_link_black_24dp_2x.png'
 
 class PodcastPage extends React.Component {
 
@@ -20,7 +23,7 @@ class PodcastPage extends React.Component {
 	render() {
 		const props = this.props;
 		const { itemIsActive, itemsPerPage, makePath, page, pageData, PaginateNav, search} = props;
-		const play = search.play ? Math.min(parseInt(search.play, 10), pageData.length - 1) : -1;
+		const play = this.props.activeItem;
 		return (
 			<div>
 				<MakeGrid wrapperClassName="lz-grid-with-drawer-mobile" columnWrap={2} play={play} {...this.props} />
@@ -37,7 +40,7 @@ class MakeGrid extends React.Component {
 	}
 
 	render() {
-		const {columnWrap, itemIsActive, makePath, page, pageData, play, wrapperClassName} = this.props;
+		const { columnWrap, itemIsActive, makePath, page, pageData, play, wrapperClassName, openDrawer, closeDrawer } = this.props;
 		const playRow = Math.floor(play / columnWrap);
 		const playCol = (play + 1) - (playRow * columnWrap);
 		const emptyCells = new Array(Math.max((Math.ceil(pageData.length / columnWrap) * columnWrap) - pageData.length, 0)).fill({});
@@ -50,24 +53,26 @@ class MakeGrid extends React.Component {
 				className={`lz-grid lz-grid-wrap ${wrapperClassName}`}
 			>
 				{pageData.concat(emptyCells).map(
-					({trackId, image, title}, i) => 
+					({trackId, image, title, permalink}, i) => 
 						trackId || image || title ? 
 							<div 
 								className="lz-col" 
 								key={'podcast' + i} 
 								style={{order: (i + 1) % columnWrap === 0 ? order++ : order}}
 							>
-								<Link to={makePath({page, play: i})}>
-									<img 
-										alt={`Cover Art for ${title}`}
-										src={image} 
-										className={[
-											'img-responsive', 
-											play === i ? 
-												'selected' : ''
-										].join(' ')}  
-									/>
-								</Link>
+								<img 
+									alt={`Cover Art for ${title}`}
+									src={image} 
+									className={[
+										'img-responsive', 
+										play === i ? 
+											'selected' : ''
+									].join(' ')} 
+									onClick={play === i ? closeDrawer : (e) => openDrawer(i)}
+								/>
+								<noscript>
+									<a href={`/${permalink}`} className="no-script-tile-link"></a>
+								</noscript>
 							</div> : 
 							<div 
 								className="lz-col filler" 
@@ -97,14 +102,21 @@ class MakeGrid extends React.Component {
 						<div className="inner-drawer">
 							<div>
 								<SoundCloudEmbed trackId={pageData[play].trackId} />
+								<div>
+									<Link to={`/${pageData[play].permalink}`}>
+										<img src={linkIconSm} alt="Podcast Permalink" />
+									</Link>
+								</div>
 							</div>
 							<div>
-								<Link to={makePath({page, play: -1})} className="close-drawer">
-									<img src={closeDrawer} alt="Close Podcast Details" />
-								</Link>
-								<h4>{pageData[play].title}</h4>
+								<span className="close-drawer" onClick={closeDrawer}>
+									<img src={closeDrawerImg} alt="Close Podcast Details" />
+								</span>
 								<div>
-									<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />
+									<h4>{pageData[play].title}</h4>
+									<div>
+										<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />
+									</div>
 								</div>
 							</div>
 						</div>
@@ -115,4 +127,13 @@ class MakeGrid extends React.Component {
 	}
 }
 
-export default PodcastPage
+const mapStateToProps = ({drawer}) => ({
+	activeItem: drawer.activeDrawerOnPage
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	openDrawer: (index) => dispatch({type: 'OPEN_DRAWER', index}),
+	closeDrawer: () => dispatch({type: 'CLOSE_DRAWER'})
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(PodcastPage)
