@@ -9,15 +9,11 @@ import PlayerBtn from '../Player/PlayerBtn'
 import styles from '../../css/lz-grid.scss'
 import animations from '../../css/lz-grid-animations.scss'
 
-<<<<<<< HEAD
-import closeDrawer from '../../assets/images/template/nav-close.jpg'
-=======
 import SoundCloudEmbed from '../SoundCloudEmbed'
 import closeDrawerImg from '../../assets/images/template/nav-close.jpg'
 
 import linkIconSm from '../../assets/md-icons/ic_link_black_24dp_1x.png'
 import linkIconLg from '../../assets/md-icons/ic_link_black_24dp_2x.png'
->>>>>>> master
 
 class PodcastPage extends React.Component {
 
@@ -45,11 +41,7 @@ class MakeGrid extends React.Component {
 	}
 
 	render() {
-<<<<<<< HEAD
-		const {columnWrap, itemIsActive, makePath, page, pageData, play, player, wrapperClassName} = this.props;
-=======
-		const { columnWrap, itemIsActive, makePath, page, pageData, play, wrapperClassName, openDrawer, closeDrawer } = this.props;
->>>>>>> master
+		const { columnWrap, itemIsActive, makePath, page, pageData, play, player, wrapperClassName, openDrawer, closeDrawer } = this.props;
 		const playRow = Math.floor(play / columnWrap);
 		const playCol = (play + 1) - (playRow * columnWrap);
 		const emptyCells = new Array(Math.max((Math.ceil(pageData.length / columnWrap) * columnWrap) - pageData.length, 0)).fill({});
@@ -110,23 +102,6 @@ class MakeGrid extends React.Component {
 						</div>
 						<div className="inner-drawer">
 							<div>
-<<<<<<< HEAD
-								<Link to={makePath({page, play: -1})} className="close-drawer">
-									<img src={closeDrawer} alt="Close Podcast Details" />
-								</Link>
-								<h4>{pageData[play].title}</h4>
-								<div>
-									<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />
-									<PlayerBtn episode={pageData[play]} />
-=======
-								<SoundCloudEmbed trackId={pageData[play].trackId} />
-								<div>
-									<Link to={`/${pageData[play].permalink}`}>
-										<img src={linkIconSm} alt="Podcast Permalink" />
-									</Link>
-								</div>
-							</div>
-							<div>
 								<span className="close-drawer" onClick={closeDrawer}>
 									<img src={closeDrawerImg} alt="Close Podcast Details" />
 								</span>
@@ -134,8 +109,11 @@ class MakeGrid extends React.Component {
 									<h4>{pageData[play].title}</h4>
 									<div>
 										<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />
+										<PlayerBtn episode={pageData[play]} />
+										<Link to={`/${pageData[play].permalink}`}>
+											<img src={linkIconSm} alt="Podcast Permalink" />
+										</Link>
 									</div>
->>>>>>> master
 								</div>
 							</div>
 						</div>
