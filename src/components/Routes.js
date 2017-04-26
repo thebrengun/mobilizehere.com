@@ -12,6 +12,10 @@ import Gallery from './pages/Gallery'
 import About from './pages/About'
 import Contact from './pages/Contact'
 
+import PodcastDetailPage from './pages/PodcastDetailPage'
+
+import data from '../providers/podcast.provider'
+
 const title = "Mobilize Here";
 
 export const routes = (
@@ -33,6 +37,17 @@ export const routes = (
 		<Route path="contact/" component={Contact} title={`${title} - Contact`}>
 			<Redirect from="index.html" to="/contact/" />
 		</Route>
+		{data.episodes.map((episode, i) => 
+			<Route 
+				path={episode.permalink} 
+				title={`${title} - ${episode.title}`} 
+				component={PodcastDetailPage} 
+				data={episode} 
+				key={`podcast-episode-${i}`} 
+			>
+				<Redirect from="index.html" to={`/${episode.permalink}/`} />
+			</Route>
+		)}
     </Route>
 );
 

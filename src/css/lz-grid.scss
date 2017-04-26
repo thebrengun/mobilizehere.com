@@ -165,3 +165,16 @@
 		opacity: .2;
 	}
 }
+
+.no-script-tile-link {
+	position: relative;
+	display: block;
+	width: $col-width;
+	height: $col-width;
+	margin-top: -1 * $col-width;
+	@media screen and (max-width: $break-small) {
+		width: 47.5%;
+		height: 47.5%;
+		margin-top: -47.5%;
+	}
+}

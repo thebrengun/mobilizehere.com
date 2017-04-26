@@ -15,14 +15,14 @@ function sortByDate({ascending = true}) {
 
 	function sort(dateA, dateB) {
 		const dateAObj = new Date(dateA), dateBObj = new Date(dateB);
-		return dateAObj < dateBObj ? -1 : dateBObj > dateAObj ? 1 : 0;
+		return dateAObj < dateBObj ? -1 : dateAObj > dateBObj ? 1 : 0;
 	}
 }
 
 function splitEpisodesAndExtras(formatted, podcast) {
 	return podcast.isEpisode ? 
-		({...formatted, episodes: formatted.episodes.concat([podcast])}) : 
-		({...formatted, extras: formatted.extras.concat([podcast])});
+		({...formatted, episodes: formatted.episodes.concat([{...podcast, permalink: convertTitleToURL(podcast.title)}])}) : 
+		({...formatted, extras: formatted.extras.concat([{...podcast, permalink: convertTitleToURL(podcast.title)}])});
 }
 
 function addRootToImagePath(podcast) {
@@ -32,6 +32,14 @@ function addRootToImagePath(podcast) {
 	} else {
 		return podcast;
 	}
+}
+
+function convertTitleToURL(title) {
+	const specialChars = /[^((a-z)|(0-9)|(-))]/g;
+	const whitespace = /\s/g;
+	const multipleDashes = /-{2,}/g;
+	const trailingSlash = '/';
+	return title.toLowerCase().replace(specialChars, ' ').trim().replace(whitespace, '-').replace(multipleDashes, '-') + trailingSlash;
 }
 
 export default data;

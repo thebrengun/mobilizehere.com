@@ -14,14 +14,24 @@ class SoundCloudEmbed extends React.Component {
 	render() {
 		const { trackId } = this.props;
 		return (
-			<iframe 
-				width="100%" 
-				height="166" 
-				scrolling="no" 
-				frameBorder="no" 
-				src={this.makeUrl(trackId)}
-			>
-			</iframe>
+			<div>
+				<noscript>
+					<div style={{margin: '5%', textAlign: 'center'}}>
+						<strong style={{color: '#646464'}}>You need to enable JavaScript to use the SoundCloud player.</strong>
+						<div>
+							<a href="http://www.enable-javascript.com/" target="_blank"><button>Show Me How</button></a>
+						</div>
+					</div>
+				</noscript>
+				<iframe 
+					width="100%" 
+					height="166" 
+					scrolling="no" 
+					frameBorder="no" 
+					src={this.makeUrl(trackId)}
+				>
+				</iframe>
+			</div>
 		);
 	}
 }
