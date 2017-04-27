@@ -127,7 +127,7 @@ $col-width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
 			padding: 0 $drawer-padding;
 		}
 
-		.player {
+		.drawer-player {
 			order: -1;
 			@media screen and (max-width: $break-small) {
 				order: 1;

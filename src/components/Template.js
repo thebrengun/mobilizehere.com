@@ -8,7 +8,7 @@ import withRouter from 'react-router/lib/withRouter'
 import styles from '../css/index.scss'
 
 import desktopLogo from '../assets/images/template/mobilize-logo-desktop.png'
-import mobileLogo from '../assets/images/template/mobilize-logo-mobile.jpg'
+import mobileLogo from '../assets/images/template/mobilize-logo-mobile.png'
 
 import {Nav, ToggleNav} from './Nav'
 
@@ -45,7 +45,9 @@ class Template extends React.Component {
 				</div>
 				<Nav showNav={showNav} toggleNav={toggleNav} />
 				{children}
-				<div className="lz-footer lz-padding text-center">2017 &copy; Reserved to Mobilize</div>
+				<div className="lz-footer lz-padding text-center">
+					<span>2017 &copy; Reserved to Mobilize</span>
+				</div>
 			</div>
 		);
 	}

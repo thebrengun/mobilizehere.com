@@ -100,7 +100,7 @@ class MakeGrid extends React.Component {
 							)}
 						</div>
 						<div className="inner-drawer">
-							<div>
+							<div className="drawer-player">
 								<SoundCloudEmbed trackId={pageData[play].trackId} />
 								<div>
 									<Link to={`/${pageData[play].permalink}`}>
