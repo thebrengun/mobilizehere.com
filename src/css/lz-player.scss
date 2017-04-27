@@ -5,8 +5,8 @@
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	background: rgba(darken($darker-blue, 35%), .8);
-	color: lighten($dark-gray, 45%);
+	background: rgba(#fff, .8);
+	color: $darker-blue;
 	font-size: 1.2em;
 	@media screen and (max-width: $break-small) {
 		font-size: 1em;

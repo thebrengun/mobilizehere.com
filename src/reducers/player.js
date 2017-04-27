@@ -1,8 +1,8 @@
 import data from '../providers/podcast.provider'
 
 const defaultState = {
-	discovered: true,
-	playing: true,
+	discovered: false,
+	playing: false,
 	progress: {playedSeconds: 0, played: 0, loaded: 0, loadedSeconds: 0},
 	seeking: false,
 	duration: null,

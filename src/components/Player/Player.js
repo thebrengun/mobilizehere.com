@@ -29,13 +29,6 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 	return (
 		<div className={['player', !discovered ? 'hidden' : ''].join(' ')}>
 			<div className="lz-container player-main">
-				<div className="player-art">
-					<img 
-						src={queue[0].image} 
-						alt={'Cover Art for ' + queue[0].title} 
-						className="img-responsive"
-					/>
-				</div>
 				<div 
 					className={[
 						'player-info',
@@ -115,7 +108,7 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 			<ReactPlayer 
 				ref={player => {playerRef = player}}
 				url={queue[0].url || null} 
-				playing={false} 
+				playing={playing} 
 				hidden={true} 
 				controls={false} 
 				onProgress={updateProgress}
