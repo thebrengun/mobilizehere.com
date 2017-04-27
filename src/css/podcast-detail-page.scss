@@ -1,0 +1,20 @@
+@import 'lz-variables';
+
+.pd-description-and-art {
+	display: flex;
+	margin-bottom: $lz-padding;
+
+	@media screen and (max-width: $break-small) {
+		flex-wrap: wrap;
+	}
+}
+
+.pd-art {
+	flex-basis: 30%;
+	flex-shrink: 0;
+
+	@media screen and (max-width: $break-small) {
+		flex-basis: 100%;
+		order: -1;
+	}
+}
