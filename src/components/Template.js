@@ -35,7 +35,7 @@ class Template extends React.Component {
 	render() {
 		const { children, toggleNav, showNav, scroll, discovered } = this.props;
 		return (
-			<div className={['lz-container', showNav || !scroll ? 'lz-container-no-scroll' : ''].join(' ')} style={discovered ? {marginBottom: '15vh'} : {}}>
+			<div className={['lz-container', showNav || !scroll ? 'lz-container-no-scroll' : '', discovered ? 'player-is-visible' : 'player-is-invisible'].join(' ')}>
 				<div className="lz-header lz-padding">
 					<div className="logo">
 						<Link to="/">

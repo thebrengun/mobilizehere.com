@@ -91,6 +91,14 @@ a {
 	overflow: hidden;
 }
 
+.lz-container.player-is-visible {
+	margin-top: 4.5em; 
+
+	@media screen and (max-width: $break-small) {
+		margin-bottom: 8em;
+	}
+}
+
 .lz-header {
 	
 }

@@ -5,7 +5,7 @@ const defaultState = {
 	playing: false,
 	progress: {playedSeconds: 0, played: 0, loaded: 0, loadedSeconds: 0},
 	seeking: false,
-	duration: null,
+	duration: undefined,
 	queue: data.episodes.concat(data.extras).sort(({date: dateA}, {date: dateB}) => new Date(dateB).getTime() - new Date(dateA).getTime()),
 	played: []
 };
