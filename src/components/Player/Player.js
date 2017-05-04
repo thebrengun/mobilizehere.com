@@ -1,12 +1,8 @@
 import '../../css/lz-player.scss'
 
-import arrowBtnLeft from '../../assets/player/player-arrow-btn-left.png'
-import arrowBtnRight from '../../assets/player/player-arrow-btn-right.png'
-import pauseBtn from '../../assets/player/player-pause-btn.png'
-import playBtn from '../../assets/player/player-play-btn.png'
-
 import React from 'react'
 import ReactPlayer from 'react-player'
+import PlayerIcon from './PlayerIcon'
 
 import { connect } from 'react-redux'
 
@@ -19,6 +15,7 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 	const playedSeconds = progress.playedSeconds || 0;
 	const remaining = duration ? duration - playedSeconds : 0;
 	const nowPlaying = queue[0];
+	const iconFill = playing ? '#f59446' : '#4d4d4d';
 	return (
 		<div className={['player', !discovered ? 'player-hidden' : 'player-visible', playing ? 'playing' : '', showNav ? 'nav-is-showing' : 'nav-is-not-showing'].join(' ')}>
 			<div className="player-info">
@@ -31,19 +28,13 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 								playingFirstTrack ? 'disabled-btn' : ''
 							].join(' ')}
 						>
-							<img src={arrowBtnLeft} />
+							<PlayerIcon type="previous" fill={iconFill} />
 						</button>
 						<button 
 							onClick={playing ? pause : play}
 							className="ctrl-btn"
 						>
-							<img 
-								src={
-									playing ? 
-										pauseBtn : 
-										playBtn
-								}
-							/>
+							<PlayerIcon type={playing ? 'pause' : 'play'} fill={iconFill} />
 						</button>
 						<button 
 							onClick={playingLastTrack ? noop : next}
@@ -52,7 +43,7 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 								playingLastTrack ? 'disabled-btn' : ''
 							].join(' ')}
 						>
-							<img src={arrowBtnRight} />
+							<PlayerIcon type="next" fill={iconFill} />
 						</button>
 					</div>
 				</div>

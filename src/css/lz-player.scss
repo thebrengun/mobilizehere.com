@@ -70,7 +70,12 @@
 		justify-content: center;
 		align-items: center;
 		padding: 0;
-		margin: 0 .5em;
+		margin: 0 .1em;
+		font-size: 1.75em;
+
+		@media screen and (max-width: $break-small) {
+			font-size: 2.5em;
+		}
 	}
 
 	button:first-child {
@@ -85,6 +90,7 @@
 .player-controls {
 	width: 10%;
 	margin-left: $lz-padding;
+	flex-shrink: 1;
 
 	.player-button-set {
 		display: flex;
