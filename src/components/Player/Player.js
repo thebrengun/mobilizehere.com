@@ -6,7 +6,11 @@ import PlayerIcon from './PlayerIcon'
 
 import { connect } from 'react-redux'
 
-function MainPlayer({playing, duration, progress, discovered, queue, play, played, pause, previous, next, updateDuration, updateProgress, showNav, seeking, startSeek, endSeek, updateSeek}) {
+function MainPlayer({
+	buffer, playing, duration, progress, discovered, queue, play, played, pause, 
+	previous, next, updateDuration, updateProgress, showNav, seeking, startSeek, 
+	endSeek, updateSeek, onBuffer, onReady, onStart
+}) {
 	let playerRef;
 	const disabled = {disabled: 'disabled'};
 	const noop = () => {};
@@ -15,9 +19,15 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 	const playedSeconds = progress.playedSeconds || 0;
 	const remaining = duration ? duration - playedSeconds : 0;
 	const nowPlaying = queue[0];
-	const iconFill = playing ? '#f59446' : '#4d4d4d';
 	return (
-		<div className={['player', !discovered ? 'player-hidden' : 'player-visible', playing ? 'playing' : '', showNav ? 'nav-is-showing' : 'nav-is-not-showing'].join(' ')}>
+		<div 
+			className={[
+				'player', 
+				!discovered ? 'player-hidden' : 'player-visible', 
+				playing ? 'playing' : '', 
+				showNav ? 'nav-is-showing' : 'nav-is-not-showing'
+			].join(' ')}
+		>
 			<div className="player-info">
 				<div className="player-controls">
 					<div className="player-button-set">
@@ -28,13 +38,13 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 								playingFirstTrack ? 'disabled-btn' : ''
 							].join(' ')}
 						>
-							<PlayerIcon type="previous" fill={iconFill} />
+							<PlayerIcon type="previous" />
 						</button>
 						<button 
 							onClick={playing ? pause : play}
 							className="ctrl-btn"
 						>
-							<PlayerIcon type={playing ? 'pause' : 'play'} fill={iconFill} />
+							<PlayerIcon type={playing ? 'pause' : 'play'} />
 						</button>
 						<button 
 							onClick={playingLastTrack ? noop : next}
@@ -43,7 +53,7 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 								playingLastTrack ? 'disabled-btn' : ''
 							].join(' ')}
 						>
-							<PlayerIcon type="next" fill={iconFill} />
+							<PlayerIcon type="next" />
 						</button>
 					</div>
 				</div>
@@ -58,14 +68,9 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 					</span>
 				</div>
 			</div>
-			<div className="player-seekbar">
-				<div 
-					className="seekbar-played" 
-					style={{
-						width: progress.played * 100 + '%'
-					}}
-				>
-				</div>
+			<div className={['player-seekbar', buffer ? 'buffering' : ''].join(' ')}>
+				<div className="seekbar-loaded" style={{width: progress.loaded * 100 + '%'}}></div>
+				<div className="seekbar-played" style={{width: progress.played * 100 + '%'}}></div>
 			</div>
 			<div className="seek-input">
 				<input 
@@ -86,11 +91,11 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 				ref={player => { playerRef = player }} 
 				url={nowPlaying.url} 
 				playing={playing} 
-				onReady={() => console.log('onReady')}
-				onStart={() => console.log('onStart')}
-				// onPlay={() => this.setState({ playing: true })}
-				// onPause={() => this.setState({ playing: false })}
-				onBuffer={() => console.log('onBuffer')}
+				onReady={onReady}
+				onStart={onStart}
+				onPlay={play}
+				onPause={pause}
+				onBuffer={onBuffer}
 				onEnded={next}
 				onError={e => console.log('onError', e)}
 				onProgress={updateProgress}
@@ -100,88 +105,11 @@ function MainPlayer({playing, duration, progress, discovered, queue, play, playe
 			/>
 		</div>
 	);
-	// return (
-	// 	<div className={['player', !discovered ? 'hidden' : ''].join(' ')}>
-	// 		<div className="top">
-	// 			<div className="top-left">
-	// 				<div className="player-controls">
-	// 					<button 
-	// 						onClick={playingFirstTrack ? noop : previous}
-	// 						className={[
-	// 							'ctrl-btn',
-	// 							playingFirstTrack ? 'disabled-btn' : ''
-	// 						].join(' ')}
-	// 					>
-	// 						<img src={arrowBtnLeft} />
-	// 					</button>
-	// 					<button 
-	// 						onClick={playing ? pause : play}
-	// 						className="ctrl-btn"
-	// 					>
-	// 						<img 
-	// 							src={
-	// 								playing ? 
-	// 									pauseBtn : 
-	// 									playBtn
-	// 							}
-	// 						/>
-	// 					</button>
-	// 					<button 
-	// 						onClick={playingLastTrack ? noop : next}
-	// 						className={[
-	// 							'ctrl-btn',
-	// 							playingLastTrack ? 'disabled-btn' : ''
-	// 						].join(' ')}
-	// 					>
-	// 						<img src={arrowBtnRight} />
-	// 					</button>
-	// 				</div>
-	// 			</div>
-	// 			<div className="lz-container player-main">
-	// 				<div className="playing-title">
-	// 					{queue[0].title}
-	// 				</div>
-	// 			</div>
-	// 			<div className="top-right">
-	// 				<div className="time">
-	// 					{playing ? '-' : ''}{Math.floor(remaining / 60)}m:{Math.ceil(remaining % 60)}s
-	// 				</div>
-	// 			</div>
-	// 		</div>
-	// 		<div className="seek-bar">
-	// 			<div className="seek-wrap">
-	// 				<input 
-	// 					type="range" 
-	// 					min={0} 
-	// 					max={1} 
-	// 					step="any" 
-	// 					value={progress.played}
-	// 					onMouseDown={startSeek}
-	//   					onChange={(e) => updateSeek(parseFloat(e.target.value))}
-	//   					onMouseUp={(e) => {
-	//   						playerRef.seekTo(parseFloat(e.target.value));
-	//   						endSeek();
-	//   					}}
-	//   					className="seek-input"
-	// 				/>
-	// 				<div 
-	// 					className={[
-	// 						'seek-color', 
-	// 						playing ? 'playing' : ''
-	// 					].join(' ')} 
-	// 					style={{
-	// 						width: progress.played * 100 + '%'
-	// 					}}
-	// 				>
-	// 				</div>
-	// 			</div>
-	// 		</div>
-	// 	</div>
-	// );
 }
 
 const mapStateToProps = ({player, nav}) => ({...player, showNav: nav.showNav});
 const mapDispatchToProps = (dispatch) => ({
+	onBuffer: () => dispatch({type: 'BUFFER'}),
 	play: () => dispatch({type: 'PLAY'}),
 	pause: () => dispatch({type: 'PAUSE'}),
 	previous: () => dispatch({type: 'PREVIOUS'}),
@@ -190,7 +118,9 @@ const mapDispatchToProps = (dispatch) => ({
 	updateProgress: (progress) => dispatch({type: 'UPDATE_PROGRESS', progress}),
 	startSeek: () => dispatch({type: 'START_SEEK'}),
 	endSeek: () => dispatch({type: 'END_SEEK'}),
-	updateSeek: (played) => dispatch({type: 'UPDATE_SEEK', played})
+	updateSeek: (played) => dispatch({type: 'UPDATE_SEEK', played}),
+	onReady: () => dispatch({type: 'READY'}),
+	onStart: () => dispatch({type: 'START'})
 });
 
 

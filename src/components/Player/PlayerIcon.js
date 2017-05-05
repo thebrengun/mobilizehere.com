@@ -38,12 +38,12 @@ const icons = {
 	]
 };
 
-function PlayerIcon({type, fill = '#4d4d4d', height = '1em', width = '1em'}) {
+function PlayerIcon({type, height = '1em', width = '1em'}) {
 	return (
 		<svg width={width} height={height} viewBox="0 0 1024 1024">
 			{icons[type].map(
 				({type, props}, i) => 
-					React.createElement(type, {...props, fill, key: 'shape-' + i})
+					React.createElement(type, {...props, className: 'svg-btn', key: 'shape-' + i})
 			)}
   		</svg>
 	);

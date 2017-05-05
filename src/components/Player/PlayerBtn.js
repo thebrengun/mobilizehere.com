@@ -15,7 +15,7 @@ function PlayerBtn({episode, nowPlaying, queue, playing, discovered, playNow, pl
 			onClick={(e) => playNow(episode)} 
 			className="podcast-display-btn"
 		>
-			<PlayerIcon type="playInCircle" fill="#f59446" />
+			<PlayerIcon type="playInCircle" />
 		</button>
 	);
 	const PlayNowBtn = PlayBtn;
@@ -24,10 +24,17 @@ function PlayerBtn({episode, nowPlaying, queue, playing, discovered, playNow, pl
 			onClick={pause} 
 			className="podcast-display-btn"
 		>
-			<PlayerIcon type="pauseInCircle" fill="#f59446" />
+			<PlayerIcon type="pauseInCircle" />
 		</button>
 	);
-	const ResumeBtn = PlayBtn;
+	const ResumeBtn = (
+		<button 
+			onClick={resume} 
+			className="podcast-display-btn"
+		>
+			<PlayerIcon type="playInCircle" />
+		</button>
+	);
 
 	// Not Discovered: "Play", Not Playing: "Play Now", Is Playing: "Pause" Is Paused: "Resume"
 	const PrimaryBtn = !discovered ? PlayBtn : notPlaying ? PlayNowBtn : isPlaying ? PauseBtn : ResumeBtn;
@@ -35,13 +42,6 @@ function PlayerBtn({episode, nowPlaying, queue, playing, discovered, playNow, pl
 	return (
 		<div>
 			{PrimaryBtn}
-			{discovered && notPlaying ? 
-				<span>
-					<button onClick={(e) => playNext(episode)} className="podcast-display-btn">
-						<PlayerIcon type="addInCircle" fill="#f59446" />
-					</button>
-				</span> : ''
-			}
 		</div>
 	);
 }

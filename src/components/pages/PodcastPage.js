@@ -106,13 +106,14 @@ class MakeGrid extends React.Component {
 									<img src={closeDrawerImg} alt="Close Podcast Details" />
 								</span>
 								<div>
-									<h4>{pageData[play].title}</h4>
+									<h4>
+										<Link to={`/${pageData[play].permalink}`}>
+											{pageData[play].title}
+										</Link>
+									</h4>
 									<div>
 										<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />
 										<PlayerBtn episode={pageData[play]} />
-										<Link to={`/${pageData[play].permalink}`}>
-											<img src={linkIconSm} alt="Podcast Permalink" />
-										</Link>
 									</div>
 								</div>
 							</div>

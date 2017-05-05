@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import SoundCloudEmbed from '../SoundCloudEmbed'
+import PlayerBtn from '../Player/PlayerBtn'
 
 import '../../css/podcast-detail-page.scss'
 
@@ -11,13 +11,13 @@ function PodcastDetailPageComponent({route}) {
 			<Helmet title={title} />
 			<h2>{title}</h2>
 			<div className="pd-description-and-art">
-				<div dangerouslySetInnerHTML={{__html: __content}}></div>
 				<div className="pd-art">
 					<img src={image} alt={`Cover Art for ${title}`} className="img-responsive" />
 				</div>
-			</div>
-			<div>
-				<SoundCloudEmbed trackId={trackId} />
+				<div className="pd-description">
+					<div dangerouslySetInnerHTML={{__html: __content}}></div>
+					<PlayerBtn episode={route.data} />
+				</div>
 			</div>
 		</div>
 	);

@@ -2,6 +2,7 @@ import data from '../providers/podcast.provider'
 
 const defaultState = {
 	discovered: false,
+	buffer: false,
 	playing: false,
 	progress: {playedSeconds: 0, played: 0, loaded: 0, loadedSeconds: 0},
 	seeking: false,
@@ -12,6 +13,12 @@ const defaultState = {
 
 const player = (state = defaultState, action) => {
 	switch(action.type) {
+		case 'READY':
+			return {...state, buffer: false};
+		case 'BUFFER':
+			return {...state, buffer: true};
+		case 'START':
+			return {...state, buffer: false};
 		case 'UPDATE_PROGRESS':
 			if(!state.seeking) {
 				return {...state, progress: action.progress};
@@ -32,12 +39,16 @@ const player = (state = defaultState, action) => {
 			return {
 				...state, 
 				playing: true,
+				buffer: true,
+				progress: {...defaultState.progress},
 				played: state.queue.slice(0, 1).concat(state.played),
 				queue: state.queue.slice(1)
 			};
 		case 'PREVIOUS': 
 			return {
 				...state, 
+				buffer: true,
+				progress: {...defaultState.progress},
 				queue: state.played.slice(0, 1).concat(state.queue),
 				played: state.played.slice(1)
 			};
@@ -50,6 +61,8 @@ const player = (state = defaultState, action) => {
 				...state, 
 				discovered: true,
 				playing: true,
+				buffer: true,
+				progress: {...defaultState.progress},
 				queue: [action.episode].concat(state.queue.filter(removeFromQueue(action.episode)))
 			};
 		case 'PLAY_NEXT':

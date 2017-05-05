@@ -26,7 +26,8 @@ const config = {
     hot: true,
     contentBase: resolve(__dirname, 'build'),
     publicPath: '/',
-    historyApiFallback: true
+    historyApiFallback: true,
+    host: '0.0.0.0'
   },
   module: {
     rules: [
