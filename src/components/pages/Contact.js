@@ -5,7 +5,10 @@ import contactStyles from '../../css/contact.scss'
 function Contact({route}) {
 	return (
 		<div>
-			<Helmet title={route.title} />
+			<Helmet title={route.title}>
+				<meta property="og:title" content={route.title} />
+				<meta property="og:url" content={'https://www.mobilizehere.com/' + route.path} />
+			</Helmet>
 			<h2>Contact</h2>
 			<div className="contact-info">
 				<div>

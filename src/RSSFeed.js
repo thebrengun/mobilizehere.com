@@ -1,7 +1,5 @@
 import about from './providers/about.provider'
-import podcast from './providers/podcast.provider'
-
-const htmlExp = /<[^>]*>/g;
+import podcast, { removeTagsFromString } from './providers/podcast.provider'
 
 export default createFeed({...about, podcast});
 
@@ -17,10 +15,10 @@ function createFeed({ name, email, website: websiteHttps, image, itunesArtwork, 
     <copyright>&#x2117; &amp; &#xA9; 2017 ${name}</copyright>
     <itunes:author>${name}</itunes:author>
     <itunes:summary>
-    	${__content.replace(htmlExp, '').replace('\n', ' ')}
+    	${removeTagsFromString(__content).replace('\n', ' ')}
     </itunes:summary>
     <description>
-    	${__content.replace(htmlExp, '').replace('\n', ' ')}
+    	${removeTagsFromString(__content).replace('\n', ' ')}
     </description>
     <itunes:owner>
     	<itunes:name>${name}</itunes:name>
@@ -40,10 +38,10 @@ function createFeed({ name, email, website: websiteHttps, image, itunesArtwork, 
     `<item>
       <title>${title}</title>
       <description>
-        ${description.replace(htmlExp, '')}
+        ${removeTagsFromString(description)}
       </description>
       <itunes:summary>
-      	${description.replace(htmlExp, '')}
+      	${removeTagsFromString(description)}
       </itunes:summary>
       <itunes:image href="${image.replace('https://', 'http://')}" />
       <enclosure length="${length}" type="audio/mpeg" url="${url.replace('https://', 'http://')}" />

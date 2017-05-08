@@ -9,6 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const RSSPlugin = require('./src/plugins/RSSPlugin/RSSPlugin');
 
 const publicPath = 'https://www.mobilizehere.com/';
+//const publicPath = 'http://127.0.0.1:8080/';
 
 module.exports = {
   devtool: 'source-map',
@@ -74,7 +75,8 @@ module.exports = {
       routes: './src/components/Routes.js',
       template: './src/Html.js',
       reduxStore: './src/reducers/store.js',
-      publicPath: publicPath
+      publicPath: publicPath,
+      manifest: 'manifest.json'
     }),
     new CopyWebpackPlugin(
       [

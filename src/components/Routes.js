@@ -19,7 +19,7 @@ import data from '../providers/podcast.provider'
 const title = "Mobilize Here";
 
 export const routes = (
-	<Route path="/" component={Template}>
+	<Route path="/" component={Template} title={title}>
 		<Redirect from="index.html" to="/" />
 		<IndexRoute component={Home} title={`${title}`} />
 		<Route path="podcast/" component={Podcast} title={`${title} - Podcast`}>
