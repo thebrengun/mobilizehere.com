@@ -28,8 +28,8 @@ class PodcastPage extends React.Component {
 		const play = this.props.activeItem;
 		return (
 			<div>
-				<MakeGrid wrapperClassName="lz-grid-with-drawer-mobile" columnWrap={2} play={play} {...this.props} key="mobile" />
-				<MakeGrid wrapperClassName="lz-grid-with-drawer-desktop" columnWrap={4} play={play} {...this.props} key="desktop" />
+				<MakeGrid wrapperClassName="lz-grid-with-drawer-mobile" columnWrap={2} play={play} {...this.props} />
+				<MakeGrid wrapperClassName="lz-grid-with-drawer-desktop" columnWrap={4} play={play} {...this.props} />
 				<PaginateNav page={page} />
 			</div>
 		);
@@ -42,7 +42,7 @@ class MakeGrid extends React.Component {
 	}
 
 	render() {
-		const { columnWrap, itemIsActive, makePath, page, pageData, play, player, wrapperClassName, openDrawer, closeDrawer, key } = this.props;
+		const { columnWrap, itemIsActive, makePath, page, pageData, play, player, wrapperClassName, openDrawer, closeDrawer } = this.props;
 		const playRow = Math.floor(play / columnWrap);
 		const playCol = (play + 1) - (playRow * columnWrap);
 		const emptyCells = new Array(Math.max((Math.ceil(pageData.length / columnWrap) * columnWrap) - pageData.length, 0)).fill({});
@@ -84,7 +84,7 @@ class MakeGrid extends React.Component {
 							</div>
 				)}
 				{itemIsActive(play) ? 
-					<div className="lz-drawer" style={{order: Math.floor(play / columnWrap)}} key={'drawer-' + key}>
+					<div className="lz-drawer" style={{order: Math.floor(play / columnWrap)}}>
 						<div className="pinch-row">
 							<div className="lz-col" style={{order: playCol - 1}}>
 								<div className="pinch-arrow"></div>
