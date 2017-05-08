@@ -42,4 +42,9 @@ function convertTitleToURL(title) {
 	return title.toLowerCase().replace(specialChars, ' ').trim().replace(whitespace, '-').replace(multipleDashes, '-') + trailingSlash;
 }
 
+export function removeTagsFromString(htmlString) {
+	const htmlExp = /<[^>]*>/g;
+	return htmlString.replace(htmlExp, '');
+}
+
 export default data;
