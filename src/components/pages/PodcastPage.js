@@ -2,6 +2,7 @@ import React from 'react'
 import TransitionGroup from 'react-addons-css-transition-group'
 import { connect } from 'react-redux'
 import Link from 'react-router/lib/Link'
+import Noscript from '../Noscript'
 
 import Paginate from '../Paginate'
 import PlayerBtn from '../Player/PlayerBtn'
@@ -27,8 +28,8 @@ class PodcastPage extends React.Component {
 		const play = this.props.activeItem;
 		return (
 			<div>
-				<MakeGrid wrapperClassName="lz-grid-with-drawer-mobile" columnWrap={2} play={play} {...this.props} />
-				<MakeGrid wrapperClassName="lz-grid-with-drawer-desktop" columnWrap={4} play={play} {...this.props} />
+				<MakeGrid wrapperClassName="lz-grid-with-drawer-mobile" columnWrap={2} play={play} {...this.props} key="mobile" />
+				<MakeGrid wrapperClassName="lz-grid-with-drawer-desktop" columnWrap={4} play={play} {...this.props} key="desktop" />
 				<PaginateNav page={page} />
 			</div>
 		);
@@ -41,7 +42,7 @@ class MakeGrid extends React.Component {
 	}
 
 	render() {
-		const { columnWrap, itemIsActive, makePath, page, pageData, play, player, wrapperClassName, openDrawer, closeDrawer } = this.props;
+		const { columnWrap, itemIsActive, makePath, page, pageData, play, player, wrapperClassName, openDrawer, closeDrawer, key } = this.props;
 		const playRow = Math.floor(play / columnWrap);
 		const playCol = (play + 1) - (playRow * columnWrap);
 		const emptyCells = new Array(Math.max((Math.ceil(pageData.length / columnWrap) * columnWrap) - pageData.length, 0)).fill({});
@@ -71,9 +72,9 @@ class MakeGrid extends React.Component {
 									].join(' ')} 
 									onClick={play === i ? closeDrawer : (e) => openDrawer(i)}
 								/>
-								<noscript>
+								<Noscript>
 									<a href={`/${permalink}`} className="no-script-tile-link"></a>
-								</noscript>
+								</Noscript>
 							</div> : 
 							<div 
 								className="lz-col filler" 
@@ -83,7 +84,7 @@ class MakeGrid extends React.Component {
 							</div>
 				)}
 				{itemIsActive(play) ? 
-					<div className="lz-drawer" style={{order: Math.floor(play / columnWrap)}} key="drawer">
+					<div className="lz-drawer" style={{order: Math.floor(play / columnWrap)}} key={'drawer-' + key}>
 						<div className="pinch-row">
 							<div className="lz-col" style={{order: playCol - 1}}>
 								<div className="pinch-arrow"></div>
