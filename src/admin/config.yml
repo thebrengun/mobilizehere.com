@@ -28,11 +28,11 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content/resource"
     create: true
     fields: 
-      - {label: "Title", name: "title", widget: "string", required: false}
-      - {label: "Description", name: "body", widget: "markdown", required: false}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Color", name: "color", widget: "string"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Artwork", name: "image", widget: "image", default: "/assets/mobilize_logo.jpg"}
       - {label: "Link", name: "url", widget: "string"}
+      - {label: "Description", name: "body", widget: "markdown", required: false}
   - name: "settings"
     label: "Settings"
     files:
