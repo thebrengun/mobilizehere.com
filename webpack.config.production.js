@@ -159,7 +159,7 @@ module.exports = {
           options: {
             name: '[name].[ext]',
             outputPath: 'pdfs/',
-            publicPath: `${publicPath}pdfs/`
+            publicPath: `${publicPath}`
           }
         }
       },
@@ -171,7 +171,7 @@ module.exports = {
             options: {
               name: '[name].[ext]',
               outputPath: 'images/',
-              publicPath: `${publicPath}images/`
+              publicPath: `${publicPath}`
             }
           },
         ],
