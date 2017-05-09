@@ -93,17 +93,11 @@ RSSPlugin.prototype.apply = function(compiler) {
 		delete compilation.assets[this.outputFileName];
 		delete compilation.assets[this.outputFileName + '.map'];
 
-		console.log(rawAssets[this.outputFileName]);
-		console.log(compilation.assets[this.outputFileName]);
-
 		asset = rawAssets[this.outputFileName] || compilation.assets[this.outputFileName];
-
-		console.log(asset);
 
 		return new Promise(
 			(resolve, reject) => {
 
-				console.log(asset.source());
 				// Instantiate browser sandbox
 		    	const doc = jsdom('<html><body></body></html>');
 		    	const win = doc.defaultView;
