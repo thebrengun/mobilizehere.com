@@ -28,8 +28,8 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content/resource"
     create: true
     fields: 
-      - {label: "Name", name: "name", widget: "string"}
-      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Title", name: "title", widget: "string", required: false}
+      - {label: "Description", name: "body", widget: "markdown", required: false}
       - {label: "Color", name: "color", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Link", name: "url", widget: "string"}
