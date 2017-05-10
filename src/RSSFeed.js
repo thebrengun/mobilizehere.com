@@ -39,9 +39,13 @@ function createFeed({ name, email, website: websiteHttps, image, itunesArtwork, 
       <title>${title}</title>
       <description>
         ${removeTagsFromString(description)}
+
+        ${'https://www.mobilizehere.com'}
       </description>
       <itunes:summary>
       	${removeTagsFromString(description)}
+        
+        ${'https://www.mobilizehere.com'}
       </itunes:summary>
       <itunes:image href="${image.replace('https://', 'http://')}" />
       <enclosure length="${length}" type="audio/mpeg" url="${url.replace('https://', 'http://')}" />

@@ -11,10 +11,3 @@ explicit: 'no'
 trackId: '320878659'
 ---
 Thousands and thousands of people across the country are using a mass conference call as a tool to coordinate their actions. We interviewed one of the organizers: Victoria Kaplan.
-
-[www.mobilizehere.com](https://www.mobilizehere.com)
-
-
-
-
-

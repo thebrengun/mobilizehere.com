@@ -11,8 +11,3 @@ explicit: 'yes'
 trackId: '319027387'
 ---
 When Kristin Mink heard about a hate crime at a church in her community, she decided to do something about it. 
-
-[www.mobilizehere.com](https://www.mobilizehere.com)
-
-
-

@@ -11,5 +11,3 @@ explicit: 'no'
 trackId: '314037649'
 ---
 Nick Panken of Spirit Family Reunion gives a thoughtful interview about resistance, vulnerability and honesty, and his protest song: *Going Out To Cannon Ball*.
-
-[www.mobilizehere.com](https://www.mobilizehere.com)
