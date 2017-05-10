@@ -11,5 +11,3 @@ explicit: 'no'
 trackId: '305459487'
 ---
 *Rise Up*, written and performed by Charlotte Littlehales and Phil Pardell, is a call for community, unity, and action. Want to sing it in your local choir? [Click here for sheet music!](https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf)
-
-[www.mobilizehere.com](https://www.mobilizehere.com)

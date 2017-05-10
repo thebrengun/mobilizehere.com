@@ -11,5 +11,3 @@ explicit: 'no'
 trackId: '310319933'
 ---
 Sound engineer Cory Choy recounts the Mobilize origin story, undocumented DREAMer and DACA holder Cristina tells us why she is fighting, and musician Charlottle Littlehales talks about the process of writing— and meaning behind— our theme song: *Rise Up*.
-
-[www.mobilizehere.com](https://www.mobilizehere.com)
