@@ -1,0 +1,71 @@
+@import 'lz-variables';
+
+.share-your-story {
+	background: $orange;
+	color: darken($orange, 25%);
+	padding: $lz-padding ($lz-padding / 2);
+
+	h1, h2, h3, h4, h5, h6 {
+		color: darken($orange, 25%);
+		margin: 0;
+		margin-bottom: $lz-padding / 2;
+	}
+
+}
+
+.story-form {
+	display: flex;
+	flex-direction: row;
+
+	& > div {
+		flex-basis: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin: 0 ($lz-padding / 2);
+
+		span {
+			display: flex;
+			margin: ($lz-padding / 4) 0;
+			align-items: center;
+
+			label {
+				width: 15%;
+				flex-shrink: 0;
+				text-align: right;
+				padding-right: $lz-padding / 2;
+			}
+		}
+	}
+
+	input, textarea {
+		border-radius: .15em;
+		border: none;
+		font-size: 1.25em;
+	}
+
+	input {
+		width: 100%;
+	}
+
+	textarea {
+		margin: ($lz-padding / 4) 0;
+		resize: none;
+		height: 4em;
+		padding: $lz-padding / 4;
+	}
+}
+
+.share-your-story-btns {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	button {
+		background: darken($orange, 25%);
+
+		&:hover {
+			background: darken($orange, 15%);
+		}
+	}
+}
