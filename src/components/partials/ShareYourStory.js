@@ -31,10 +31,14 @@ class ShareYourStory extends React.Component {
 
 		fetch('https://formspree.io/mobilizehere@gmail.com', {
 			method: 'POST',
-			data: JSON.stringify(this.state.formData),
-    		dataType: "json"
+			headers: {
+		      'Accept': 'application/json',
+		      'Content-Type': 'application/json'
+		    },
+			body: JSON.stringify(this.state.formData)
 		}).then(
-			(response) => this.setState({status: 'SENT'})
+			(response) => 
+				this.setState({status: 'SENT', message: 'Thanks!'})
 		).catch(
 			(error) => this.setState({status: 'ERROR', message: 'Hmm...Something went wrong.'})
 		);
