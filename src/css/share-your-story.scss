@@ -11,11 +11,49 @@
 		margin-bottom: $lz-padding / 2;
 	}
 
+	.message {
+		display: none;
+		padding: 0 ($lz-padding / 2);
+		text-align: center;
+		color: lighten($orange, 45%);
+	}
+
+}
+
+.share-your-story.sending {
+	.story-form {
+		opacity: .5
+	}
+
+	.message {
+		display: block;
+	}
+}
+
+.share-your-story.sent {
+	.story-form {
+		display: none;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0;
+	}
+}
+
+.share-your-story.error {
+	.message {
+		display: block;
+	}
 }
 
 .story-form {
+	transition: all .5s;
 	display: flex;
 	flex-direction: row;
+
+	@media screen and (max-width: $break-small) {
+		flex-direction: column;
+	}
 
 	& > div {
 		flex-basis: 50%;
@@ -29,6 +67,11 @@
 			margin: ($lz-padding / 4) 0;
 			align-items: center;
 
+			@media screen and (max-width: $break-small) {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+
 			label {
 				width: 15%;
 				flex-shrink: 0;
@@ -36,16 +79,45 @@
 				padding-right: $lz-padding / 2;
 			}
 		}
+
+		label.textarea-label {
+			display: none;
+
+			@media screen and (max-width: $break-small) {
+				display: block;
+			}
+		}
+
+		span.align-right {
+			justify-content: flex-end;
+		}
+
 	}
 
 	input, textarea {
 		border-radius: .15em;
 		border: none;
-		font-size: 1.25em;
+		font-size: 1em;
+		padding: .25em;
 	}
 
 	input {
 		width: 100%;
+	}
+
+	input[type="submit"] {
+		width: 25%;
+		background: darken($orange, 25%);
+		color: darken($orange, 50%);
+		outline: none;
+
+		@media screen and (max-width: $break-small) {
+			width: 100%;
+		}
+
+		&:hover {
+			background: darken($orange, 15%);
+		}
 	}
 
 	textarea {
@@ -53,19 +125,5 @@
 		resize: none;
 		height: 4em;
 		padding: $lz-padding / 4;
-	}
-}
-
-.share-your-story-btns {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-
-	button {
-		background: darken($orange, 25%);
-
-		&:hover {
-			background: darken($orange, 15%);
-		}
 	}
 }
