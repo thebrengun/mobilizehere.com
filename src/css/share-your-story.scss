@@ -52,7 +52,7 @@
 	flex-direction: row;
 
 	@media screen and (max-width: $break-small) {
-		flex-direction: column;
+		flex-wrap: wrap;
 	}
 
 	& > div {
@@ -61,6 +61,10 @@
 		flex-direction: column;
 		justify-content: space-between;
 		margin: 0 ($lz-padding / 2);
+
+		@media screen and (max-width: $break-small) {
+			flex-basis: 100%;
+		}
 
 		span {
 			display: flex;

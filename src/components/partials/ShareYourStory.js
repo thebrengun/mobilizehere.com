@@ -55,7 +55,7 @@ class ShareYourStory extends React.Component {
 				].join(' ')}
 			>
 				<h2>{this.state.status === 'SENT' ? 'Thanks For Sharing!' : 'Share Your Story'}</h2>
-				<form onSubmit={this.handleSubmit} style={this.state.status === 'SENT' ? {display: 'none'} : {}}>
+				<form onSubmit={this.handleSubmit}>
 					<div className="message">{this.state.message}</div>
 					<div className="story-form">
 						<div>
