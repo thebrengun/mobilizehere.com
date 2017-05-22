@@ -89,7 +89,7 @@ function MainPlayer({
 			</div>
 			<ReactPlayer 
 				ref={player => { playerRef = player }} 
-				url={nowPlaying.url} 
+				url={discovered ? nowPlaying.url : ''} 
 				playing={playing} 
 				onReady={onReady}
 				onStart={onStart}
