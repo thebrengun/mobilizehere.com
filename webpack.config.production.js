@@ -7,6 +7,7 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const RSSPlugin = require('./src/plugins/RSSPlugin/RSSPlugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const publicPath = 'https://www.mobilizehere.com/';
 //const publicPath = 'http://127.0.0.1:8080/';
@@ -58,6 +59,13 @@ module.exports = {
       comments: false,
       sourceMap: true
     }),
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.(js|html)$/,
+      threshold: 0,
+      minRatio: 0.8
+    }),
     new ManifestPlugin({
       fileName: 'manifest.json',
       cache: {
@@ -90,7 +98,7 @@ module.exports = {
     new RSSPlugin({
       entry: './src/RSSFeed.js',
       output: 'podcast.rss'
-    })
+    }),
   ],
 
   module: {
