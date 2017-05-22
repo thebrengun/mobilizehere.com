@@ -15,7 +15,7 @@ const favicon96 = require('./assets/icons/favicon-96x96.png');
 const favicon16 = require('./assets/icons/favicon-16x16.png');
 const msIcon144 = require('./assets/icons/ms-icon-144x144.png');
 const largeImage = require('./assets/images/about/mobilize-logo-big.jpg');
-const splash = require('./assets/images/icons/splash.png');
+const splash = require('./assets/icons/splash.png');
 
 const T = React.PropTypes;
 
