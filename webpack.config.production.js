@@ -63,7 +63,9 @@ module.exports = {
       cache: {
         "short_name": "Mobilize",
         "name": "Mobilize Here",
-        "start_url": "/"
+        "start_url": "/",
+        "background_color": "#fafeff",
+        "theme_color": "#fafeff"
       }
     }),
     new HtmlWebpackPlugin({

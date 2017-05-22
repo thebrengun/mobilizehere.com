@@ -9,7 +9,8 @@ function SubscribeLinks({className = 'subscribe-links'}) {
 				<li>
 					<a 
 						href="https://itunes.apple.com/us/podcast/mobilize/id1229280265" 
-						target="_blank"
+						target="_blank" 
+						rel="noopener"
 					>
 						iTunes
 					</a>
@@ -18,7 +19,8 @@ function SubscribeLinks({className = 'subscribe-links'}) {
 					<a 
 						href="https://playmusic.app.goo.gl/?ibi=com.google.PlayMusic&amp;isi=691797987&amp;ius=googleplaymusic&amp;link=https://play.google.com/music/m/I3jcwhqyumtfgwz3kbwrm7upwlm?t%3DMobilize%26pcampaignid%3DMKT-na-all-co-pr-mu-pod-16" 
 						rel="nofollow" 
-						target="_blank"
+						target="_blank" 
+						rel="noopener"
 					>
 						Google Play
 					</a>
@@ -27,6 +29,7 @@ function SubscribeLinks({className = 'subscribe-links'}) {
 					<a 
 						href="http://www.stitcher.com/podcast/mobilize" 
 						target="_blank" 
+						rel="noopener"
 					>
 						Stitcher
 					</a>
@@ -35,6 +38,7 @@ function SubscribeLinks({className = 'subscribe-links'}) {
 					<a 
 						href="https://www.mobilizehere.com/podcast.rss" 
 						target="_blank" 
+						rel="noopener"
 					>
 						RSS
 					</a>

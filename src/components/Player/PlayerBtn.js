@@ -13,6 +13,7 @@ function PlayerBtn({episode, nowPlaying, queue, playing, discovered, playNow, pl
 	const PlayBtn = (
 		<button 
 			onClick={(e) => playNow(episode)} 
+			aria-label={'Play ' + episode.title} 
 			className="podcast-display-btn"
 		>
 			<PlayerIcon type="playInCircle" />
@@ -22,6 +23,7 @@ function PlayerBtn({episode, nowPlaying, queue, playing, discovered, playNow, pl
 	const PauseBtn = (
 		<button 
 			onClick={pause} 
+			aria-label={'Pause ' + episode.title} 
 			className="podcast-display-btn"
 		>
 			<PlayerIcon type="pauseInCircle" />
@@ -30,6 +32,7 @@ function PlayerBtn({episode, nowPlaying, queue, playing, discovered, playNow, pl
 	const ResumeBtn = (
 		<button 
 			onClick={resume} 
+			aria-label={'Resume ' + episode.title} 
 			className="podcast-display-btn"
 		>
 			<PlayerIcon type="playInCircle" />

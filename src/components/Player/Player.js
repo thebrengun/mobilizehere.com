@@ -33,6 +33,7 @@ function MainPlayer({
 					<div className="player-button-set">
 						<button 
 							onClick={playingFirstTrack ? noop : previous}
+							aria-label="Next Episode"
 							className={[
 								'ctrl-btn',
 								playingFirstTrack ? 'disabled-btn' : ''
@@ -42,12 +43,14 @@ function MainPlayer({
 						</button>
 						<button 
 							onClick={playing ? pause : play}
+							aria-label={playing ? 'Pause' : 'Play'} 
 							className="ctrl-btn"
 						>
 							<PlayerIcon type={playing ? 'pause' : 'play'} />
 						</button>
 						<button 
 							onClick={playingLastTrack ? noop : next}
+							aria-label="Previous Episode"
 							className={[
 								'ctrl-btn',
 								playingLastTrack ? 'disabled-btn' : ''
@@ -85,6 +88,7 @@ function MainPlayer({
   						playerRef.seekTo(parseFloat(e.target.value));
   						endSeek();
   					}}
+  					aria-label="Seek"
 				/>
 			</div>
 			<ReactPlayer 

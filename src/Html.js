@@ -15,6 +15,7 @@ const favicon96 = require('./assets/icons/favicon-96x96.png');
 const favicon16 = require('./assets/icons/favicon-16x16.png');
 const msIcon144 = require('./assets/icons/ms-icon-144x144.png');
 const largeImage = require('./assets/images/about/mobilize-logo-big.jpg');
+const splash = require('./assets/images/icons/splash.png');
 
 const T = React.PropTypes;
 
@@ -50,6 +51,8 @@ const Html = ({
         <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
         <link rel="icon" type="image/png" sizes="96x96" href={favicon96} />
         <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
+        <link rel="icon" type="image/png" sizes="512x512" href={splash} />
+
         <meta name="msapplication-TileColor" content="#2096c3" />
         <meta name="msapplication-TileImage" content={msIcon144} />
         <meta name="theme-color" content="#2096c3" />

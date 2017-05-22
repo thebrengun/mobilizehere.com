@@ -22,7 +22,7 @@ function Home({route, featuredEpisode, aboutText}) {
 			</div>
 			<ShareYourStory />
 			<div className="lz-dbl-padding">
-				<a href="https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf" target="_blank">
+				<a href="https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf" target="_blank" rel="noopener">
 					<img src={downloadSheetMusic} className="img-responsive lz-padding" alt="Download Rise Up Sheet Music" />
 				</a>
 				<Link to={'/take-action/'}>

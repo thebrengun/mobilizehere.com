@@ -2,11 +2,11 @@
 
 .share-your-story {
 	background: $orange;
-	color: darken($orange, 25%);
+	color: darken($orange, 45%);
 	padding: $lz-padding ($lz-padding / 2);
 
 	h1, h2, h3, h4, h5, h6 {
-		color: darken($orange, 25%);
+		color: darken($orange, 45%);
 		margin: 0;
 		margin-bottom: $lz-padding / 2;
 	}
@@ -15,7 +15,7 @@
 		display: none;
 		padding: 0 ($lz-padding / 2);
 		text-align: center;
-		color: lighten($orange, 45%);
+		color: darken($orange, 45%);
 	}
 
 }

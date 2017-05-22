@@ -6,17 +6,17 @@ import closeNav from '../assets/images/template/nav-close.jpg'
 
 function ToggleNav({showNav, toggleNav}) {
 	return (
-		<div className="hamburger hide-desktop" onClick={toggleNav}>
+		<div className="hamburger hide-desktop">
 			{showNav ? 
-				<div>
+				<button aria-label="close menu" onClick={toggleNav}>
 					<img src={closeNav} className="img-responsive" alt="Hide Navigation" />
-				</div>
+				</button>
 				: 
-				<div>
+				<button aria-label="menu" onClick={toggleNav}>
 					<div className="hamburger-line"></div>
 					<div className="hamburger-line"></div>
 					<div className="hamburger-line"></div>
-				</div>
+				</button>
 			}
 		</div>
 	);

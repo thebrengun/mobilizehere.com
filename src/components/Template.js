@@ -81,7 +81,7 @@ class Template extends React.Component {
 				<Nav showNav={showNav} toggleNav={toggleNav} />
 				{children}
 				<div className="lz-footer lz-padding text-center">
-					<span>2017 &copy; Reserved to Mobilize - Hosted with <a href="https://www.netlify.com" target="_blank">Netlify</a> - <a href="https://github.com/mobilizehere/mobilizehere.com" target="_blank">Source</a></span>
+					<span>2017 &copy; Reserved to Mobilize - Hosted with <a href="https://www.netlify.com" target="_blank" rel="noopener">Netlify</a> - <a href="https://github.com/mobilizehere/mobilizehere.com" target="_blank" rel="noopener">Source</a></span>
 				</div>
 				<MainPlayer />
 			</div>
