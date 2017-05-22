@@ -64,6 +64,7 @@ module.exports = {
         "short_name": "Mobilize",
         "name": "Mobilize Here",
         "start_url": "/",
+        "display": "minimal-ui",
         "background_color": "#fafeff",
         "theme_color": "#fafeff",
         "icons": [
