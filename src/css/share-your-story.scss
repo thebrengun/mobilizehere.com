@@ -111,8 +111,7 @@
 
 	input[type="submit"] {
 		width: 25%;
-		background: darken($orange, 25%);
-		color: darken($orange, 50%);
+		background: #fff;
 		outline: none;
 
 		@media screen and (max-width: $break-small) {
@@ -120,7 +119,8 @@
 		}
 
 		&:hover {
-			background: darken($orange, 15%);
+			background: darken($orange, 45%);
+			color: #fff;
 		}
 	}
 

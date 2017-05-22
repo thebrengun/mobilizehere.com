@@ -65,7 +65,84 @@ module.exports = {
         "name": "Mobilize Here",
         "start_url": "/",
         "background_color": "#fafeff",
-        "theme_color": "#fafeff"
+        "theme_color": "#fafeff",
+        "icons": [
+          {
+            src: publicPath + 'images/apple-icon-57x57.png', 
+            type: "image/png", 
+            sizes: "57x57"
+          },
+          {
+            src: publicPath + 'images/apple-icon-60x60.png', 
+            type: "image/png", 
+            sizes: "60x60"
+          },
+          {
+            src: publicPath + 'images/apple-icon-72x72.png', 
+            type: "image/png", 
+            sizes: "72x72"
+          },
+          {
+            src: publicPath + 'images/apple-icon-76x76.png', 
+            type: "image/png", 
+            sizes: "76x76"
+          },
+          {
+            src: publicPath + 'images/apple-icon-114x114.png', 
+            type: "image/png", 
+            sizes: "114x114"
+          },
+          {
+            src: publicPath + 'images/apple-icon-120x120.png', 
+            type: "image/png", 
+            sizes: "120x120"
+          },
+          {
+            src: publicPath + 'images/apple-icon-144x144.png', 
+            type: "image/png", 
+            sizes: "144x144"
+          },
+          {
+            src: publicPath + 'images/apple-icon-152x152.png', 
+            type: "image/png", 
+            sizes: "152x152"
+          },
+          {
+            src: publicPath + 'images/apple-icon-180x180.png', 
+            type: "image/png", 
+            sizes: "180x180"
+          },
+          {
+            src: publicPath + 'images/android-icon-192x192.png', 
+            type: "image/png", 
+            sizes: "192x192"
+          },
+          {
+            src: publicPath + 'images/favicon-32x32.png', 
+            type: "image/png", 
+            sizes: "32x32"
+          },
+          {
+            src: publicPath + 'images/favicon-96x96.png', 
+            type: "image/png", 
+            sizes: "96x96"
+          },
+          {
+            src: publicPath + 'images/favicon-16x16.png', 
+            type: "image/png", 
+            sizes: "16x16"
+          },
+          {
+            src: publicPath + 'images/ms-icon-144x144.png', 
+            type: "image/png", 
+            sizes: "144x144"
+          },
+          {
+            src: publicPath + 'images/splash.png', 
+            type: "image/png", 
+            sizes: "512x512"
+          },
+        ]
       }
     }),
     new HtmlWebpackPlugin({
