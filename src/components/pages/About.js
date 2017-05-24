@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import ShareYourStory from '../partials/ShareYourStory'
 import { connect } from 'react-redux'
 import aboutStyles from '../../css/about.scss'
 import mobilizeLogoBig from '../../assets/images/about/mobilize-logo-big.jpg'
@@ -16,11 +17,14 @@ function About({__content, credits, route}) {
 				<img src={mobilizeLogoBig} className="about-img" alt="Mobilize Logo" />
 				<div dangerouslySetInnerHTML={{__html: __content}} />
 			</div>
-			<h3>Credits</h3>
-			<div className="credits">
-				{credits.map(
-					(name, i) => <span key={`podcast-contrib-${i}`}>{name}</span>
-				)}
+			<ShareYourStory />
+			<div className="lz-padding">
+				<h3>Credits</h3>
+				<div className="credits">
+					{credits.map(
+						(name, i) => <span key={`podcast-contrib-${i}`}>{name}</span>
+					)}
+				</div>
 			</div>
 		</div>
 	);

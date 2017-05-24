@@ -33,8 +33,8 @@ import msIcon144 from '../assets/icons/ms-icon-144x144.png'
 import largeImage from '../assets/images/about/mobilize-logo-big.jpg'
 
 class Template extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -51,7 +51,7 @@ class Template extends React.Component {
 	}
 
 	render() {
-		const { children, toggleNav, showNav, scroll, discovered, route } = this.props;
+		const { children, toggleNav, toggleSubNav, showNav, subNavs, scroll, discovered, route, closeAllSubNavs } = this.props;
 		return (
 			<div 
 				className={[
@@ -78,7 +78,12 @@ class Template extends React.Component {
 					</div>
 					<ToggleNav showNav={showNav} toggleNav={toggleNav} />
 				</div>
-				<Nav showNav={showNav} toggleNav={toggleNav} />
+				<Nav 
+					showNav={showNav} 
+					toggleNav={toggleNav} 
+					subNavs={subNavs} 
+					toggleSubNav={toggleSubNav} 
+				/>
 				{children}
 				<div className="lz-footer lz-padding text-center">
 					<span>2017 &copy; Reserved to Mobilize - Hosted with <a href="https://www.netlify.com" target="_blank" rel="noopener">Netlify</a> - <a href="https://github.com/mobilizehere/mobilizehere.com" target="_blank" rel="noopener">Source</a></span>
@@ -89,9 +94,19 @@ class Template extends React.Component {
 	}
 }
 
-const mapStateToProps = ({nav, scroll, player}) => ({showNav: nav.showNav, scroll, discovered: player.discovered});
+const mapStateToProps = ({nav, scroll, player}) => ({
+	discovered: player.discovered,
+	showNav: nav.showNav, 
+	subNavs: nav.subNavs, 
+	scroll
+});
+
 const mapDispatchToProps = (dispatch) => ({
 	toggleNav: () => dispatch({type: 'TOGGLE_NAV'}),
+	toggleSubNav: (name) => 
+		() => {
+			dispatch({type: 'TOGGLE_SUB_NAV', name});
+		},
 	hideNav: () => dispatch({type: 'HIDE_NAV'}),
 	disableScroll: () => dispatch({type: 'NO_SCROLL'}),
 	enableScroll: () => dispatch({type: 'SCROLL'}),

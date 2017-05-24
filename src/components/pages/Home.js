@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import Link from 'react-router/lib/Link'
 
 import EpisodeShowcase from '../EpisodeShowcase'
-import SubscribeLinks from '../SubscribeLinks'
 import ShareYourStory from '../partials/ShareYourStory'
 
 import takeAction from '../../assets/images/index/take-action-graphic-2.png'
@@ -16,9 +15,6 @@ function Home({route, featuredEpisode, aboutText}) {
 			<Helmet title={route.title} />
 			<div className="lz-dbl-padding">
 				<EpisodeShowcase episode={featuredEpisode} />
-			</div>
-			<div className="lz-dbl-padding">
-				<SubscribeLinks />
 			</div>
 			<ShareYourStory />
 			<div className="lz-dbl-padding">

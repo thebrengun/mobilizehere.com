@@ -10,7 +10,6 @@ import Podcast from './pages/Podcast'
 import TakeAction from './pages/TakeAction'
 import Gallery from './pages/Gallery'
 import About from './pages/About'
-import Contact from './pages/Contact'
 
 import PodcastDetailPage from './pages/PodcastDetailPage'
 
@@ -34,9 +33,8 @@ export const routes = (
 		<Route path="about/" component={About} title={`${title} - About`}>
 			<Redirect from="index.html" to="/about/" />
 		</Route>
-		<Route path="contact/" component={Contact} title={`${title} - Contact`}>
-			<Redirect from="index.html" to="/contact/" />
-		</Route>
+		<Redirect from="contact/index.html" to="contact/" />
+		<Redirect from="contact/" to="about/" />
 		{data.episodes.map((episode, i) => 
 			<Route 
 				path={episode.permalink} 

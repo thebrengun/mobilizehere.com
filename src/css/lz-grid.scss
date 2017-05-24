@@ -90,11 +90,7 @@
 	}
 
 	.pinch-arrow {
-		width: 0;
-		height: 0;
-		border-left: solid $pinch-width transparent;
-		border-right: solid $pinch-width transparent;
-		border-bottom: solid $pinch-width $light-blue;
+		@include PinchArrow($light-blue, $pinch-width);
 	}
 
 	.inner-drawer {

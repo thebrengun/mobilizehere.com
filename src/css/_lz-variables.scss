@@ -46,3 +46,11 @@ $gutter-width: ($lz-container-max-width - ($col-width * 4)) / 3;
 		@include ThumbnailDark();
 	}
 }
+
+@mixin PinchArrow($arrow-color, $arrow-width) {
+	width: 0;
+	height: 0;
+	border-left: solid $arrow-width transparent;
+	border-right: solid $arrow-width transparent;
+	border-bottom: solid $arrow-width $arrow-color;
+}
