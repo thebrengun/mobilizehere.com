@@ -10,7 +10,6 @@ import PlayerBtn from '../Player/PlayerBtn'
 import styles from '../../css/lz-grid.scss'
 import animations from '../../css/lz-grid-animations.scss'
 
-import SoundCloudEmbed from '../SoundCloudEmbed'
 import closeDrawerImg from '../../assets/images/template/nav-close.jpg'
 
 import linkIconSm from '../../assets/md-icons/ic_link_black_24dp_1x.png'
@@ -28,8 +27,12 @@ class PodcastPage extends React.Component {
 		const play = this.props.activeItem;
 		return (
 			<div>
-				<MakeGrid wrapperClassName="lz-grid-with-drawer-mobile" columnWrap={2} play={play} {...this.props} />
-				<MakeGrid wrapperClassName="lz-grid-with-drawer-desktop" columnWrap={4} play={play} {...this.props} />
+				<div className="lz-grid-with-drawer-mobile">
+					<MakeGrid columnWrap={2} play={play} {...this.props} />
+				</div>
+				<div className="lz-grid-with-drawer-desktop">
+					<MakeGrid columnWrap={4} play={play} {...this.props} />
+				</div>
 				<PaginateNav page={page} />
 			</div>
 		);
@@ -39,6 +42,33 @@ class PodcastPage extends React.Component {
 class MakeGrid extends React.Component {
 	constructor() {
 		super();
+	}
+
+	componentWillUnmount() {
+		clearTimeout(this.scroll);
+	}
+
+	componentDidUpdate() {
+		if(this.props.play > -1) {
+			let { top } = this.selectedCover.getBoundingClientRect();
+			const { top: drawerTop, bottom: drawerBottom } = this.drawer.getBoundingClientRect();
+			if(drawerBottom > window.innerHeight || top < 0) {
+				const body = window.document.body;
+				const ms = 500;
+				top -= 15;
+				top = Math.min(body.clientHeight - window.innerHeight, window.pageYOffset + top) - window.pageYOffset;
+				body.style['transition'] = 'transform';
+        		body.style['transition-duration'] = ms + 'ms';
+        		body.style['transform'] = `translateY(${top * -1}px)`;
+        		this.scroll = setTimeout(
+        			() => {
+        				body.style['transition'] = '';
+        				body.style['transform'] = '';
+        				window.scrollBy(window.pageXOffset, top);
+        			}, 
+        		ms);
+			}
+		}
 	}
 
 	render() {
@@ -52,7 +82,7 @@ class MakeGrid extends React.Component {
 				transitionName="drawer"
 				transitionEnterTimeout={500}
 				transitionLeaveTimeout={300}
-				className={`lz-grid lz-grid-wrap ${wrapperClassName}`}
+				className="lz-grid lz-grid-wrap"
 			>
 				{pageData.concat(emptyCells).map(
 					({trackId, image, title, permalink}, i) => 
@@ -61,6 +91,11 @@ class MakeGrid extends React.Component {
 								className="lz-col" 
 								key={'podcast' + i} 
 								style={{order: (i + 1) % columnWrap === 0 ? order++ : order}}
+								ref={ref => {
+									if(play === i) {
+										this.selectedCover = ref;
+									}
+								}}
 							>
 								<img 
 									alt={`Cover Art for ${title}`}
@@ -84,7 +119,7 @@ class MakeGrid extends React.Component {
 							</div>
 				)}
 				{itemIsActive(play) ? 
-					<div className="lz-drawer" style={{order: Math.floor(play / columnWrap)}}>
+					<div className="lz-drawer" style={{order: Math.floor(play / columnWrap)}} ref={ref => {this.drawer = ref;}}>
 						<div className="pinch-row">
 							<div className="lz-col" style={{order: playCol - 1}}>
 								<div className="pinch-arrow"></div>
