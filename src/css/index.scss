@@ -263,6 +263,7 @@ a {
 
 .sub-menu {
 	$pinch-width: 1em;
+	$sub-menu-bg: rgba($light-blue, .9);
 	display: inline-flex;
 	flex-direction: column;
 
@@ -278,68 +279,67 @@ a {
 		display: inline-flex;
 		flex-direction: column;
 		margin-left: 50%;
+
 		@media screen and (max-width: $break-small) {
 			margin: 0;
 		}
-	}
-
-	.ctrl-wrapper.hidden {
-		display: none;
 	}
 
 	.ul-wrapper {
 		position: absolute;
+		margin-top: $pinch-width;
+		display: inline-flex;
+		transition: all 1s;
+		
 		@media screen and (max-width: $break-small) {
 			position: static;
-		}
-	}
-
-	.ul-flex {
-		display: inline;
-	}
-
-	ul.sub-menu-menu {
-		background: rgba($light-blue, .9);
-		flex-direction: column;
-		list-style: none;
-		margin: $pinch-width 50% 0 -50%;
-		text-align: center;
-		padding: 0;
-		box-shadow: 0px 0px $pinch-width ($pinch-width / 3) rgba(0,0,0,0.25);
-
-		@media screen and (max-width: $break-small) {
-			box-shadow: 0 0 0 0 #fff;
 			margin: 0;
 		}
 
-		li {
-			margin: 1em;
+		ul.sub-menu-menu {
+			background: $sub-menu-bg;
+			flex-direction: column;
+			list-style: none;
+			margin: 0 50% 0 -50%;
+			text-align: center;
+			padding: .1em 1em;
+			box-shadow: 0px 0px $pinch-width ($pinch-width / 3) rgba(0,0,0,0.25);
 
 			@media screen and (max-width: $break-small) {
-				a {
-					color: $orange;
+				box-shadow: 0 0 0 0 #fff;
+				margin: 0;
+			}
+
+			li {
+				margin: 1em 0;
+
+				@media screen and (max-width: $break-small) {
+					a {
+						color: $orange;
+					}
 				}
 			}
 		}
 
-		li.arrow-wrapper {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			padding: 0;
-			margin: 0;
-			margin-top: -1 * $pinch-width;
-			margin-left: 50%;
-			position: absolute;
-		}
+	}
 
-		.sub-menu-pinch-arrow {
-			@include PinchArrow($light-blue, $pinch-width);
-			margin-left: -1 * $pinch-width;
+	.ul-wrapper.sub-hidden {
+		display: none;
+	}
 
-			@media screen and (max-width: $break-small) {
-				display: none;
-			}
+	.ul-wrapper.sub-visible {
+		
+	}
+
+	.sub-menu-pinch-arrow {
+		@include PinchArrow($light-blue, $pinch-width);
+		position: absolute;
+		margin: 0;
+		margin-top: -1 * $pinch-width;
+		margin-left: -1 * $pinch-width;
+
+		@media screen and (max-width: $break-small) {
+			display: none;
 		}
 	}
 

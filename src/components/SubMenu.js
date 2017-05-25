@@ -45,20 +45,20 @@ class SubMenu extends React.Component {
 				>
 					{this.props.control}
 				</button>
-				<span className={['ctrl-wrapper', this.props.show ? 'visible' : 'hidden'].join (' ')}>
-					<span className="ul-wrapper">
-						<span className="ul-flex">
-							<ul className="sub-menu-menu" onClick={e => e.stopPropagation()}>
-								<li className="arrow-wrapper"><span className="sub-menu-pinch-arrow"></span></li>
-								{this.props.menu.map(
-									({text, href}) => (
-										<li key={'link-to-' + text}>
-											<a href={href} target="_blank" rel="noopener">{text}</a>
-										</li>
-									)
-								)}
-							</ul>
+				<span className="ctrl-wrapper">
+					<span className={['ul-wrapper', this.props.show ? 'sub-visible' : 'sub-hidden'].join (' ')}>
+						<span className="arrow-wrapper">
+							<span className="sub-menu-pinch-arrow"></span>
 						</span>
+						<ul className="sub-menu-menu" onClick={e => e.stopPropagation()}>
+							{this.props.menu.map(
+								({text, href}) => (
+									<li key={'link-to-' + text}>
+										<a href={href} target="_blank" rel="noopener">{text}</a>
+									</li>
+								)
+							)}
+						</ul>
 					</span>
 				</span>
 			</span>
