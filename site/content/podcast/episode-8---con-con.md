@@ -1,5 +1,5 @@
 ---
-title: Episode 8 - Con Con
+title: 'Episode 8: Con Con'
 image: /assets/mobilize_logo.jpg
 date: 2017-06-20T22:02:04.847Z
 isEpisode: true
@@ -10,5 +10,6 @@ explicit: 'no'
 trackId: none
 ---
 “Google Docuvist” Amber Sexton explains the New York State Constitutional Convention Referendum, a little-known ballot initiative that could have a very large impact for the people of New York for generations to come.
+
 
 
