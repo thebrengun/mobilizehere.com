@@ -20,6 +20,7 @@ function MainPlayer({
 	const remaining = duration ? duration - playedSeconds : 0;
 	const nowPlaying = queue[0];
 	return (
+		<div>
 		<div 
 			className={[
 				'player', 
@@ -91,22 +92,23 @@ function MainPlayer({
   					aria-label="Seek"
 				/>
 			</div>
-			<ReactPlayer 
-				ref={player => { playerRef = player }} 
-				url={discovered ? nowPlaying.url : ''} 
-				playing={playing} 
-				onReady={onReady}
-				onStart={onStart}
-				onPlay={play}
-				onPause={pause}
-				onBuffer={onBuffer}
-				onEnded={next}
-				onError={e => console.log('onError', e)}
-				onProgress={updateProgress}
-				onDuration={updateDuration}
-				width={0}
-				height={0}
-			/>
+		</div>
+		<ReactPlayer 
+			ref={player => { playerRef = player }} 
+			url={discovered ? nowPlaying.url : ''} 
+			playing={playing} 
+			onReady={onReady}
+			onStart={onStart}
+			onPlay={play}
+			onPause={pause}
+			onBuffer={onBuffer}
+			onEnded={next}
+			onError={e => console.log('onError', e)}
+			onProgress={updateProgress}
+			onDuration={updateDuration}
+			width={0}
+			height={0}
+		/>
 		</div>
 	);
 }
@@ -114,7 +116,7 @@ function MainPlayer({
 const mapStateToProps = ({player, nav}) => ({...player, showNav: nav.showNav});
 const mapDispatchToProps = (dispatch) => ({
 	onBuffer: () => dispatch({type: 'BUFFER'}),
-	play: () => dispatch({type: 'PLAY'}),
+	play: (e) => dispatch({type: 'PLAY'}),
 	pause: () => dispatch({type: 'PAUSE'}),
 	previous: () => dispatch({type: 'PREVIOUS'}),
 	next: () => dispatch({type: 'NEXT'}),
