@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "dist": "NODE_ENV=production webpack -p --progress --config webpack.config.production.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -49,6 +51,8 @@
   "dependencies": {
     "markdown-with-front-matter-loader": "^0.1.0",
     "netlify-cms": "^0.3.22",
-    "react-player": "^0.17.2"
-  }
+    "react-player": "^0.17.2",
+    "snyk": "^1.46.0"
+  },
+  "snyk": true
 }
