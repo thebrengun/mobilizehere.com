@@ -10,4 +10,4 @@ duration: '20:00'
 explicit: 'no'
 trackId: 'https://soundcloud.com/user-548478055/mobilize-episode-13-rise-and-resist'
 ---
- Cory sat down with Wrolf Courtney , a local computer network engineer - to talk about his protest during Trumps first visit back to NYC, after his inauguration. A protest that became a message to Trump and the world, that he is not welcome in his hometown.
+Cory sat down with Wrolf Courtney, a local computer network engineer, to talk about his work with Rise and Resist, a NYC based resistance group, on “Operation Welcome Wagon” — a protest held in response to Trump’s first visit to NYC after his inauguration. This protest sent a message to Trump and the world that Trump is not welcome in his own hometown.
