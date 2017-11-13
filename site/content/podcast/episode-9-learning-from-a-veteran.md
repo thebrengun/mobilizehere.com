@@ -11,3 +11,4 @@ explicit: 'no'
 trackId: none
 ---
 Mobilize producer Betsy Nagler interviews her mother, Iris, about her experiences organizing with the National Organization for Women in the 60’s and 70’s. What’s it like trying to balance organizing with a career and a family?
+
