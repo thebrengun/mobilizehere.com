@@ -5,10 +5,11 @@ date: 2018-01-31T20:53:17.592Z
 isEpisode: true
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+15+-+Knowledge+Is+Power.1.mp3
-length: '40'
-duration: '15:00'
+length: '44026560'
+duration: '18:20'
 explicit: 'no'
 trackId: 'https://soundcloud.com/user-548478055/mobilize-episode-15-knowledge-is-power'
 ---
 Mazeda Uddin is a Bangladeshi American activist and community organizer based in NYC. She helped organize one of the JFK protests to Trump's announcement of executive order[#13769](https://soundcloud.com/tags/13769)- the first iteration of his Muslim ban.
+
 
