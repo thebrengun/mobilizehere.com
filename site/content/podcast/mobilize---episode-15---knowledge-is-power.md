@@ -12,3 +12,4 @@ trackId: 'https://soundcloud.com/user-548478055/mobilize-episode-15-knowledge-is
 ---
 Mobilize producer Betsy Nagler spoke to Bangladeshi American community organizer Mazeda Uddin about her work, including organizing World Hijab Day, defending an immigrant from ICE, and leading a multicultural contingent to help shut down JFK in response to the first #MuslimBan.
 
+
