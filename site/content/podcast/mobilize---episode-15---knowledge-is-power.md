@@ -13,3 +13,4 @@ trackId: 'https://soundcloud.com/user-548478055/mobilize-episode-15-knowledge-is
 Mazeda Uddin is a Bangladeshi American activist and community organizer based in NYC. She helped organize one of the JFK protests to Trump's announcement of executive order number 13769 - the first iteration of his Muslim ban.
 
 
+
