@@ -1,5 +1,5 @@
 ---
-title: 'Episode 9 : Learning From A Veteran'
+title: 'Episode 9: Learning From A Veteran'
 image: /assets/mobilize_logo.jpg
 date: 2017-07-08T00:18:12.970Z
 isEpisode: true
@@ -11,4 +11,5 @@ explicit: 'no'
 trackId: none
 ---
 Mobilize producer Betsy Nagler interviews her mother, Iris, about her experiences organizing with the National Organization for Women in the 60’s and 70’s. What’s it like trying to balance organizing with a career and a family?
+
 
