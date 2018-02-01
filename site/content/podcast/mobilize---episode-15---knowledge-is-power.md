@@ -10,4 +10,4 @@ duration: '18:20'
 explicit: 'no'
 trackId: 'https://soundcloud.com/user-548478055/mobilize-episode-15-knowledge-is-power'
 ---
-Mobilize producer Betsy Nagler spoke with Mazeda Uddin, who is a Bangladeshi American activist and community organizer based in NYC. She helped organize one of the JFK protests to Trump's announcement of executive order number 13769 - the first iteration of his Muslim ban.
+Mobilize producer Betsy Nagler spoke to Bangladeshi American community organizer Mazeda Uddin about her work, including organizing World Hijab Day, defending an immigrant from ICE, and leading a multicultural contingent to help shut down JFK in response to the first #MuslimBan.
