@@ -1,6 +1,6 @@
 ---
 title: 'Episode 11: Resistbot'
-image: /assets/mobilize_logo.jpg
+image: /assets/011.jpeg
 date: 2017-09-15T00:10:53.285Z
 isEpisode: true
 url: >-
@@ -11,5 +11,6 @@ explicit: 'no'
 trackId: 'https://soundcloud.com/user-548478055/mobilize-episode-11-resistbot'
 ---
 Resistbot co-founder Jason Putorti talks about the free text-to-fax service that allows users to easily contact their government officials with a simple SMS. Text "RESIST" to 50409 to get started.
+
 
 
