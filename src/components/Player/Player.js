@@ -20,11 +20,40 @@ function MainPlayer({
 	const remaining = duration ? duration - playedSeconds : 0;
 	const nowPlaying = queue[0];
 
-	const handleSeekChange = (e) => updateSeek(parseFloat(e.target.value));
+	const handleSeekStart = (e) => {
+		startSeek();
+	};
+	const handleSeekChange = (e) => {
+		updateSeek(parseFloat(e.target.value));
+	};
 	const handleSeekEnd = (e) => {
 		playerRef.seekTo(parseFloat(e.target.value));
 		endSeek();
 	};
+
+	const getPercentOfAverageTouchClientX = (e) => {
+		const { touches, target } = e;
+		let sum = 0;
+		for(let i = 0; i < touches.length; i++) {
+			const { clientX } = touches[i];
+			sum += clientX;
+		}
+		const averageX = sum / touches.length;
+		const percent = averageX / target.clientWidth;
+		return percent;
+	};
+
+	const handleTouchStart = (e) => {
+		startSeek();
+		updateSeek(parseFloat(getPercentOfAverageTouchClientX(e)));
+	};
+
+	const handleTouchMove = (e) => {
+		e.preventDefault();
+		updateSeek(parseFloat(getPercentOfAverageTouchClientX(e)));
+	};
+
+	const handleTouchEnd = handleSeekEnd;
 
 	return (
 		<div>
@@ -90,12 +119,12 @@ function MainPlayer({
 					max={1} 
 					step="any" 
 					value={progress.played} 
-					onMouseDown={startSeek} 
-					onTouchStart={startSeek} 
+					onMouseDown={handleSeekStart} 
+					onTouchStart={handleTouchStart} 
   					onChange={handleSeekChange} 
-  					onTouchMove={handleSeekChange} 
-  					onMouseUp={handleSeekEnd}
-  					onTouchEnd={handleSeekEnd}
+  					onTouchMove={handleTouchMove} 
+  					onMouseUp={handleSeekEnd} 
+  					onTouchEnd={handleTouchEnd} 
   					aria-label="Seek"
 				/>
 			</div>
