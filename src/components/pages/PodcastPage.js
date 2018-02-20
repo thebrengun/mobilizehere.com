@@ -21,6 +21,14 @@ class PodcastPage extends React.Component {
 		super();
 	}
 
+	componentWillReceiveProps(nextProps) {
+		const { page:currentPage, closeDrawer } = this.props;
+		const { page:nextPage } = nextProps;
+		if(currentPage !== nextPage) {
+			closeDrawer();
+		}
+	}
+
 	render() {
 		const props = this.props;
 		const { itemIsActive, itemsPerPage, makePath, page, pageData, PaginateNav, search} = props;
