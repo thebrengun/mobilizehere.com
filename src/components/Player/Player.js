@@ -19,6 +19,13 @@ function MainPlayer({
 	const playedSeconds = progress.playedSeconds || 0;
 	const remaining = duration ? duration - playedSeconds : 0;
 	const nowPlaying = queue[0];
+
+	const handleSeekChange = (e) => updateSeek(parseFloat(e.target.value));
+	const handleSeekEnd = (e) => {
+		playerRef.seekTo(parseFloat(e.target.value));
+		endSeek();
+	};
+
 	return (
 		<div>
 		<div 
@@ -82,13 +89,13 @@ function MainPlayer({
 					min={0} 
 					max={1} 
 					step="any" 
-					value={progress.played}
-					onMouseDown={startSeek}
-  					onChange={(e) => updateSeek(parseFloat(e.target.value))}
-  					onMouseUp={(e) => {
-  						playerRef.seekTo(parseFloat(e.target.value));
-  						endSeek();
-  					}}
+					value={progress.played} 
+					onMouseDown={startSeek} 
+					onTouchStart={startSeek} 
+  					onChange={handleSeekChange} 
+  					onTouchMove={handleSeekChange} 
+  					onMouseUp={handleSeekEnd}
+  					onTouchEnd={handleSeekEnd}
   					aria-label="Seek"
 				/>
 			</div>
