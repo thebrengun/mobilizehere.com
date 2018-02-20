@@ -1,6 +1,6 @@
 ---
 title: 'Episode 8: Con Con'
-image: /assets/008.jpeg
+image: /assets/008.png
 date: 2017-06-20T22:02:04.847Z
 isEpisode: true
 url: 'https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+8+-+Con+Con.mp3'

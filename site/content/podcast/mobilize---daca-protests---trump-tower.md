@@ -1,6 +1,6 @@
 ---
 title: Mobilize - DACA Protests - Trump Tower
-image: /assets/000daca2.jpeg
+image: /assets/000daca2.png
 date: 2017-09-12T22:52:21.369Z
 isEpisode: true
 url: >-

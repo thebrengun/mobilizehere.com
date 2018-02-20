@@ -1,6 +1,6 @@
 ---
 title: Episode 10 - Resistance Media Collective
-image: /assets/010.jpeg
+image: /assets/010.png
 date: 2017-07-27T23:18:25.161Z
 isEpisode: true
 url: >-

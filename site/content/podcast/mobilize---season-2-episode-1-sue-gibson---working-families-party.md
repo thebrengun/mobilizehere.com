@@ -1,6 +1,6 @@
 ---
 title: 'Episode 14: Sue Gibson - A Lifetime of Activism'
-image: /assets/IMG_6919.JPG
+image: /assets/IMG_6919.png
 date: 2018-01-30T01:04:13.318Z
 isEpisode: true
 url: >-

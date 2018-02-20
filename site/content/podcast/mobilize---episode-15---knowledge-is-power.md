@@ -1,6 +1,6 @@
 ---
 title: 'Episode 15: Mazeda Uddin - Knowledge Is Power'
-image: /assets/0015.jpeg
+image: /assets/0015.png
 date: 2018-01-31T20:53:17.592Z
 isEpisode: true
 url: >-

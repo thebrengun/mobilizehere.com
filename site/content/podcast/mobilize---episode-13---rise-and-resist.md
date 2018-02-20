@@ -1,6 +1,6 @@
 ---
 title: 'Episode 13: Rise and Resist'
-image: /assets/013.jpeg
+image: /assets/013.png
 date: 2017-11-06T17:25:04.164Z
 isEpisode: true
 url: >-

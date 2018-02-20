@@ -1,6 +1,6 @@
 ---
 title: 'Episode 9: Learning From A Veteran'
-image: /assets/009.jpeg
+image: /assets/009.png
 date: 2017-07-08T00:18:12.970Z
 isEpisode: true
 url: >-

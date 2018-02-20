@@ -1,6 +1,6 @@
 ---
 title: 'Episode 11: Resistbot'
-image: /assets/011.jpeg
+image: /assets/011.png
 date: 2017-09-15T00:10:53.285Z
 isEpisode: true
 url: >-

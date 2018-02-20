@@ -1,6 +1,6 @@
 ---
 title: 'Episode 12 - Renee Thomas: A Transgender Coxswain of the U.S. Coastguard'
-image: /assets/012.jpeg
+image: /assets/012.png
 date: 2017-10-11T22:48:14.514Z
 isEpisode: true
 url: >-
