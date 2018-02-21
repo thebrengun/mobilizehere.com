@@ -89,7 +89,7 @@ const config = {
   plugins: [
     new DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('dev'),
+        NODE_ENV: JSON.stringify('development'),
         BROWSER: JSON.stringify(true)
       },
     }),

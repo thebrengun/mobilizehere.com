@@ -1,4 +1,4 @@
-import { combineReducers, createStore } from 'redux'
+import { combineReducers, createStore, applyMiddleware } from 'redux'
 import nav from './nav'
 import scroll from './scroll'
 import about from './about'
@@ -19,6 +19,13 @@ const reducers = combineReducers({
 	drawer
 });
 
-const store = createStore(reducers);
+const middleware = [];
+
+if (process.env.NODE_ENV === `development`) {
+  const { logger } = require(`redux-logger`);
+  middleware.push(logger);
+}
+
+const store = createStore(reducers, applyMiddleware(...middleware));
 
 export default store
