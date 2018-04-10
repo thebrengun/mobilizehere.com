@@ -11,4 +11,4 @@ explicit: 'no'
 trackId: >-
   https://soundcloud.com/user-548478055/mobilize-episode-16-new-leadership-and-new-solutions
 ---
-Betsy Nagler speaks to New York State Senate candidate Alessandra Biaggi about her race to unseat Jeff Klein, head of a group known as the IDC who, despite running as Democrats, choose to caucus with Republicans. The IDC gives control of the State Senate to Republicans bent on advancing the Trump agenda.
+Mobilize producer Betsy Nagler interviews New York State Senate candidate Alessandra Biaggi about her campaign to unseat Jeff Klein, the former leader of the Independent Democratic Conference. While the IDC’s eight members just made a deal to reunite with the mainline Senate Democrats, they have spent that past eight years caucusing with Senate Republicans and blocking progressive legislation in order to gain money and power for themselves. Biaggi is running against these “fake Democrats” as part of a wave of new, progressive candidates now stepping up to run for office throughout the country, and fighting back against the Trump agenda.![](https://ssl.gstatic.com/ui/v1/icons/mail/images/cleardot.gif)
