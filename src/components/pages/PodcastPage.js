@@ -15,6 +15,8 @@ import closeDrawerImg from '../../assets/images/template/nav-close.jpg'
 import linkIconSm from '../../assets/md-icons/ic_link_black_24dp_1x.png'
 import linkIconLg from '../../assets/md-icons/ic_link_black_24dp_2x.png'
 
+const breakSmall = 750;
+
 class PodcastPage extends React.Component {
 
 	constructor() {
@@ -35,12 +37,7 @@ class PodcastPage extends React.Component {
 		const play = this.props.activeItem;
 		return (
 			<div>
-				<div className="lz-grid-with-drawer-mobile">
-					<MakeGrid columnWrap={2} play={play} {...this.props} />
-				</div>
-				<div className="lz-grid-with-drawer-desktop">
-					<MakeGrid columnWrap={4} play={play} {...this.props} />
-				</div>
+				<MakeGrid play={play} {...this.props} />
 				<PaginateNav page={page} />
 			</div>
 		);
@@ -48,8 +45,21 @@ class PodcastPage extends React.Component {
 }
 
 class MakeGrid extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
+		this.state = {
+			row: this.calculateRow(props.play),
+			col: this.calculateCol(props.play)
+		};
+	}
+
+	componentWillReceiveProps(nextProps) {
+		if(nextProps.play !== this.props.play && nextProps.play > -1) {
+			this.setState({
+				row: this.calculateRow(nextProps.play),
+				col: this.calculateCol(nextProps.play)
+			});
+		}
 	}
 
 	componentWillUnmount() {
@@ -79,92 +89,96 @@ class MakeGrid extends React.Component {
 		}
 	}
 
+	calculateRow = (play) => {
+		if(play > -1) {
+			const columns = window.innerWidth >= breakSmall ? 4 : 2;
+			return Math.ceil((play + 1) / columns);
+		} else {
+			return 1;
+		}
+	};
+
+	calculateCol = (play) => {
+		if(play > -1) {
+			const columns = window.innerWidth >= breakSmall ? 4 : 2;
+			const col = (play + 1) % columns;
+			return col === 0 ? columns - 1 : col - 1;
+		} else {
+			return 1;
+		}
+	};
+
 	render() {
-		const { columnWrap, itemIsActive, makePath, page, pageData, play, player, wrapperClassName, openDrawer, closeDrawer } = this.props;
-		const playRow = Math.floor(play / columnWrap);
-		const playCol = (play + 1) - (playRow * columnWrap);
-		const emptyCells = new Array(Math.max((Math.ceil(pageData.length / columnWrap) * columnWrap) - pageData.length, 0)).fill({});
+		const { itemIsActive, makePath, page, pageData, play, player, wrapperClassName, openDrawer, closeDrawer } = this.props;
+		const { row, col } = this.state;
 		let order = 0;
+
 		return (
-			<TransitionGroup 
-				transitionName="drawer"
-				transitionEnterTimeout={500}
-				transitionLeaveTimeout={300}
-				className="lz-grid lz-grid-wrap"
-			>
-				{pageData.concat(emptyCells).map(
+			<div className="lz-grid lz-grid-wrap">
+				{pageData.map(
 					({trackId, image, title, permalink}, i) => 
-						trackId || image || title ? 
-							<div 
-								className="lz-col" 
-								key={'podcast' + i} 
-								style={{order: (i + 1) % columnWrap === 0 ? order++ : order}}
-								ref={ref => {
-									if(play === i) {
-										this.selectedCover = ref;
-									}
-								}}
-							>
-								<img 
-									alt={`Cover Art for ${title}`}
-									src={image} 
-									className={[
-										'img-responsive', 
-										play === i ? 
-											'selected' : ''
-									].join(' ')} 
-									onClick={play === i ? closeDrawer : (e) => openDrawer(i)}
-								/>
-								<Noscript>
-									<a href={`/${permalink}`} className="no-script-tile-link"></a>
-								</Noscript>
-							</div> : 
-							<div 
-								className="lz-col filler" 
-								key={'podcast' + i} 
-								style={{order: (i + 1) % columnWrap === 0 ? order++ : order}}
-							>
-							</div>
-				)}
-				{itemIsActive(play) ? 
-					<div className="lz-drawer" style={{order: Math.floor(play / columnWrap)}} ref={ref => {this.drawer = ref;}}>
-						<div className="pinch-row">
-							<div className="lz-col" style={{order: playCol - 1}}>
-								<div className="pinch-arrow"></div>
-							</div>
-							{new Array(columnWrap - 1).fill('').map(
-								(empty, fillerIndex) => 
-									<div 
-										className="lz-col" 
-										style={{
-											order: fillerIndex
-										}} 
-										key={`pinch-arrow-empty-${fillerIndex}`}
-									>
-									</div>
-							)}
+						<div 
+							className="lz-col" 
+							key={'podcast' + i} 
+							ref={ref => {
+								if(play === i) {
+									this.selectedCover = ref;
+								}
+							}}
+						>
+							<img 
+								alt={`Cover Art for ${title}`}
+								src={image} 
+								className={[
+									'img-responsive', 
+									play === i ? 
+										'selected' : ''
+								].join(' ')} 
+								onClick={play === i ? closeDrawer : (e) => openDrawer(i)}
+							/>
+							<Noscript>
+								<a href={`/${permalink}`} className="no-script-tile-link"></a>
+							</Noscript>
 						</div>
-						<div className="inner-drawer">
-							<div>
-								<span className="close-drawer" onClick={closeDrawer}>
-									<img src={closeDrawerImg} alt="Close Podcast Details" />
-								</span>
+				)}
+				<TransitionGroup 
+					transitionName="drawer"
+					transitionEnterTimeout={500}
+					transitionLeaveTimeout={300} 
+					className={`lz-drawer-wrapper after-row-${row}`} 
+				>
+					{itemIsActive(play) ? 
+						<div 
+							className="lz-drawer" 
+							ref={ref => {this.drawer = ref;}}
+						>
+							<div className="lz-grid pinch-row">
+								<div className={`lz-col after-col-${col}`}>
+									<div className="pinch-arrow"></div>
+								</div>							
+							</div>
+							<div className="inner-drawer">
 								<div>
-									<h4>
-										<Link to={`/${pageData[play].permalink}`}>
-											{pageData[play].title}
-										</Link>
-									</h4>
+									<span className="close-drawer" onClick={closeDrawer}>
+										<img src={closeDrawerImg} alt="Close Podcast Details" />
+									</span>
 									<div>
-										<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />
-										<PlayerBtn episode={pageData[play]} />
+										<h4>
+											<Link to={`/${pageData[play].permalink}`}>
+												{pageData[play].title}
+											</Link>
+										</h4>
+										<div>
+											<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />
+											<PlayerBtn episode={pageData[play]} />
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div> : ''
-				}
-			</TransitionGroup>
+						</div> : ''
+					}
+				</TransitionGroup>
+			</div>
 		);
 	}
 }
