@@ -1,30 +1,23 @@
 @import 'lz-variables';
 
-.lz-grid {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-}
+/* 
+	In PodcastPage.js there is some logic surrounding columns that 
+	may need to be changed as well if anything here is changed about 
+	the number of columns that exist in the grid.
+ */
 
-.lz-grid-wrap {
-	flex-basis: 25%;
-	flex-wrap: wrap;
+.lz-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: $lz-padding / 2;
+	grid-row-gap: $lz-padding / 2;
 
 	@media screen and (max-width: $break-small) {
-		flex-basis: 50%;
+		grid-template-columns: repeat(2, auto);
 	}
 }
 
 .lz-col {
-	margin-top: $lz-padding;
-	width: $col-width;
-	height: $col-width;
-	@media screen and (max-width: $break-small) {
-		width: 47.5%;
-		height: 47.5%;
-	}
-
 	img {
 		@include ThumbnailShadowHover();
 	}
@@ -32,7 +25,6 @@
 	img.selected {
 		@include ThumbnailDark();
 	}
-
 }
 
 .filler {
@@ -65,6 +57,19 @@
 	@include hide-mobile();
 }
 
+.lz-drawer-wrapper {
+	align-self: start;
+	grid-column-start: 1;
+	grid-column-end: 5;
+	grid-row-start: 1;
+	grid-row-end: 2;
+
+	@media screen and (max-width: $break-small) {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+}
+
 .lz-drawer {
 	$pinch-width: 15px;
 	width: 100%;
@@ -73,10 +78,6 @@
 	box-shadow: 0px 0px $pinch-width ($pinch-width / 3) rgba(0,0,0,0.25);
 
 	.pinch-row {
-		display: flex;
-		flex-direction: row;
-		align-items: stretch;
-		justify-content: space-between;
 		position: relative;
 		top: -1 * $pinch-width;
 	}
@@ -128,6 +129,20 @@
 			float: right;
 			margin-left: $drawer-padding;
 		}
+	}
+}
+
+@for $i from 1 through 10 {
+	.after-row-#{$i} {
+		grid-row-start: $i + 1;
+		grid-row-end: $i + 2;
+	}
+}
+
+@for $i from 1 through 4 {
+	.after-col-#{$i} {
+		grid-column-start: $i + 1;
+		grid-column-end: $i + 2;
 	}
 }
 

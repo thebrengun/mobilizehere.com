@@ -15,7 +15,7 @@
 }
 
 .drawer-leave.drawer-leave-active {
-	max-height: 0px;
 	overflow: hidden;
+	max-height: 0px;
 	transition: max-height 300ms ease-in;
 }
