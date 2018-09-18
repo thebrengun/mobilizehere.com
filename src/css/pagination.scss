@@ -20,4 +20,9 @@
 	a.activePage {
 		color: $dark-gray;
 	}
+
+	a.disabled {
+		color: $light-gray;
+		pointer-events: none;
+	}
 }

@@ -1,8 +1,9 @@
-import React from 'react'
-import PlayerBtn from './Player/PlayerBtn'
+import React from 'react';
+import Link from 'react-router/lib/Link';
+import PlayerBtn from './Player/PlayerBtn';
 
 function EpisodeShowcase({episode}) {
-	const {title, image, __content} = episode;
+	const {title, image, permalink, __content} = episode;
 	return (
 		<div className="episode-showcase">
 			<div className="art-width">
@@ -13,16 +14,18 @@ function EpisodeShowcase({episode}) {
 				/>
 			</div>
 			<div className="description">
-				<h4>{title}</h4>
-				<div 
-					dangerouslySetInnerHTML={{
-						__html: __content
-					}} 
-				/>
-				<PlayerBtn episode={episode} />
+				<h4><Link to={`/${permalink}`}>{title}</Link></h4>
+				<div>
+					<div className="pull-left" dangerouslySetInnerHTML={{__html: __content}} />
+					<PlayerBtn 
+						episode={episode} 
+						renderStatusText={({statusText}) => <span className="podcast-display-btn-text">{statusText}</span>} 
+						className="podcast-display-btn-color" 
+					/>
+				</div>
 			</div>
 		</div>
 	);
 }
 
-export default EpisodeShowcase
+export default EpisodeShowcase;

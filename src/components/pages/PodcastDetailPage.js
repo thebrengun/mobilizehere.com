@@ -24,8 +24,14 @@ function PodcastDetailPageComponent({route}) {
 					<img src={image} alt={`Cover Art for ${title}`} className="img-responsive" />
 				</div>
 				<div className="pd-description">
-					<div dangerouslySetInnerHTML={{__html: __content}}></div>
-					<PlayerBtn episode={route.data} />
+					<div dangerouslySetInnerHTML={{__html: __content}} />					
+					<div className="pd-btn">
+						<PlayerBtn 
+							episode={route.data} 
+							renderStatusText={({statusText}) => <span className="podcast-display-btn-text">{statusText}</span>} 
+							className="podcast-display-btn-color" 
+						/>
+					</div>
 				</div>
 			</div>
 		</div>

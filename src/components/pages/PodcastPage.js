@@ -81,6 +81,7 @@ class MakeGrid extends React.Component {
         		this.scroll = setTimeout(
         			() => {
         				body.style['transition'] = '';
+        				body.style['transition-duration'] = '0ms';
         				body.style['transform'] = '';
         				window.scrollBy(window.pageXOffset, top);
         			}, 
@@ -169,8 +170,17 @@ class MakeGrid extends React.Component {
 											</Link>
 										</h4>
 										<div>
-											<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />
-											<PlayerBtn episode={pageData[play]} />
+											<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />											
+											<PlayerBtn 
+												episode={pageData[play]} 
+												renderStatusText={
+													({statusText}) => 
+														<span className="podcast-display-btn-text">
+															{statusText}
+														</span>
+												} 
+												className="podcast-display-btn-color" 
+											/>
 										</div>
 									</div>
 								</div>

@@ -54,7 +54,7 @@ function Paginate(data, location, itemsPerPage = 8) {
 					<div className="pagination-container">
 						{page !== 1 ? 
 							<Link to={`${base}?page=1`} activeClassName="activePage">&lt;&lt;</Link> : 
-							<span>&lt;&lt;</span>
+							<a className="disabled">&lt;&lt;</a>
 						}
 						{new Array(maxPage).fill('').map(
 							(s, i) => 
@@ -64,7 +64,7 @@ function Paginate(data, location, itemsPerPage = 8) {
 						)}
 						{page !== maxPage ? 
 							<Link to={`${base}?page=${maxPage}`} activeClassName="activePage">&gt;&gt;</Link> : 
-							<span>&gt;&gt;</span>
+							<a className="disabled">&gt;&gt;</a>
 						}
 					</div>
 				);

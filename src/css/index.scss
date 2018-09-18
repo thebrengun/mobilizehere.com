@@ -71,6 +71,10 @@ a {
 	float: left;
 }
 
+.pull-right {
+	float: right;
+}
+
 .lz-padding {
 	margin: $lz-padding 0;
 }
@@ -408,7 +412,8 @@ a {
 	background: transparent;
 	font-size: 2.75em;
 	padding: 0;
-	margin: 0 .125em;
+	margin: 0 .25em 0 0;
+	outline: none;
 
 	&:first-child {
 		margin-left: 0;
@@ -416,5 +421,34 @@ a {
 
 	&:hover {
 		background: transparent;
+	}
+}
+
+.podcast-display-btn-color {
+	background: $orange;
+	border-radius: 1.5em;
+	color: #ffffff;
+	padding: .125em .25em .125em .125em;
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	border-style: solid;
+	border-width: 1px;
+	border-color: lighten($orange, 10%) darken($orange, 20%) darken($orange, 20%) lighten($orange, 10%);
+	font-size: 2em;
+	outline: none;
+
+	.podcast-display-btn-text {
+		margin-left: .25em;
+		font-size: .5em;
+	}
+
+	&:hover {
+		border-color: lighten($darker-blue, 10%) darken($darker-blue, 20%) darken($darker-blue, 20%) lighten($darker-blue, 10%);
+	}
+
+	.svg-btn {
+		fill: #ffffff;
 	}
 }

@@ -1,20 +1,25 @@
 @import 'lz-variables';
 
 .pd-description-and-art {
-	display: flex;
+	display: grid;
+	grid-template-columns: 50% auto;
+	grid-column-gap: $lz-padding;
+	align-items: start;
 	margin-bottom: $lz-padding;
 
 	@media screen and (max-width: $break-small) {
-		flex-wrap: wrap;
+		grid-template-columns: auto;
 	}
 }
 
-.pd-art {
-	flex-basis: 30%;
-	flex-shrink: 0;
+.pd-description p {
+	margin: 0;
+}
 
-	@media screen and (max-width: $break-small) {
-		flex-basis: 100%;
-		order: -1;
-	}
+.pd-btn {
+	margin-top: 1em;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 }

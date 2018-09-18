@@ -5,7 +5,11 @@ import React from 'react'
 import PlayerIcon from './PlayerIcon'
 import  { connect } from 'react-redux'
 
-function PlayerBtn({episode, nowPlaying, queue, playing, discovered, playNow, playNext, resume, pause, playLater}) {
+function PlayerBtn({
+	children, className = 'podcast-display-btn', episode, nowPlaying, queue, 
+	playing, discovered, playNow, playNext, resume, pause, playLater, 
+	renderStatusText
+}) {
 	const isPaused = !playing && nowPlaying.url === episode.url;
 	const isPlaying = playing && nowPlaying.url === episode.url;
 	const notPlaying = !playing && nowPlaying.url !== episode.url || playing && nowPlaying.url !== episode.url;
@@ -14,9 +18,10 @@ function PlayerBtn({episode, nowPlaying, queue, playing, discovered, playNow, pl
 		<button 
 			onClick={(e) => playNow(episode)} 
 			aria-label={'Play ' + episode.title} 
-			className="podcast-display-btn"
+			className={className}
 		>
 			<PlayerIcon type="playInCircle" />
+			{renderStatusText && renderStatusText({statusText: 'Play Episode', children: children})}
 		</button>
 	);
 	const PlayNowBtn = PlayBtn;
@@ -24,29 +29,27 @@ function PlayerBtn({episode, nowPlaying, queue, playing, discovered, playNow, pl
 		<button 
 			onClick={pause} 
 			aria-label={'Pause ' + episode.title} 
-			className="podcast-display-btn"
+			className={className}
 		>
 			<PlayerIcon type="pauseInCircle" />
+			{renderStatusText && renderStatusText({statusText: 'Pause Episode', children: children})}
 		</button>
 	);
 	const ResumeBtn = (
 		<button 
 			onClick={resume} 
 			aria-label={'Resume ' + episode.title} 
-			className="podcast-display-btn"
+			className={className}
 		>
 			<PlayerIcon type="playInCircle" />
+			{renderStatusText && renderStatusText({statusText: 'Resume Episode', children: children})}
 		</button>
 	);
 
 	// Not Discovered: "Play", Not Playing: "Play Now", Is Playing: "Pause" Is Paused: "Resume"
 	const PrimaryBtn = !discovered ? PlayBtn : notPlaying ? PlayNowBtn : isPlaying ? PauseBtn : ResumeBtn;
 
-	return (
-		<div>
-			{PrimaryBtn}
-		</div>
-	);
+	return PrimaryBtn;
 }
 
 const mapStateToProps = ({player}) => ({
