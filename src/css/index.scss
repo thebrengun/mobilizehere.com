@@ -364,46 +364,41 @@ a {
 }
 
 .episode-showcase {
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: $lz-padding / 2;
+	grid-row-gap: $lz-padding / 2;
 
 	@media screen and (max-width: $break-small) {
-		flex-direction: column;
-	}
-
-	h4 {
-		margin: 0;
-		text-align: left;
-		color: $orange;
-		letter-spacing: .075em;
-		font-size: 1.1em;
-	}
-
-	p {
-		margin: .5em 0;
-		line-height: 1.5em;
-	}
-
-	.art-width {
-		flex-shrink: 0;
-		width: $col-width;
-		@media screen and (max-width: $break-small) {
-			width: 100%;
-		}
-
-		img {
-			@include ThumbnailShadow();
-		}
+		grid-template-columns: 1fr;
 	}
 
 	.description {
-		flex-grow: 0;
-		width: ($col-width * 3) + ($gutter-width * 2);
+		grid-column-start: 2;
+		grid-column-end: 5;
+
 		@media screen and (max-width: $break-small) {
-			width: 100%;
-			margin-top: 5%;
+			grid-column-start: 1;
+			grid-column-end: 2;
+		}
+
+		h4 {
+			margin: 0;
+			text-align: left;
+			color: $orange;
+			letter-spacing: .075em;
+			font-size: 1.1em;
+		}
+
+		p {
+			margin: .5em 0;
+			line-height: 1.5em;
+		}
+	}
+
+	.art-width {
+		img {
+			@include ThumbnailShadow();
 		}
 	}
 }
