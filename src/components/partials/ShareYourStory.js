@@ -66,6 +66,7 @@ class ShareYourStory extends React.Component {
 									name="name" 
 									id="form-name" 
 									title="Let us know who you are" 
+									autoComplete="name" 
 									required 
 									value={this.state.formData.name} 
 									onChange={this.handleChange} 
@@ -78,6 +79,7 @@ class ShareYourStory extends React.Component {
 									name="email" 
 									id="form-email" 
 									title="Please provide a way to contact you" 
+									autoComplete="email" 
 									required 
 									value={this.state.formData.email} 
 									onChange={this.handleChange}  
@@ -90,6 +92,7 @@ class ShareYourStory extends React.Component {
 									name="phone" 
 									id="form-phone" 
 									title="We can chat by phone if you prefer" 
+									autoComplete="tel" 
 									value={this.state.formData.phone} 
 									onChange={this.handleChange} 
 								/>
