@@ -1,6 +1,8 @@
 ---
+id: episode-4-protest-at-jfk
 title: 'Episode 4: Protest at JFK'
 image: /assets/cover-ep-4.jpg
+description: 'How Audrey Sage, a self-described newbie organizer, led thousands of protesters to JFK airport.'
 date: '2017-03-30T03:11:13.716Z'
 isEpisode: true
 url: >-
@@ -8,6 +10,4 @@ url: >-
 length: '57729600'
 duration: '40:05'
 explicit: 'yes'
-trackId: '315175699'
 ---
-How Audrey Sage, a self-described newbie organizer, led thousands of protesters to JFK airport. 

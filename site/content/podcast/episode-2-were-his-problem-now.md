@@ -1,6 +1,9 @@
 ---
-title: 'Episode 2: We''re His Problem Now'
+id: episode-2-we-re-his-problem-now
+title: "Episode 2: We're His Problem Now"
 image: /assets/cover-ep-2.jpg
+description: >-
+  Mobilize producer Matt Bockelman tracks down and interviews Kara, author of the famous "We're His Problem Now" online spreadsheet.
 date: '2017-03-16T03:11:13.716Z'
 isEpisode: true
 url: >-

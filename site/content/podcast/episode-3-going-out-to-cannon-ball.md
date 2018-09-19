@@ -1,6 +1,8 @@
 ---
+id: episode-3-going-out-to-cannon-ball
 title: 'Episode 3: Going Out to Cannon Ball'
 image: /assets/cover-ep-3.jpg
+description: 'Nick Panken of Spirit Family Reunion gives a thoughtful interview about resistance, vulnerability and honesty, and his protest song: Going Out To Cannon Ball.'
 date: '2017-03-23T03:11:13.716Z'
 isEpisode: true
 url: >-
@@ -8,6 +10,4 @@ url: >-
 length: '40143744'
 duration: '27:52'
 explicit: 'no'
-trackId: '314037649'
 ---
-Nick Panken of Spirit Family Reunion gives a thoughtful interview about resistance, vulnerability and honesty, and his protest song: *Going Out To Cannon Ball*.

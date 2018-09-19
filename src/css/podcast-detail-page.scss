@@ -1,25 +1,25 @@
 @import 'lz-variables';
 
-.pd-description-and-art {
-	display: grid;
-	grid-template-columns: 50% auto;
-	grid-column-gap: $lz-padding;
-	align-items: start;
-	margin-bottom: $lz-padding;
-
-	@media screen and (max-width: $break-small) {
-		grid-template-columns: auto;
+.podcast-detail-page {
+	p {
+		margin-left: 0;
+		margin-right: 0;
 	}
 }
 
-.pd-description p {
-	margin: 0;
+.pd-date {
+	font-weight: bold;
 }
 
-.pd-btn {
-	margin-top: 1em;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
+.pd-art {
+	float: right;
+	width: 45%;
+	margin-left: $lz-padding;
+	margin-bottom: $lz-padding;
+
+	@media screen and (max-width: $break-small) {
+		float: none;
+		width: 100%;
+		margin: 0;
+	}
 }

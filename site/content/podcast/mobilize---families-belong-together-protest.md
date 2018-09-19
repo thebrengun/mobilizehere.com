@@ -1,6 +1,8 @@
 ---
+id: mobilize-families-belong-together-protest
 title: Mobilize - Families Belong Together Protest
 image: /assets/Families Belong Together Artwork.jpeg
+description: 'Matthew Hittle attends the Families Belong Together protest in New York City.'
 date: 2018-08-30T13:28:15.226Z
 isEpisode: true
 url: >-
@@ -8,7 +10,4 @@ url: >-
 length: '4352904'
 duration: '01:35'
 explicit: 'yes'
-trackId: >-
-  https://soundcloud.com/user-548478055/mobilize-families-belong-together-protest
 ---
-Matthew Hittle attends the Families Belong Together protest in New York City.

@@ -13,16 +13,17 @@ collections: # A list of collections the CMS should be able to edit
     folder: "site/content/podcast" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
+      - {label: "Unique ID", name: "id", widget: "UniqueID", default: '', required: true}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Artwork", name: "image", widget: "image", default: "/assets/mobilize_logo.jpg"}
-      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Description", name: "description", widget: "text"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Is Episode", name: "isEpisode", widget: "isEpisode", default: true, required: false}
       - {label: "Media URL", name: "url", widget: "string"}
       - {label: "File Size (in bytes)", name: "length", widget: "number"}
       - {label: "Duration (mm:ss)", name: "duration", widget: "string"}
       - {label: "Explicit (yes/no)", name: "explicit", widget: "string", default: "no"}
-      - {label: "SoundCloud Track ID", name: "trackId", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: "resource"
     label: "Resource"
     folder: "site/content/resource"

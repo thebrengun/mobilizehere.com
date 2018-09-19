@@ -34,16 +34,16 @@ function createFeed({ name, email, website: websiteHttps, image, itunesArtwork, 
     <itunes:category text="Society &amp; Culture" />
     <itunes:explicit>no</itunes:explicit>
     ${[...podcast.episodes, ...podcast.extras].map(
-    	({ image, url, title, __content: description, date, length, duration, explicit }) => 
+    	({ image, url, title, description, date, length, duration, explicit }) => 
     `<item>
       <title>${title}</title>
       <description>
-        ${removeTagsFromString(description)}
+        ${description}
 
         ${'https://www.mobilizehere.com'}
       </description>
       <itunes:summary>
-      	${removeTagsFromString(description)}
+      	${description}
         
         ${'https://www.mobilizehere.com'}
       </itunes:summary>

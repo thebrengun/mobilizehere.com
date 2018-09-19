@@ -170,7 +170,7 @@ class MakeGrid extends React.Component {
 											</Link>
 										</h4>
 										<div>
-											<div dangerouslySetInnerHTML={{__html: pageData[play].__content}} />											
+											<p>{pageData[play].description}</p>											
 											<PlayerBtn 
 												episode={pageData[play]} 
 												renderStatusText={

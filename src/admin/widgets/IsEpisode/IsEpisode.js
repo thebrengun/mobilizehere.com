@@ -17,6 +17,7 @@ class IsEpisodeControl extends React.Component {
 				type="checkbox" 
 				checked={value} 
 				onChange={(e) => onChange(e.target.checked)} 
+				className="css-1d8xcao"
 			/>
 		);
 	}

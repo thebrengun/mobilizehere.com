@@ -1,6 +1,8 @@
 ---
+id: mobilize-rise-up-by-charlotte-littlehales
 title: Mobilize - Rise Up by Charlotte Littlehales
 image: /assets/rise-up.jpg
+description: 'Rise Up, written and performed by Charlotte Littlehales and Phil Pardell, is a call for community, unity, and action. Want to sing it in your local choir? Sheet music: https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf'
 date: '2017-03-02T03:11:13.716Z'
 isEpisode: true
 url: >-
@@ -8,6 +10,6 @@ url: >-
 length: '2566268'
 duration: '02:40'
 explicit: 'no'
-trackId: '305459487'
 ---
-*Rise Up*, written and performed by Charlotte Littlehales and Phil Pardell, is a call for community, unity, and action. Want to sing it in your local choir? [Click here for sheet music!](https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf)
+<p>Want to perform Rise Up? Download the sheet music by clicking the image below to download a PDF. Or use this link: <a href="https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf">https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf</a></p>
+<a href="https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf"><img src="https://www.mobilizehere.com/images/download-sheet-music.png" alt="Click here for sheet music!" /></a>

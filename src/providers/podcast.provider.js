@@ -21,8 +21,8 @@ function sortByDate({ascending = true}) {
 
 function splitEpisodesAndExtras(formatted, podcast) {
 	return podcast.isEpisode ? 
-		({...formatted, episodes: formatted.episodes.concat([{...podcast, permalink: convertTitleToURL(podcast.title)}])}) : 
-		({...formatted, extras: formatted.extras.concat([{...podcast, permalink: convertTitleToURL(podcast.title)}])});
+		({...formatted, episodes: formatted.episodes.concat([{...podcast, permalink: podcast.id}])}) : 
+		({...formatted, extras: formatted.extras.concat([{...podcast, permalink: podcast.id}])});
 }
 
 function addRootToImagePath(podcast) {

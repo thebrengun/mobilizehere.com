@@ -1,6 +1,8 @@
 ---
+id: episode-7-march-chorus
 title: 'Episode 7: March Chorus'
 image: /assets/episode_07.jpg
+description: 'Katie McCreary and her husband John Evans give their community a chance to (literally) raise their voices together in protest and song.'
 date: 2017-05-18T09:06:52.590Z
 isEpisode: true
 url: >-
@@ -8,6 +10,4 @@ url: >-
 length: '61931038'
 duration: '42:56'
 explicit: 'no'
-trackId: none
 ---
-Katie McCreary and her husband John Evans give their community a chance to (literally) raise their voices together in protest and song.
