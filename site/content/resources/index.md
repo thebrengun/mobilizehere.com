@@ -5,5 +5,4 @@ resource:
       color: '#000000'
       image: /assets/mobilize_logo.jpg
       url: https://www.5calls.org
-      body: 
 ---
