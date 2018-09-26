@@ -1,4 +1,3 @@
 ---
 templateKey: resources
-resource: []
 ---
