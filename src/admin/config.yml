@@ -34,6 +34,23 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Artwork", name: "image", widget: "image", default: "/assets/mobilize_logo.jpg"}
       - {label: "Link", name: "url", widget: "string"}
       - {label: "Description", name: "body", widget: "markdown", required: false}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "site/content/resources/index.md"
+        label: "Resources"
+        name: "resources"
+        fields: 
+          - {label: "TemplateKey", name: "templateKey", widget: "hidden", default: "resources"}
+          - label: "Resource"
+            name: "resource"
+            widget: "list"
+            fields: 
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Color", name: "color", widget: "string"}
+              - {label: "Artwork", name: "image", widget: "image", default: "/assets/mobilize_logo.jpg"}
+              - {label: "Link", name: "url", widget: "string"}
+              - {label: "Description", name: "body", widget: "markdown", required: false}
   - name: "settings"
     label: "Settings"
     files:
