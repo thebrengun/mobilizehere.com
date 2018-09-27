@@ -42,11 +42,14 @@ collections: # A list of collections the CMS should be able to edit
         name: "resources"
         fields: 
           - {label: "TemplateKey", name: "templateKey", widget: "hidden", default: "resources"}
+          - label: "Title"
+            name: "title"
+            widget: "string"
+            default: "Take Action"
           - label: "Resources"
             label_singular: "Resource"
             name: "resources"
             widget: "list"
-            default: []
             fields: 
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Color", name: "color", widget: "string"}
