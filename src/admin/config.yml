@@ -49,8 +49,12 @@ collections: # A list of collections the CMS should be able to edit
             widget: "list"
             allow_add: true
             fields: 
-              - {label: "Title", name: "title", widget: "string", default: "Resource"}
-              - {label: "URL", name: "url", widget: "string", default: "https://www.mobilizehere.com"}
+              - label: "Resource"
+                name: "resource_object"
+                widget: "object"
+                fields: 
+                  - {label: "Title", name: "title", widget: "string", default: "Resource"}
+                  - {label: "URL", name: "url", widget: "string", default: "https://www.mobilizehere.com"}
 #            fields: 
 #              - {label: "Title", name: "title", widget: "string"}
 #              - {label: "Color", name: "color", widget: "string"}
