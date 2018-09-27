@@ -46,6 +46,7 @@ collections: # A list of collections the CMS should be able to edit
             label_singular: "Resource"
             name: "resources"
             widget: "list"
+            default: []
             fields: 
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Color", name: "color", widget: "string"}
