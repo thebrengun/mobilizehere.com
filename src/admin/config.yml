@@ -50,11 +50,14 @@ collections: # A list of collections the CMS should be able to edit
             label_singular: "Resource"
             name: "resources"
             widget: "list"
-            fields: 
+            allow_add: true
+            field: 
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Color", name: "color", widget: "string"}
-              - {label: "Artwork", name: "image", widget: "image", default: "/assets/mobilize_logo.jpg"}
-              - {label: "Link", name: "url", widget: "string"}
+#            fields: 
+#              - {label: "Title", name: "title", widget: "string"}
+#              - {label: "Color", name: "color", widget: "string"}
+#              - {label: "Artwork", name: "image", widget: "image", default: "/assets/mobilize_logo.jpg"}
+#              - {label: "Link", name: "url", widget: "string"}
   - name: "settings"
     label: "Settings"
     files:
