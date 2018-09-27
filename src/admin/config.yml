@@ -37,18 +37,15 @@ collections: # A list of collections the CMS should be able to edit
   - name: "pages"
     label: "Pages"
     files:
-      - file: "site/content/resources/index.md"
+      - name: "resources"
         label: "Resources (Take Action)"
-        name: "resources"
+        file: "site/content/resources/index.md"
         fields: 
           - {label: "TemplateKey", name: "templateKey", widget: "hidden", default: "resources"}
-          - label: "Title"
-            name: "title"
-            widget: "string"
-            default: "Take Action"
-          - label: "Resources"
-            label_singular: "Resource"
-            name: "resources"
+          - {label: "Title", name: "title", widget: "string"}
+          - label: "Links"
+            label_singular: "Link"
+            name: "links"
             widget: "list"
             allow_add: true
             field: 
