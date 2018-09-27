@@ -48,6 +48,7 @@ collections: # A list of collections the CMS should be able to edit
             name: "links"
             widget: "list"
             allow_add: true
+            required: false
             fields: 
               - label: "Resource"
                 name: "resource_object"
