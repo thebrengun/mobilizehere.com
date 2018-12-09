@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.8.0
+version: v1.13.1
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -8,3 +8,12 @@ patch:
         patched: '2017-10-29T06:24:15.619Z'
     - netlify-cms > jest > jest-cli > node-notifier > cli-usage > marked:
         patched: '2017-10-29T06:24:15.619Z'
+  'npm:hoek:20180212':
+    - netlify-cms > @kadira/storybook > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > hoek:
+        patched: '2018-12-09T23:44:33.635Z'
+    - netlify-cms > @kadira/storybook > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > sntp > hoek:
+        patched: '2018-12-09T23:44:33.635Z'
+    - netlify-cms > @kadira/storybook > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > boom > hoek:
+        patched: '2018-12-09T23:44:33.635Z'
+    - netlify-cms > @kadira/storybook > webpack > watchpack > chokidar > fsevents > node-pre-gyp > hawk > cryptiles > boom > hoek:
+        patched: '2018-12-09T23:44:33.635Z'
