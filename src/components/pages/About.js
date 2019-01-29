@@ -1,9 +1,9 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import ShareYourStory from '../partials/ShareYourStory'
-import { connect } from 'react-redux'
-import aboutStyles from '../../css/about.scss'
-import mobilizeLogoBig from '../../assets/images/about/mobilize-logo-big.jpg'
+import React from 'react';
+import Helmet from 'react-helmet';
+import ShareYourStory from '../partials/ShareYourStory';
+import { connect } from 'react-redux';
+import '../../css/about.scss';
+import mobilizeLogoBig from '../../assets/images/about/mobilize-logo-big.jpg';
 
 function About({__content, credits, route}) {
 	return (

@@ -1,9 +1,12 @@
 import React from 'react';
-import Link from 'react-router/lib/Link';
 import PlayerBtn from './Player/PlayerBtn';
+import { Link } from 'gatsby';
 
-function EpisodeShowcase({episode}) {
-	const {title, image, permalink, description} = episode;
+function EpisodeShowcase({data}) {
+	const latestEpisode = data.allMarkdownRemark.edges[0].node;
+	const { title, image, description } = latestEpisode.frontmatter;
+	const { slug: permalink } = latestEpisode.fields;
+
 	return (
 		<div className="episode-showcase">
 			<div className="art-width">
@@ -18,7 +21,7 @@ function EpisodeShowcase({episode}) {
 				<div>
 					<p>{description}</p>
 					<PlayerBtn 
-						episode={episode} 
+						episode={{...latestEpisode.frontmatter, permalink}} 
 						renderStatusText={({statusText}) => <span className="podcast-display-btn-text">{statusText}</span>} 
 						className="podcast-display-btn-color" 
 					/>

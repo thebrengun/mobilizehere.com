@@ -12,7 +12,7 @@ class SubMenu extends React.Component {
 		this.stopListeningForClicks();
 	}
 
-	componentWillReceiveProps(nextProps) {
+	UNSAFE_componentWillReceiveProps(nextProps) {
 		if(nextProps.show) {
 			this.listenForClicks();
 		} else {
@@ -54,7 +54,7 @@ class SubMenu extends React.Component {
 							{this.props.menu.map(
 								({text, href}) => (
 									<li key={'link-to-' + text}>
-										<a href={href} target="_blank" rel="noopener">{text}</a>
+										<a href={href} target="_blank" rel="noopener noreferrer">{text}</a>
 									</li>
 								)
 							)}

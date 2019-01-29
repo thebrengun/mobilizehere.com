@@ -51,7 +51,7 @@ class Template extends React.Component {
 	}
 
 	render() {
-		const { children, toggleNav, toggleSubNav, showNav, subNavs, scroll, discovered, route, closeAllSubNavs } = this.props;
+		const { children, toggleNav, toggleSubNav, showNav, subNavs, scroll, discovered, closeAllSubNavs } = this.props;
 		return (
 			<div 
 				className={[
@@ -61,8 +61,8 @@ class Template extends React.Component {
 				].join(' ')}
 			>
 				<Helmet>
-					<title>{route.title}</title>
-					<meta property="og:title" content={route.title} />
+					<title></title>
+					<meta property="og:title" content="" />
 					<meta property="og:description" content="Mobilize is a podcast that puts a spotlight on and is a resource for people, friends, communities, and activists who have decided to stand up, resist, fight back -- mobilize." />
 					<meta property="og:image" content={largeImage} />
 					<meta property="og:url" content="https://www.mobilizehere.com" />

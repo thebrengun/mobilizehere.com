@@ -1,9 +1,8 @@
-import React from 'react'
-import Link from 'react-router/lib/Link'
-import IndexLink from 'react-router/lib/IndexLink'
-import SubMenu from './SubMenu'
-import { connect } from 'react-redux'
-import closeNav from '../assets/images/template/nav-close.jpg'
+import React from 'react';
+import { Link } from 'gatsby';
+import SubMenu from './SubMenu';
+import { connect } from 'react-redux';
+import closeNav from '../assets/images/template/nav-close.jpg';
 
 function ToggleNav({showNav, toggleNav}) {
 	return (

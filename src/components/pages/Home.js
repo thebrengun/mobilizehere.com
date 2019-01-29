@@ -9,10 +9,10 @@ import ShareYourStory from '../partials/ShareYourStory'
 import takeAction from '../../assets/images/index/take-action-graphic-2.png'
 import downloadSheetMusic from '../../assets/images/index/download-sheet-music.png'
 
-function Home({route, featuredEpisode, aboutText}) {
+function Home() {
 	return (
 		<div>
-			<Helmet title={route.title} />
+			<Helmet title="" />
 			<div className="lz-dbl-padding">
 				<EpisodeShowcase episode={featuredEpisode} />
 			</div>

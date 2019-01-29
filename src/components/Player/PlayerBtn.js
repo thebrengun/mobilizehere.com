@@ -1,60 +1,93 @@
-import addIcon from '../../assets/player/ic_playlist_add_black_24dp_1x.png'
-import addedIcon from '../../assets/player/ic_playlist_add_check_black_24dp_1x.png'
+import React, { PureComponent } from 'react';
+import PlayerIcon from './PlayerIcon';
+import  { connect } from 'react-redux';
 
-import React from 'react'
-import PlayerIcon from './PlayerIcon'
-import  { connect } from 'react-redux'
+const PLAY_BTN = 'PLAY_BTN';
+const PLAY_NOW_BTN = 'PLAY_NOW_BTN';
+const PAUSE_BTN = 'PAUSE_BTN';
+const RESUME_BTN = 'RESUME_BTN';
 
-function PlayerBtn({
-	children, className = 'podcast-display-btn', episode, nowPlaying, queue, 
-	playing, discovered, playNow, playNext, resume, pause, playLater, 
-	renderStatusText
-}) {
-	const isPaused = !playing && nowPlaying.url === episode.url;
-	const isPlaying = playing && nowPlaying.url === episode.url;
-	const notPlaying = !playing && nowPlaying.url !== episode.url || playing && nowPlaying.url !== episode.url;
+class PlayerBtn extends PureComponent {
+	chooseBtnType = () => {
+		const { discovered, nowPlaying, episode, playing } = this.props;
+		const nowPlayingUrl = nowPlaying && nowPlaying.url ? nowPlaying.url : '';
+		const isPlaying = playing && nowPlayingUrl === episode.url;
+		const notPlaying = (!playing && (nowPlayingUrl !== episode.url)) || (playing && (nowPlayingUrl !== episode.url));
+		// Not Discovered: "Play", Not Playing: "Play Now", Is Playing: "Pause" Is Paused: "Resume"
+		const buttonType = !discovered ? PLAY_BTN : notPlaying ? PLAY_NOW_BTN : isPlaying ? PAUSE_BTN : RESUME_BTN;
+		return buttonType;
+	};
 
-	const PlayBtn = (
-		<button 
-			onClick={(e) => playNow(episode)} 
-			aria-label={'Play ' + episode.title} 
-			className={className}
-		>
-			<PlayerIcon type="playInCircle" />
-			{renderStatusText && renderStatusText({statusText: 'Play Episode', children: children})}
-		</button>
-	);
-	const PlayNowBtn = PlayBtn;
-	const PauseBtn = (
-		<button 
-			onClick={pause} 
-			aria-label={'Pause ' + episode.title} 
-			className={className}
-		>
-			<PlayerIcon type="pauseInCircle" />
-			{renderStatusText && renderStatusText({statusText: 'Pause Episode', children: children})}
-		</button>
-	);
-	const ResumeBtn = (
-		<button 
-			onClick={resume} 
-			aria-label={'Resume ' + episode.title} 
-			className={className}
-		>
-			<PlayerIcon type="playInCircle" />
-			{renderStatusText && renderStatusText({statusText: 'Resume Episode', children: children})}
-		</button>
-	);
+	render() {
+		const {
+			children, className, episode, resume, pause, renderStatusText, playNow
+		} = this.props;
 
-	// Not Discovered: "Play", Not Playing: "Play Now", Is Playing: "Pause" Is Paused: "Resume"
-	const PrimaryBtn = !discovered ? PlayBtn : notPlaying ? PlayNowBtn : isPlaying ? PauseBtn : ResumeBtn;
+		switch(this.chooseBtnType()) {
+			case PAUSE_BTN:
+				return <PauseBtn  {...{pause, episode, className, renderStatusText, children}} />;
+			case RESUME_BTN:
+				return <ResumeBtn {...{resume, episode, className, renderStatusText, children}} />;
+			case PLAY_BTN:
+			case PLAY_NOW_BTN:
+			default:
+				return <PlayBtn {...{playNow, episode, className, renderStatusText, children}} />;
+		}
+	}
+}
 
-	return PrimaryBtn;
+PlayerBtn.defaultProps = {className: 'podcast-display-btn'};
+
+class PlayBtn extends PureComponent {
+	render() {
+		const { episode, className, renderStatusText, children, playNow } = this.props;
+		return (
+			<button 
+				onClick={(e) => playNow(episode)} 
+				aria-label={'Play ' + episode.title} 
+				className={className}
+			>
+				<PlayerIcon type="playInCircle" />
+				{renderStatusText && renderStatusText({statusText: 'Play Episode', children: children})}
+			</button>
+		);
+	}
+}
+
+class PauseBtn extends PureComponent {
+	render() {
+		const { pause, episode, className, renderStatusText, children } = this.props;
+		return (
+			<button 
+				onClick={pause} 
+				aria-label={'Pause ' + episode.title} 
+				className={className}
+			>
+				<PlayerIcon type="pauseInCircle" />
+				{renderStatusText && renderStatusText({statusText: 'Pause Episode', children: children})}
+			</button>
+		);
+	}
+}
+
+class ResumeBtn extends PureComponent {
+	render() {
+		const { resume, episode, className, renderStatusText, children } = this.props;
+		return (
+			<button 
+				onClick={resume} 
+				aria-label={'Resume ' + episode.title} 
+				className={className}
+			>
+				<PlayerIcon type="playInCircle" />
+				{renderStatusText && renderStatusText({statusText: 'Resume Episode', children: children})}
+			</button>
+		);
+	}
 }
 
 const mapStateToProps = ({player}) => ({
 	nowPlaying: player.queue[0],
-	queue: player.queue.slice(1),
 	playing: player.playing,
 	discovered: player.discovered
 });

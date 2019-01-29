@@ -38,7 +38,6 @@ class PodcastPage extends React.Component {
 		return (
 			<div>
 				<MakeGrid play={play} {...this.props} />
-				<PaginateNav page={page} />
 			</div>
 		);
 	}

@@ -1,0 +1,26 @@
+@import 'lz-variables';
+
+.lz-pagination-btns {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: $lz-padding / 2;
+
+	span {
+		margin-bottom: $lz-padding / 2;
+	}
+
+	a {
+		margin-bottom: $lz-padding / 2;
+		padding: 0 $lz-padding / 2;
+		color: $darker-blue;
+
+		&.active {
+			color: $dark-gray;
+			text-decoration: none;
+			font-weight: bold;
+		}
+	}
+}

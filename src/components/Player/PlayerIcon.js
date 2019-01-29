@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 
 const icons = {
 	play: [{type: 'path', props: {d: 'M295.962,812.335l483.912-300.351L295.962,211.666V812.335z'}}],
@@ -38,15 +38,23 @@ const icons = {
 	]
 };
 
-function PlayerIcon({type, height = '1em', width = '1em'}) {
-	return (
-		<svg width={width} height={height} viewBox="0 0 1024 1024">
-			{icons[type].map(
-				({type, props}, i) => 
-					React.createElement(type, {...props, className: 'svg-btn', key: 'shape-' + i})
-			)}
-  		</svg>
-	);
+class PlayerIcon extends PureComponent {
+	render() {
+		const { type, height, width } = this.props;
+		return (
+			<svg width={width} height={height} viewBox="0 0 1024 1024">
+				{icons[type].map(
+					({type, props}, i) => 
+						React.createElement(type, {...props, className: 'svg-btn', key: 'shape-' + i})
+				)}
+	  		</svg>
+		);
+	}
 }
+
+PlayerIcon.defaultProps = {
+	width: '1em',
+	height: '1em'
+};
 
 export default PlayerIcon

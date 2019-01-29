@@ -7,10 +7,10 @@ node_modules
 coverage
 
 # production
-build
-dist
+public
 
 # misc
 .DS_Store
 .env
 npm-debug.log
+.cache
