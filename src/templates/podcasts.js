@@ -38,9 +38,9 @@ class Podcast extends ResponsiveGridOrder {
 				</div>
 				<div className="inner-drawer">
 					<div>
-						<span className="close-drawer" onClick={closeDrawer}>
+						<button aria-label="Close Podcast Details" className="close-drawer" onClick={closeDrawer}>
 							<img src={closeDrawerImg} alt="Close Podcast Details" />
-						</span>
+						</button>
 						<div>
 							<h4><Link to={slug}>{title}</Link></h4>
 							<div>
@@ -77,14 +77,14 @@ class Podcast extends ResponsiveGridOrder {
 				const altText = `Cover Art for ${title}`;
 
 				return (
-					<div className="lz-col" key={'podcast' + i}>
-						<img alt={altText} src={image}  className={classNames} onClick={handleClick} />
+					<button className="lz-col" key={'podcast' + i} onClick={handleClick}>
+						<img alt={altText} src={image}  className={classNames} />
 						<Noscript>
 							<Link to={slug} className="no-script-tile-link">
 								<img alt={altText} src={image}  className={classNames} />
 							</Link>
 						</Noscript>
-					</div>
+					</button>
 				);
 			}
 		);

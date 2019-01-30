@@ -182,6 +182,19 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Mobilize",
+        short_name: "Mobilize",
+        start_url: "/",
+        background_color: "#fafeff",
+        theme_color: "#2096c3",
+        display: "standalone",
+        icon: "src/assets/icons/splash.png",
+      },
+    },
+    'gatsby-plugin-offline',
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-93560224-1",

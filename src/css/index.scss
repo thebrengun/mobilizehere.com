@@ -417,13 +417,15 @@ a {
 
 	&:hover {
 		background: transparent;
+		cursor: pointer;
 	}
 }
 
 .podcast-display-btn-color {
 	background: $orange;
 	border-radius: 1.5em;
-	color: #ffffff;
+	color: #421300;
+	font-weight: bold;
 	padding: .125em .25em .125em .125em;
 	display: inline-flex;
 	flex-direction: row;
@@ -433,15 +435,16 @@ a {
 	border-width: 1px;
 	border-color: lighten($orange, 10%) darken($orange, 20%) darken($orange, 20%) lighten($orange, 10%);
 	font-size: 2em;
-	outline: none;
 
 	.podcast-display-btn-text {
-		margin-left: .25em;
+		margin: 0 .5em;
 		font-size: .5em;
 	}
 
 	&:hover {
+		color: #ffffff;
 		border-color: lighten($darker-blue, 10%) darken($darker-blue, 20%) darken($darker-blue, 20%) lighten($darker-blue, 10%);
+		cursor: pointer;
 	}
 
 	.svg-btn {
