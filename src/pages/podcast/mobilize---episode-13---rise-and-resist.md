@@ -1,5 +1,5 @@
 ---
-id: episode-13-rise-and-resist
+legacyURL: episode-13-rise-and-resist
 templateKey: podcast
 title: 'Episode 13: Rise and Resist'
 image: /assets/013.png

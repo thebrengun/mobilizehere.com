@@ -1,5 +1,5 @@
 ---
-id: episode-10-resistance-media-collective
+legacyURL: episode-10-resistance-media-collective
 templateKey: podcast
 title: Episode 10 - Resistance Media Collective
 image: /assets/010.png

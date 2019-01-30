@@ -1,5 +1,5 @@
 ---
-id: mobilize-daca-protests-trump-tower
+legacyURL: mobilize-daca-protests-trump-tower
 templateKey: podcast
 title: Mobilize - DACA Protests - Trump Tower
 image: /assets/000daca2.png

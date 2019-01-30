@@ -1,5 +1,5 @@
 ---
-id: mobilize-episode-16-new-leadership-and-new-solutions
+legacyURL: mobilize-episode-16-new-leadership-and-new-solutions
 templateKey: podcast
 title: Mobilize - Episode 16 - New Leadership and New Solutions
 image: /assets/016.jpeg

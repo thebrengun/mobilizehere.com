@@ -1,5 +1,5 @@
 ---
-id: mobilize-march-for-our-lives
+legacyURL: mobilize-march-for-our-lives
 templateKey: podcast
 title: Mobilize - March For Our Lives
 image: /assets/000march.jpeg

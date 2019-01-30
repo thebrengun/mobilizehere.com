@@ -1,5 +1,5 @@
 ---
-id: episode-12-renee-thomas-a-transgender-coxswain-of-the-u-s-coastguard
+legacyURL: episode-12-renee-thomas-a-transgender-coxswain-of-the-u-s-coastguard
 templateKey: podcast
 title: 'Episode 12 - Renee Thomas: A Transgender Coxswain of the U.S. Coastguard'
 image: /assets/012.png

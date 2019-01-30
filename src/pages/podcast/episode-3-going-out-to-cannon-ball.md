@@ -1,5 +1,5 @@
 ---
-id: episode-3-going-out-to-cannon-ball
+legacyURL: episode-3-going-out-to-cannon-ball
 templateKey: podcast
 title: 'Episode 3: Going Out to Cannon Ball'
 image: /assets/cover-ep-3.jpg

@@ -1,5 +1,5 @@
 ---
-id: episode-1-why-we-fight
+legacyURL: episode-1-why-we-fight
 templateKey: podcast
 title: 'Episode 1: Why We Fight'
 image: /assets/cover-ep-1.jpg

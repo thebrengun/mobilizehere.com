@@ -1,5 +1,5 @@
 ---
-id: mobilize-rise-up-by-charlotte-littlehales
+legacyURL: mobilize-rise-up-by-charlotte-littlehales
 templateKey: podcast
 title: Mobilize - Rise Up by Charlotte Littlehales
 image: /assets/rise-up.jpg

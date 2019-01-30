@@ -1,5 +1,5 @@
 ---
-id: trumpcare
+legacyURL: trumpcare
 templateKey: podcast
 title: TrumpCare
 image: /assets/TrumpCare.jpg

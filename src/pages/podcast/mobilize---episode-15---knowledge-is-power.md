@@ -1,5 +1,5 @@
 ---
-id: episode-15-mazeda-uddin-knowledge-is-power
+legacyURL: episode-15-mazeda-uddin-knowledge-is-power
 templateKey: podcast
 title: 'Episode 15: Mazeda Uddin - Knowledge Is Power'
 image: /assets/0015.png

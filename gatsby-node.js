@@ -33,7 +33,7 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              id
+              legacyURL
               templateKey
               title
               image

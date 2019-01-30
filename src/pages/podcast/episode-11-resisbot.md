@@ -1,5 +1,5 @@
 ---
-id: episode-11-resistbot
+legacyURL: episode-11-resistbot
 templateKey: podcast
 title: 'Episode 11: Resistbot'
 image: /assets/011.png

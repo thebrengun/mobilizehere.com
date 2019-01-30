@@ -1,5 +1,5 @@
 ---
-id: episode-2-we-re-his-problem-now
+legacyURL: episode-2-we-re-his-problem-now
 templateKey: podcast
 title: "Episode 2: We're His Problem Now"
 image: /assets/cover-ep-2.jpg

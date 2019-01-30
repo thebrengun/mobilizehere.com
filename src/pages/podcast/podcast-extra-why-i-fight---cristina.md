@@ -1,5 +1,5 @@
 ---
-id: why-i-fight-cristina
+legacyURL: why-i-fight-cristina
 templateKey: podcast
 title: 'Podcast Extra: Why I Fight - Cristina'
 image: /assets/mobilize_logo.jpg

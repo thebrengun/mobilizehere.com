@@ -1,5 +1,5 @@
 ---
-id: episode-4-protest-at-jfk
+legacyURL: episode-4-protest-at-jfk
 templateKey: podcast
 title: 'Episode 4: Protest at JFK'
 image: /assets/cover-ep-4.jpg

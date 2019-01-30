@@ -17,7 +17,7 @@ function StaticEpisodeShowcase() {
 							slug
 						}
 						frontmatter {
-							id
+							legacyURL
 							templateKey
 							title
 							image

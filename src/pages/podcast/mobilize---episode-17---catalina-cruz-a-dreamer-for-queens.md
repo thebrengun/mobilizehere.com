@@ -1,5 +1,5 @@
 ---
-id: mobilize-episode-17-catalina-cruz-a-dreamer-in-queens
+legacyURL: mobilize-episode-17-catalina-cruz-a-dreamer-in-queens
 templateKey: podcast
 title: 'Mobilize - Episode 17 - Catalina Cruz : A Dreamer in Queens'
 image: /assets/017.jpeg

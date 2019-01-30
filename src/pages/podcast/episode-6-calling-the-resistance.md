@@ -1,5 +1,5 @@
 ---
-id: episode-6-calling-the-resistance
+legacyURL: episode-6-calling-the-resistance
 templateKey: podcast
 title: 'Episode 6: Calling the Resistance'
 image: /assets/episode_06.jpg

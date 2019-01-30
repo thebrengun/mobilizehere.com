@@ -1,5 +1,5 @@
 ---
-id: episode-5-reversing-a-hate-crime
+legacyURL: episode-5-reversing-a-hate-crime
 templateKey: podcast
 title: 'Episode 5: Reversing a Hate Crime'
 image: /assets/episode_05.jpg

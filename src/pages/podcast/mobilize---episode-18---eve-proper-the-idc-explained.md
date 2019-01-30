@@ -1,5 +1,5 @@
 ---
-id: mobilize-episode-18-eve-proper-the-idc-explained
+legacyURL: mobilize-episode-18-eve-proper-the-idc-explained
 templateKey: podcast
 title: 'Mobilize - Episode 18 - Eve Proper: The IDC Explained'
 image: /assets/018.jpeg

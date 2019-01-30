@@ -1,5 +1,5 @@
 ---
-id: episode-7-march-chorus
+legacyURL: episode-7-march-chorus
 templateKey: podcast
 title: 'Episode 7: March Chorus'
 image: /assets/episode_07.jpg

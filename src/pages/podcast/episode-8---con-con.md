@@ -1,5 +1,5 @@
 ---
-id: episode-8-con-con
+legacyURL: episode-8-con-con
 templateKey: podcast
 title: 'Episode 8: Con Con'
 image: /assets/008.png

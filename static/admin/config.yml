@@ -14,7 +14,7 @@ collections: # A list of collections the CMS should be able to edit
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields each document in this collection have
-      - {label: "Unique ID", name: "id", widget: "UniqueID", default: '', required: true}
+      - {label: "Legacy URL", name: "legacyURL", widget: "Legacy URL", default: '', required: false}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "podcast"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Artwork", name: "image", widget: "image", default: "/assets/mobilize_logo.jpg"}

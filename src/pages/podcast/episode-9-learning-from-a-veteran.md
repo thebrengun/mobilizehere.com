@@ -1,5 +1,5 @@
 ---
-id: episode-9-learning-from-a-veteran
+legacyURL: episode-9-learning-from-a-veteran
 templateKey: podcast
 title: 'Episode 9: Learning From A Veteran'
 image: /assets/009.png

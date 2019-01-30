@@ -1,5 +1,5 @@
 ---
-id: mobilize-families-belong-together-protest
+legacyURL: mobilize-families-belong-together-protest
 templateKey: podcast
 title: Mobilize - Families Belong Together Protest
 image: /assets/Families Belong Together Artwork.jpeg

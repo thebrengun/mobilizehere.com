@@ -1,5 +1,5 @@
 ---
-id: episode-14-sue-gibson-a-lifetime-of-activism
+legacyURL: episode-14-sue-gibson-a-lifetime-of-activism
 templateKey: podcast
 title: 'Episode 14: Sue Gibson - A Lifetime of Activism'
 image: /assets/IMG_6919.png

@@ -1,5 +1,5 @@
 ---
-id: mobilize-mayday-2018
+legacyURL: mobilize-mayday-2018
 templateKey: podcast
 title: Mobilize - Mayday 2018
 image: /assets/000mayday.jpeg

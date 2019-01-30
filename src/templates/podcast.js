@@ -24,7 +24,7 @@ export const query = graphql`
 				slug
 			}
 			frontmatter {
-				id
+				legacyURL
 				title
 				image
 				description
