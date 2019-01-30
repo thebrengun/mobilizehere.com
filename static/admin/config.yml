@@ -42,7 +42,7 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - name: "general"
         label: "General Info"
-        file: "src/pages/info.md"
+        file: "src/data/info.md"
         description: "General Site Settings"
         fields:
           - {label: "Global title", name: "name", widget: "string"}

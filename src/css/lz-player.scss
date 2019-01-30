@@ -203,7 +203,7 @@ $pause-color: $orange;
 	margin-top: -1.3em;
 	padding: 0;
 
-	input[type=range]{
+	input[type=range] {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		appearance: none;
@@ -224,9 +224,7 @@ $pause-color: $orange;
 		padding: 0;
 	}
 
-	input[type=range]::-webkit-slider-thumb,
-	input[type=range]::-moz-range-thumb,
-	input[type=range]::-ms-range-thumb, {
+	input[type=range]::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		-moz-appearance: none;
 		appearance: none;

@@ -5,7 +5,6 @@ import PlayerBtn from '../Player/PlayerBtn'
 import '../../css/podcast-detail-page.scss'
 
 function PodcastDetailPageComponent({episode}) {
-	console.log(episode);
 	const { title, image, description, date, url, __content, slug } = episode;
 	const d = new Date(date);
 	const dateStr = `${d.toDateString()}`;

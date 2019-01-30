@@ -32,7 +32,7 @@ class PodcastPreview extends React.PureComponent {
 		return (
 			<Provider store={store}>
 				<div className="lz-container player-is-visible">
-					<PodcastDetailPage route={{data}} />
+					<PodcastDetailPage episode={data} />
 					<MainPlayer />
 				</div>
 			</Provider>
