@@ -7,7 +7,6 @@ import mainStyles from '!css-loader!sass-loader!../css/index.scss';
 import playerStyles from '!css-loader!sass-loader!../css/lz-player.scss';
 import podcastPreviewStyles from '!css-loader!sass-loader!../css/podcast-detail-page.scss';
 
-CMS.registerWidget(...isEpisodeConfig);
 CMS.registerWidget(...listConfig);
 CMS.registerWidget(...LegacyURL);
 CMS.registerPreviewStyle(`${mainStyles.toString()} ${playerStyles.toString()} ${podcastPreviewStyles.toString()}`, { raw: true });

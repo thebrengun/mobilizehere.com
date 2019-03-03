@@ -13,7 +13,7 @@ class PodcastPreview extends React.PureComponent {
 
 	render() {
 		const { makeHtml } = this.converter;
-		const { entry, widgetFor, widgetsFor, getAsset } = this.props;
+		const { entry, getAsset } = this.props;
 		
 		const data = {
 			id: entry.getIn(['data', 'id']),
@@ -21,7 +21,8 @@ class PodcastPreview extends React.PureComponent {
 			image: getAsset(entry.getIn(['data', 'image'])),
 			description: entry.getIn(['data', 'description']),
 			date: entry.getIn(['data', 'date']),
-			isEpisode: entry.getIn(['data', 'isEpisode']),
+			episodeType: entry.getIn(['data', 'episodeType']),
+			episodeNumber: entry.getIn(['data', 'episodeNumber']),
 			length: entry.getIn(['data', 'length']),
 			url: entry.getIn(['data', 'url']),
 			duration: entry.getIn(['data', 'duration']),
