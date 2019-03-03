@@ -49,6 +49,6 @@ class ListPreview extends React.Component {
 	}
 }
 
-const listConfig = [ "list", ListControl, ListPreview ];
+const listConfig = [ "contribList", ListControl, ListPreview ];
 
 export default listConfig;

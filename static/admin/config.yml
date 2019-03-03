@@ -54,4 +54,4 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "iTunes Artwork (hosted on Amazon)", name: "itunesArtwork", widget: "string"}
           - {label: "itunes Summary", name: "itunesSummary", widget: "text"}
           - {label: "Mission Statement", name: "body", widget: "markdown"}
-          - {label: "Contributors", name: "contributors", widget: "list"}
+          - {label: "Contributors", name: "contributors", widget: "contribList"}
