@@ -31,7 +31,7 @@ function PodcastDetailPageComponent({episode}) {
 				renderStatusText={({statusText}) => <span className="podcast-display-btn-text">{statusText}</span>} 
 				className="podcast-display-btn-color" 
 			/>
-			<div dangerouslySetInnerHTML={{__html: __content}} />
+			<div className="podcast-detail-body" dangerouslySetInnerHTML={{__html: __content}} />
 		</div>
 	);
 }
