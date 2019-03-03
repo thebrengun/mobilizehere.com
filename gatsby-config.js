@@ -52,6 +52,7 @@ module.exports = {
                     email
                     website
                     image
+                    keywords
                     itunesArtwork
                     itunesSummary
                   }
@@ -62,7 +63,7 @@ module.exports = {
         `,
         setup: ({ query: { about } }) => {
           const { 
-            name, email, website, image, itunesArtwork, itunesSummary 
+            name, email, website, keywords, image, itunesArtwork, itunesSummary 
           } = about.edges[0].node.frontmatter;
 
           return ({
@@ -72,7 +73,7 @@ module.exports = {
             site_url: website,
             generator: 'GatsbyJS &amp; Node RSS',
             language: 'en',
-            copyright: `&#x2117; &amp; &#xA9; 2017 - 1019 ${name}`,
+            copyright: `&#xA9; 2017 - 1019 ${name}`,
             description: itunesSummary,
             image: {
               url: itunesArtwork,
@@ -94,16 +95,13 @@ module.exports = {
                   href: itunesArtwork
                 }
               }},
+              {'itunes:keywords': keywords.join(',')},
               {'itunes:category': {
                 _attr: {
                   text: 'News &amp; Politics'
                 }
               }},
-              {'itunes:category': {
-                _attr: {
-                  text: 'Society &amp; Culture'
-                }
-              }},
+              {'itunes:type': 'episodic'},
               {'itunes:explicit': 'no'},
             ]
           });
@@ -118,6 +116,9 @@ module.exports = {
               ) {
                 edges {
                   node {
+                    fields{
+                      slug
+                    }
                     frontmatter {
                       title
                       image
@@ -144,13 +145,14 @@ module.exports = {
                   episodeType, episodeNumber, 
                   url, length, duration, explicit 
                 } = node.frontmatter;
+                const { slug } = node.fields;
                 return {
                   no_cdata_fields: ['title', 'description'],
                   title: title,
                   description: `
                     ${description}
 
-                    https://www.mobilizehere.com
+                    https://www.mobilizehere.com${slug}
                   `,
                   enclosure: {
                     __attr: {
@@ -164,10 +166,11 @@ module.exports = {
                   guid: url.replace('https://', '//'),
                   pubDate: new Date(date).toUTCString(),
                   custom_elements: [
+                    {'itunes:title': title},
                     {'itunes:summary': `
                       ${description}
 
-                      https://www.mobilizehere.com
+                      https://www.mobilizehere.com${slug}
                     `},
                     {'itunes:episodeType': episodeType},
                     {'itunes:episode': episodeNumber},

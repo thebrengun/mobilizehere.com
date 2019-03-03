@@ -3,6 +3,7 @@ name: Mobilize
 email: mobilizehere@gmail.com
 website: 'https://www.mobilizehere.com'
 image: /assets/mobilize-logo-big.jpg
+keywords: ['']
 itunesArtwork: 'http://s3.amazonaws.com/mobilize-podcast/mobilize_podcast_cover_art.jpg'
 itunesSummary: 'Mobilize is a podcast that puts a spotlight on and is a resource for people, friends, communities, and activists who have decided to stand up, resist, fight back -- mobilize.
 
