@@ -123,6 +123,8 @@ module.exports = {
                       image
                       description
                       date
+                      episodeType
+                      episodeNumber
                       url
                       length
                       duration
@@ -139,6 +141,7 @@ module.exports = {
               ({node}) => {
                 const { 
                   title, image, description, date, 
+                  episodeType, episodeNumber, 
                   url, length, duration, explicit 
                 } = node.frontmatter;
                 return {
@@ -166,6 +169,8 @@ module.exports = {
 
                       https://www.mobilizehere.com
                     `},
+                    {'itunes:episodeType': episodeType},
+                    {'itunes:episode': episodeNumber},
                     {'itunes:image': {
                       _attr: {
                         href: image.replace('https://', '//')

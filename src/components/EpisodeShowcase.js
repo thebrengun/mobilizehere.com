@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 function EpisodeShowcase({data}) {
 	const latestEpisode = data.allMarkdownRemark.edges[0].node;
-	const { title, image, description } = latestEpisode.frontmatter;
+	const { title, image, description, episodeType, episodeNumber } = latestEpisode.frontmatter;
 	const { slug: permalink } = latestEpisode.fields;
 
 	return (
@@ -17,7 +17,11 @@ function EpisodeShowcase({data}) {
 				/>
 			</div>
 			<div className="description">
-				<h4><Link to={`/${permalink}`}>{title}</Link></h4>
+				<h4>
+					<Link to={`/${permalink}`}>
+						{`${episodeType === 'full' && episodeNumber ? `Episode ${episodeNumber}: ` : ''}${title}`}
+					</Link>
+				</h4>
 				<div>
 					<p>{description}</p>
 					<PlayerBtn 

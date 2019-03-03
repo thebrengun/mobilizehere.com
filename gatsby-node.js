@@ -39,7 +39,8 @@ exports.createPages = ({ actions, graphql }) => {
               image
               description
               date
-              isEpisode
+              episodeType
+              episodeNumber
               url
               length
               duration

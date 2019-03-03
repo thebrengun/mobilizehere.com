@@ -22,7 +22,7 @@ class Podcast extends ResponsiveGridOrder {
 		}
 
 		const { frontmatter, fields } = episodes[activeItem];
-		const { title, description } = frontmatter;
+		const { title, description, episodeType, episodeNumber } = frontmatter;
 		const { slug } = fields;
 		const { col } = this.state;
 
@@ -42,7 +42,7 @@ class Podcast extends ResponsiveGridOrder {
 							<img src={closeDrawerImg} alt="Close Podcast Details" />
 						</button>
 						<div>
-							<h4><Link to={slug}>{title}</Link></h4>
+							<h4><Link to={slug}>{`${episodeType === 'full' && episodeNumber ? `Episode ${episodeNumber}: ` : ''}${title}`}</Link></h4>
 							<div>
 								<p>{description}</p>
 								<PlayerBtn 

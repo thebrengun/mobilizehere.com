@@ -29,6 +29,8 @@ export const query = graphql`
 				image
 				description
 				date
+				episodeType
+				episodeNumber
 				url
 				length
 				duration

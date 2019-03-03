@@ -98,7 +98,7 @@ class MainPlayer extends PureComponent {
 					</div>
 					<div className="player-now-playing">
 						<div className="title-text">
-							<span>{nowPlaying ? nowPlaying.title : ''}</span>
+							<span>{nowPlaying ? `${nowPlaying.episodeType === 'full' && nowPlaying.episodeNumber ? `Episode ${nowPlaying.episodeNumber}: ` : ''}${nowPlaying.title}` : ''}</span>
 						</div>
 					</div>
 					<div className="player-time">

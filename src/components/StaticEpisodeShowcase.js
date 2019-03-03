@@ -23,7 +23,8 @@ function StaticEpisodeShowcase() {
 							image
 							description
 							date
-							isEpisode
+							episodeType
+							episodeNumber
 							url
 							length
 							duration

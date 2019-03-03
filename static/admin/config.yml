@@ -16,11 +16,12 @@ collections: # A list of collections the CMS should be able to edit
     fields: # The fields each document in this collection have
       - {label: "Legacy URL", name: "legacyURL", widget: "Legacy URL", default: '', required: false}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "podcast"}
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title", name: "title", widget: "string", hint: "Do not include Mobilize or Episode Number in the title!!!"}
       - {label: "Artwork", name: "image", widget: "image", default: "/assets/mobilize_logo.jpg"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Is Episode", name: "isEpisode", widget: "isEpisode", default: true, required: false}
+      - {label: "Episode Type", name: "episodeType", widget: "select", default: 'full', options: ['full', 'bonus', 'trailer']}
+      - {label: "Episode Number", name: "episodeNumber", widget: "number", valueType: "int", min: 1, step: 1}
       - {label: "Media URL", name: "url", widget: "string"}
       - {label: "File Size (in bytes)", name: "length", widget: "number"}
       - {label: "Duration (mm:ss)", name: "duration", widget: "string"}
