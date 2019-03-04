@@ -73,7 +73,7 @@ module.exports = {
             site_url: website,
             generator: 'GatsbyJS &amp; Node RSS',
             language: 'en',
-            copyright: `&#xA9; 2017 - 1019 ${name}`,
+            copyright: `&#xA9; 2017 - 2019 ${name}`,
             description: itunesSummary,
             image: {
               url: itunesArtwork,
