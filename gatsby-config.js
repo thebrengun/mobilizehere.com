@@ -164,8 +164,8 @@ module.exports = {
                     type: 'audio/mpeg',
                   },
                   guid: url.replace('https://', '//'),
-                  pubDate: new Date(date).toUTCString(),
                   custom_elements: [
+                    {'pubDate': new Date(date).toUTCString()},
                     {'itunes:title': title},
                     {'itunes:summary': `
                       ${description}
