@@ -153,18 +153,18 @@ module.exports = {
                   description: `
                     ${description}
 
-                    https://www.mobilizehere.com${slug}
+                    ${website}${slug}
                   `,
                   enclosure: {
                     __attr: {
                       length: length
                     },
-                    url: url.replace('https://', '//'), 
+                    url: url, 
                     length: length,
                     size: length,
                     type: 'audio/mpeg',
                   },
-                  guid: url.replace('https://', '//'),
+                  guid: url,
                   custom_elements: [
                     {'pubDate': new Date(date).toUTCString()},
                     {'itunes:title': title},
@@ -177,7 +177,7 @@ module.exports = {
                     {'itunes:episode': episodeNumber},
                     {'itunes:image': {
                       _attr: {
-                        href: `${website.replace('https://', '//')}${image}`
+                        href: `${website}${image}`
                       }
                     }},
                     {'itunes:duration': duration},
