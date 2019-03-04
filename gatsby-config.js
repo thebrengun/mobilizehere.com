@@ -138,6 +138,7 @@ module.exports = {
           `,
           output: '/podcast.rss',
           serialize: ({ query: { about, episodes } }) => {
+            const { website } = about.edges[0].node.frontmatter;
             return episodes.edges.map(
               ({node}) => {
                 const { 
