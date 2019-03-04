@@ -29,7 +29,6 @@ class ListControl extends React.Component {
 
 class ListPreview extends React.Component {
 	render() {
-		
 		const { value } = this.props;
 		const list = value.split(',').map(name => name.trim());
 

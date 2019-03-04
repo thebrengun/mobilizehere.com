@@ -176,7 +176,7 @@ module.exports = {
                     {'itunes:episode': episodeNumber},
                     {'itunes:image': {
                       _attr: {
-                        href: image.replace('https://', '//')
+                        href: `${website.replace('https://', '//')}${image}`
                       }
                     }},
                     {'itunes:duration': duration},
