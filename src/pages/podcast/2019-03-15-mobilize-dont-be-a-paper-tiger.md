@@ -1,7 +1,7 @@
 ---
 legacyURL: ''
 templateKey: podcast
-title: '- Mobilize - Don''t Be A Paper Tiger'
+title: Mobilize - Episode 19 - Don't Be A Paper Tiger
 image: /assets/screen-shot-2019-03-15-at-6.10.47-pm.png
 description: >-
   Mobilize Producer Betsy Nagler wraps up Season 2 with an interview with her
