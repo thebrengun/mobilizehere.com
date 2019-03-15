@@ -18,7 +18,7 @@ description: >-
   feels about the activism of the current era.
 date: 2019-03-15T22:28:35.131Z
 episodeType: full
-episodeNumber: 20
+episodeNumber: 19
 url: >-
   https://soundcloud.com/user-548478055/mobilize-episode-19-dont-be-a-paper-tiger
 length: 37
