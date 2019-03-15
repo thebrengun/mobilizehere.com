@@ -16,7 +16,7 @@ description: >-
 
   We explore the role activism played in Stephen's life, and discuss how how he
   feels about the activism of the current era.
-date: 2019-03-15T22:28:35.131Z
+date: 2019-03-15T22:42:00.000Z
 episodeType: full
 episodeNumber: 19
 url: >-
