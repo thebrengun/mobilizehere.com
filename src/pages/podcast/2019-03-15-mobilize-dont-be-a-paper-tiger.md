@@ -20,7 +20,7 @@ date: 2019-03-15T22:42:00.000Z
 episodeType: full
 episodeNumber: 19
 url: >-
-  https://soundcloud.com/user-548478055/mobilize-episode-19-dont-be-a-paper-tiger
+  https://s3.amazonaws.com/mobilize-podcast-analytics/Mobilize+-+Episode+19+-+Don't+Be+A+Paper+Tiger.mp3
 length: 37
 duration: '25:31'
 explicit: 'no'
