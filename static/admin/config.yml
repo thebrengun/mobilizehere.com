@@ -26,7 +26,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "File Size (in bytes)", name: "length", widget: "number"}
       - {label: "Duration (mm:ss)", name: "duration", widget: "string"}
       - {label: "Explicit (yes/no)", name: "explicit", widget: "string", default: "no"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
   - name: "resource"
     label: "Resources"
     folder: "src/data/resources"

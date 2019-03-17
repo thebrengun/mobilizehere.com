@@ -18,7 +18,7 @@ function EpisodeShowcase({data}) {
 			</div>
 			<div className="description">
 				<h4>
-					<Link to={`/${permalink}`}>
+					<Link to={`${permalink}`}>
 						{`${episodeType === 'full' && episodeNumber ? `Episode ${episodeNumber}: ` : ''}${title}`}
 					</Link>
 				</h4>

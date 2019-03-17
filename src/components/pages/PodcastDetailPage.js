@@ -15,7 +15,7 @@ function PodcastDetailPageComponent({episode}) {
 				<meta property="og:description" content={description} />
 				<meta property="og:audio" content={url} />
 				<meta property="og:image" content={image} />
-				<meta property="og:url" content={'https://www.mobilizehere.com/' + slug} />
+				<meta property="og:url" content={'https://www.mobilizehere.com' + slug} />
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:site" content="@MobilizeHere" />
 				<meta name="twitter:title" content={title} />

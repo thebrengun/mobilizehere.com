@@ -6,8 +6,9 @@ import PodcastDetailPageComponent from '../components/pages/PodcastDetailPage.js
 class PodcastTemplate extends React.PureComponent {
 	render() {
 		const { data,path } = this.props;
-		const slug = data.markdownRemark.fields.slug;
-		const episode = data.markdownRemark.frontmatter;
+		const { slug } = data.markdownRemark.fields;
+		const { frontmatter, html: __content } = data.markdownRemark;
+		const episode = {...frontmatter, __content };
 
 		return (
 			<Layout path={path}>
@@ -23,6 +24,7 @@ export const query = graphql`
 			fields {
 				slug
 			}
+			html
 			frontmatter {
 				legacyURL
 				title
