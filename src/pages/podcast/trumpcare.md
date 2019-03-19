@@ -2,7 +2,7 @@
 legacyURL: trumpcare
 templateKey: podcast
 title: TrumpCare
-image: ../../../static/assets/TrumpCare.jpg
+image: /assets/TrumpCare.jpg
 description: Grab life by the pussy with TrumpCare
 date: 2017-05-25T23:59:11.335Z
 episodeType: 'bonus'

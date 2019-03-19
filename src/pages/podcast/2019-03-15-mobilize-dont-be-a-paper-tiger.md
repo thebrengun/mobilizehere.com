@@ -2,7 +2,7 @@
 legacyURL: ''
 templateKey: podcast
 title: Don't Be A Paper Tiger
-image: ../../../static/assets/screen-shot-2019-03-15-at-6.10.47-pm.png
+image: /assets/screen-shot-2019-03-15-at-6.10.47-pm.png
 description: >-
   Mobilize Producer Betsy Nagler wraps up Season 2 with an interview with her
   father, Stephen Nagler, who was executive director of the New Jersey ACLU and

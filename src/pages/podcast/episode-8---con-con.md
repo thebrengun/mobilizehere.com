@@ -2,7 +2,7 @@
 legacyURL: episode-8-con-con
 templateKey: podcast
 title: 'Con Con'
-image: ../../../static/assets/008.png
+image: /assets/008.png
 description: '"Google Docuvist" Amber Sexton explains the New York State Constitutional Convention Referendum, a little-known ballot initiative that could have a very large impact for the people of New York for generations to come.'
 date: 2017-06-20T22:02:04.847Z
 episodeType: 'full'
