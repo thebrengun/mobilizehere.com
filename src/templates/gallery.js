@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import Layout from '../components/Layout.js';
 import PageBtns from '../components/PageBtns.js';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 class GalleryTemplate extends React.PureComponent {
 	render() {
@@ -19,11 +20,13 @@ class GalleryTemplate extends React.PureComponent {
 					{images.map(
 						({childImageSharp, id}, i) => {
 							const { thumbnails: thumbnail } = childImageSharp;
-							const { src: thumbnailSrc } = thumbnail;
 							const imageNum = numPrevImages + (i + 1);
 							return (
 								<Link to={`/gallery/img/${imageNum > 1 ? imageNum : ''}`} className="lz-col" key={`gallery-image-${id}`}>
-									<img src={thumbnailSrc} className="img-responsive" />
+									<Img 
+										fluid={thumbnail} 
+										className="cover-art" 
+									/>
 								</Link>
 							);
 						}

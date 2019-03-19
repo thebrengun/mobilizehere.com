@@ -2,9 +2,9 @@
 legacyURL: mobilize-families-belong-together-protest
 templateKey: podcast
 title: Families Belong Together Protest
-image: /assets/Families Belong Together Artwork.jpeg
+image: ../../../static/assets/Families Belong Together Artwork.jpeg
 description: 'Matthew Hittle attends the Families Belong Together protest in New York City.'
-date: '2018-08-30T13:28:15.226Z'
+date: 2018-08-30T13:28:15.226Z
 episodeType: 'bonus'
 episodeNumber: ''
 url: >-

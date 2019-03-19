@@ -36,7 +36,17 @@ exports.createPages = ({ actions, graphql }) => {
               legacyURL
               templateKey
               title
-              image
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 350) {
+                    src
+                    srcSet
+                    sizes
+                    aspectRatio
+                    tracedSVG
+                  }
+                }
+              }
               description
               date
               episodeType
@@ -56,19 +66,19 @@ exports.createPages = ({ actions, graphql }) => {
             childImageSharp {
               thumbnails: resize(width: 400, height:400) {
                 src
-                tracedSVG
                 width
                 height
                 aspectRatio
                 originalName
+                tracedSVG
               }
               fullsize: fluid(maxWidth: 700) {
                 src
-                tracedSVG
                 presentationWidth
                 presentationHeight
                 aspectRatio
                 originalName
+                tracedSVG
               }
             }
           }

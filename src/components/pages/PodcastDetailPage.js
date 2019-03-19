@@ -1,11 +1,13 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import PlayerBtn from '../Player/PlayerBtn'
+import React from 'react';
+import Helmet from 'react-helmet';
+import PlayerBtn from '../Player/PlayerBtn';
+import Img from 'gatsby-image';
 
 import '../../css/podcast-detail-page.scss'
 
 function PodcastDetailPageComponent({episode}) {
 	const { title, image, description, date, episodeType, episodeNumber, url, __content, slug } = episode;
+	const { fluid } = image.childImageSharp;
 	const d = new Date(date);
 	const dateStr = `${d.toDateString()}`;
 	return (
@@ -22,9 +24,9 @@ function PodcastDetailPageComponent({episode}) {
 				<meta name="twitter:description" content={description} />
 				<meta name="twitter:image" content={image} />
 			</Helmet>
-			<h2>{`${episodeType === 'full' && episodeNumber ? `Episode ${episodeNumber}: ` : ''}${title}`}</h2>			
-			<img src={image} alt={`Cover Art for ${title}`} className="img-responsive pd-art pull-right" />
-			<span className="pd-date">{dateStr}</span>
+			<h2>{`${episodeType === 'full' && episodeNumber ? `Episode ${episodeNumber}: ` : ''}${title}`}</h2>
+			<Img fluid={fluid} alt={`Cover Art for ${title}`} className="img-responsive pd-art pull-right" />
+			<h3 className="pd-date">{dateStr}</h3>
 			<p>{description}</p>
 			<PlayerBtn 
 				episode={episode} 

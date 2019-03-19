@@ -7,6 +7,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    'gatsby-remark-images',
     'gatsby-plugin-sharp', 
     'gatsby-transformer-sharp',
     {
@@ -28,6 +29,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/assets/images`,
         name: 'images',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/assets`,
+        name: 'staticImages',
       },
     },
     'gatsby-plugin-sharp',

@@ -8,6 +8,7 @@
 }
 
 .pd-date {
+	text-align: left;
 	font-weight: bold;
 }
 
@@ -16,6 +17,7 @@
 	width: 45%;
 	margin-left: $lz-padding;
 	margin-bottom: $lz-padding;
+	@include ThumbnailShadow();
 
 	@media screen and (max-width: $break-small) {
 		float: none;
@@ -25,5 +27,6 @@
 }
 
 .podcast-detail-body {
+	padding-top: 1em;
 	clear: both;
 }
