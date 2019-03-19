@@ -4,12 +4,14 @@ import Helmet from 'react-helmet';
 import Layout from '../../components/Layout.js';
 import ShareYourStory from '../../components/partials/ShareYourStory.js';
 import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 class About extends React.PureComponent {
 	render() {
 		const { data, path } = this.props;
 		const {html, frontmatter} = data.allMarkdownRemark.edges.map(({ node }) => node)[0];
 		const { image, contributors } = frontmatter;
+		const { fluid } = image.childImageSharp;
 		const credits = contributors.split(',').map(s => s.trim());
 
 		return (
@@ -17,7 +19,7 @@ class About extends React.PureComponent {
 				<Helmet title={"About"} />
 				<h2 className="mobilize-heading">About</h2>
 				<div className="about-container">
-					<img src={image} className="about-img" alt="Mobilize Logo" />
+					<Img fluid={fluid} alt="Mobilize Logo" className="about-img" />
 					<div dangerouslySetInnerHTML={{__html: html}} />
 				</div>
 				<ShareYourStory />
@@ -45,7 +47,17 @@ function StaticAbout() {
 							name
 							email
 							website
-							image
+							image {
+								childImageSharp {
+									fluid(maxWidth: 500) {
+										src
+										srcSet
+										sizes
+										aspectRatio
+										tracedSVG
+									}
+								}
+							}
 							itunesArtwork
 							contributors
 						}

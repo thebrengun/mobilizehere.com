@@ -2,9 +2,9 @@
 legacyURL: mobilize-rise-up-by-charlotte-littlehales
 templateKey: podcast
 title: Rise Up by Charlotte Littlehales
-image: /assets/rise-up.jpg
+image: ../../../static/assets/rise-up.jpg
 description: 'Rise Up, written and performed by Charlotte Littlehales and Phil Pardell, is a call for community, unity, and action. Want to sing it in your local choir? Sheet music: https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf'
-date: '2017-03-02T03:11:13.716Z'
+date: 2017-03-02T03:11:13.716Z
 episodeType: 'bonus'
 episodeNumber: ''
 url: >-

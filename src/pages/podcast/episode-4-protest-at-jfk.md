@@ -2,9 +2,9 @@
 legacyURL: episode-4-protest-at-jfk
 templateKey: podcast
 title: 'Protest at JFK'
-image: /assets/cover-ep-4.jpg
+image: ../../../static/assets/cover-ep-4.jpg
 description: 'How Audrey Sage, a self-described newbie organizer, led thousands of protesters to JFK airport.'
-date: '2017-03-30T03:11:13.716Z'
+date: 2017-03-30T03:11:13.716Z
 episodeType: 'full'
 episodeNumber: '4'
 url: >-

@@ -2,9 +2,9 @@
 legacyURL: mobilize-episode-18-eve-proper-the-idc-explained
 templateKey: podcast
 title: 'Eve Proper: The IDC Explained'
-image: /assets/018.jpeg
+image: ../../../static/assets/018.jpeg
 description: 'Professor and activist Eve Proper talks about the role the Independent Democratic Conference plays in the New York State Legislature and why the upcoming Democratic primaries are so important. Time to dismantle the IDC (for real this time).'
-date: '2018-09-07T16:52:12.730Z'
+date: 2018-09-07T16:52:12.730Z
 episodeType: 'full'
 episodeNumber: '18'
 url: >-

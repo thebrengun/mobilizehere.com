@@ -1,6 +1,6 @@
 ---
 title: 'Resist Bot'
 color: '#11374e'
-image: /assets/resistbot.png
+image: ../../../static/assets/resistbot.png
 url: https://www.resistbot.io
 ---

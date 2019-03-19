@@ -20,7 +20,17 @@ function StaticEpisodeShowcase() {
 							legacyURL
 							templateKey
 							title
-							image
+							image {
+								childImageSharp {
+									fluid(maxWidth: 600) {
+										src
+										srcSet
+										sizes
+										aspectRatio
+										tracedSVG
+									}
+								}
+							}
 							description
 							date
 							episodeType

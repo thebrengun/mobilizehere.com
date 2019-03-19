@@ -28,7 +28,17 @@ export const query = graphql`
 			frontmatter {
 				legacyURL
 				title
-				image
+				image {
+					childImageSharp {
+						fluid(maxWidth: 600) {
+							src
+							srcSet
+							sizes
+							aspectRatio
+							tracedSVG
+						}
+					}
+				}
 				description
 				date
 				episodeType

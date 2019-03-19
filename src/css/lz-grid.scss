@@ -24,12 +24,14 @@ button.lz-col {
 .lz-col {
 	padding: 0;
 	background: transparent;
+}
 
-	img {
-		@include ThumbnailShadowHover();
-	}
+.cover-art {
+	width: 100%;
 
-	img.selected {
+	@include ThumbnailShadowHover();
+
+	.selected {
 		@include ThumbnailDark();
 	}
 }

@@ -4,7 +4,7 @@ backend:
   branch: master # Branch to update (master by default)
 
 media_folder: "static/assets" # Folder where user uploaded files should go
-public_folder: "/assets"
+public_folder: "../../../static/assets" #Not the public folder, rather where GraphQL will query images
 publish_mode: editorial_workflow
 
 collections: # A list of collections the CMS should be able to edit
@@ -43,7 +43,7 @@ collections: # A list of collections the CMS should be able to edit
     files:
       - name: "general"
         label: "General Info"
-        file: "src/data/info.md"
+        file: "src/data/info/info.md"
         description: "General Site Settings"
         fields:
           - {label: "Global title", name: "name", widget: "string"}

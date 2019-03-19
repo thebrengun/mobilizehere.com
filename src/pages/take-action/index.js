@@ -3,6 +3,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../../components/Layout.js';
 import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 class TakeAction extends React.PureComponent {
 	render() {
@@ -16,13 +17,14 @@ class TakeAction extends React.PureComponent {
 				<div className="lz-grid lz-grid-wrap">
 					{resources.map(
 						({title, color, image, url}, i) => 
-							<div 
-								className="lz-col" 
-								style={{background: color}} 
-								key={`${title}-${i}`}
-							>
+							<div className="lz-col" key={`${title}-${i}`}>
 								<a href={url} target="_blank" rel="noopener noreferrer">
-									<img src={image} className="img-responsive" alt={url} />
+									<Img 
+										fluid={image.childImageSharp.fluid} 
+										alt={url} 
+										className="img-responsive cover-art" 
+										backgroundColor={color} 
+									/>
 								</a>
 							</div>
 					)}
@@ -42,7 +44,17 @@ function StaticTakeAction() {
 						frontmatter {
 							title
 							color
-							image
+							image {
+								childImageSharp {
+									fluid(maxWidth: 350) {
+										src
+										srcSet
+										sizes
+										aspectRatio
+										tracedSVG
+									}
+								}
+							}
 							url
 						}
 					}

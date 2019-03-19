@@ -2,9 +2,9 @@
 legacyURL: mobilize-daca-protests-trump-tower
 templateKey: podcast
 title: DACA Protests - Trump Tower
-image: /assets/000daca2.png
+image: ../../../static/assets/000daca2.png
 description: 'We visited Trump Tower to ask how people felt when Donald Trump put the future of DACA in limbo.'
-date: '2017-09-12T22:52:21.369Z'
+date: 2017-09-12T22:52:21.369Z
 episodeType: 'bonus'
 episodeNumber: ''
 url: >-

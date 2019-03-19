@@ -292,6 +292,7 @@ a {
 
 	.ul-wrapper {
 		position: absolute;
+		z-index: 10000;
 		margin-top: $pinch-width;
 		display: inline-flex;
 		transition: all 1s;
@@ -398,7 +399,7 @@ a {
 	}
 
 	.art-width {
-		img {
+		.cover-art {
 			@include ThumbnailShadow();
 		}
 	}
@@ -465,6 +466,7 @@ a {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	z-index: 100000;
 }
 
 .photo-step-link {
