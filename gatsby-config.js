@@ -59,7 +59,6 @@ module.exports = {
                     name
                     email
                     website
-                    image
                     keywords
                     itunesArtwork
                     itunesSummary
@@ -71,7 +70,7 @@ module.exports = {
         `,
         setup: ({ query: { about } }) => {
           const { 
-            name, email, website, keywords, image, itunesArtwork, itunesSummary 
+            name, email, website, keywords, itunesArtwork, itunesSummary 
           } = about.edges[0].node.frontmatter;
 
           return ({
@@ -129,7 +128,6 @@ module.exports = {
                     }
                     frontmatter {
                       title
-                      image
                       description
                       date
                       episodeType
@@ -146,11 +144,11 @@ module.exports = {
           `,
           output: '/podcast.rss',
           serialize: ({ query: { about, episodes } }) => {
-            const { website } = about.edges[0].node.frontmatter;
+            const { itunesArtwork, website } = about.edges[0].node.frontmatter;
             return episodes.edges.map(
               ({node}) => {
                 const { 
-                  title, image, description, date, 
+                  title, description, date, 
                   episodeType, episodeNumber, 
                   url, length, duration, explicit 
                 } = node.frontmatter;
@@ -185,7 +183,7 @@ module.exports = {
                     {'itunes:episode': episodeNumber},
                     {'itunes:image': {
                       _attr: {
-                        href: `${website}${image}`
+                        href: itunesArtwork
                       }
                     }},
                     {'itunes:duration': duration},
