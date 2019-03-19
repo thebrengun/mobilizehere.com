@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: mobilizehere/mobilizehere.com
-  branch: cms-fix # Branch to update (master by default)
+  branch: master # Branch to update (master by default)
 
 media_folder: "static/assets" # Folder where user uploaded files should go
 public_folder: "assets" #Not the public folder, rather where GraphQL will query images
