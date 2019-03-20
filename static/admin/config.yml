@@ -21,9 +21,9 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Episode Type", name: "episodeType", widget: "select", default: 'full', options: ['full', 'bonus', 'trailer']}
-      - {label: "Episode Number", name: "episodeNumber", widget: "string", default: '', required: false, pattern: '/\d*/g'}
+      - {label: "Episode Number", name: "episodeNumber", widget: "string", default: '', required: false, pattern: '/^[0-9]*$/g'}
       - {label: "Media URL", name: "url", widget: "string"}
-      - {label: "File Size (in bytes)", name: "length", widget: "string", default: '', required: false, pattern: '/\d*/g'}
+      - {label: "File Size (in bytes)", name: "length", widget: "string", default: '', required: true, pattern: '/^[0-9]*$/g'}
       - {label: "Duration (mm:ss)", name: "duration", widget: "string"}
       - {label: "Explicit (yes/no)", name: "explicit", widget: "string", default: "no"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
