@@ -10,23 +10,24 @@ function PodcastDetailPageComponent({episode}) {
 	const { title, image, description, date, episodeType, episodeNumber, url, __content, slug } = episode;
 	const d = new Date(date);
 	const dateStr = `${d.toDateString()}`;
+
 	return (
 		<div className="podcast-detail-page">
 			<Helmet title={title}>
 				<meta property="og:title" content={title} />
 				<meta property="og:description" content={description} />
 				<meta property="og:audio" content={url} />
-				<meta property="og:image" content={image} />
+				<meta property="og:image" content={image.og.src} />
 				<meta property="og:url" content={'https://www.mobilizehere.com' + slug} />
 				<meta name="twitter:card" content="summary_large_image" />
 				<meta name="twitter:site" content="@MobilizeHere" />
 				<meta name="twitter:title" content={title} />
 				<meta name="twitter:description" content={description} />
-				<meta name="twitter:image" content={image} />
+				<meta name="twitter:image" content={image.og.src} />
 			</Helmet>
 			<h2>{`${episodeType === 'full' && episodeNumber ? `Episode ${episodeNumber}: ` : ''}${title}`}</h2>
 			<PreviewCompatibleImage 
-				image={image} 
+				image={image.default} 
 				alt={`Cover Art for ${title}`} 
 				className="pd-art pull-right" 
 			/>

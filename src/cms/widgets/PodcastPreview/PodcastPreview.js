@@ -18,7 +18,10 @@ class PodcastPreview extends React.PureComponent {
 		const data = {
 			id: entry.getIn(['data', 'id']),
 			title: entry.getIn(['data', 'title']),
-			image: getAsset(entry.getIn(['data', 'image'])).value,
+			image: {
+				default: getAsset(entry.getIn(['data', 'image'])).value, 
+				og: getAsset(entry.getIn(['data', 'image'])).value
+			},
 			description: entry.getIn(['data', 'description']),
 			date: entry.getIn(['data', 'date']),
 			episodeType: entry.getIn(['data', 'episodeType']),

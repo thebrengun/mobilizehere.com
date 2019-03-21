@@ -31,12 +31,14 @@ class Layout extends React.PureComponent {
 					<title>Mobilize</title>
 					<meta name="description" content="Mobilize is a podcast that puts a spotlight on and is a resource for people, friends, communities, and activists who have decided to stand up, resist, fight back -- mobilize." />
 					<meta property="og:title" content="Mobilize" />
-					<meta property="og:description" content="Mobilize is a podcast that puts a spotlight on and is a 
-					resource for people, friends, communities, and activists who have decided to stand up, resist, 
-					fight back -- mobilize." />
+					<meta property="og:description" content="Mobilize is a podcast that puts a spotlight on and is a resource for people, friends, communities, and activists who have decided to stand up, resist, fight back -- mobilize." />
 					<meta property="og:image" content={largeImage} />
 					<meta property="og:url" content="https://www.mobilizehere.com" />
-					<meta name="twitter:card" content={largeImage} />
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta name="twitter:site" content="@MobilizeHere" />
+					<meta name="twitter:title" content="Mobilize Podcast" />
+					<meta name="twitter:description" content="Mobilize is a podcast that puts a spotlight on and is a resource for people, friends, communities, and activists who have decided to stand up, resist, fight back -- mobilize." />
+					<meta name="twitter:image" content={largeImage} />
 				</Helmet>
 
 				<div className="lz-header lz-padding">

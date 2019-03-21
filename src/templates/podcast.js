@@ -29,13 +29,18 @@ export const query = graphql`
 				legacyURL
 				title
 				image {
-					childImageSharp {
+					default: childImageSharp {
 						fluid(maxWidth: 600) {
 							src
 							srcSet
 							sizes
 							aspectRatio
 							tracedSVG
+						}
+					}
+					og: childImageSharp {
+						fixed(width: 630, height: 630, toFormat: PNG, cropFocus: CENTER) {
+							src
 						}
 					}
 				}

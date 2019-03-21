@@ -6,9 +6,9 @@ const PreviewCompatibleImage = (props) => {
 
   const { image } = props;
 
-  if (!!image && !!image.childImageSharp) {
+  if (!!image && !!image.fluid) {
     return (
-      <Img fluid={image.childImageSharp.fluid} {...props} />
+      <Img fluid={image.fluid} {...props} />
     )
   }
 
