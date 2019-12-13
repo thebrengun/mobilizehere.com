@@ -12,7 +12,7 @@ episodeType: full
 episodeNumber: '20'
 url: >-
   https://mobilize-podcast.s3.amazonaws.com/Mobilize+-+Episode+20+-+Alessandra+Biaggi_+Doing+the+work.mp3
-length: '21634077'
+length: '21639168'
 duration: '21:50'
 explicit: 'no'
 ---
