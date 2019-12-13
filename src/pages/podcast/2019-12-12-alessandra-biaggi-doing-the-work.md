@@ -6,7 +6,7 @@ image: /assets/mobilize_logo.jpg
 description: >-
   Alessandra Biaggi speaks with Mobilize producer Betsy Nagler about what it's
   like being in office as a progressive leader as opposed to running for office
-  as a political upstart.
+  as a political upstart. 
 date: 2019-12-13T00:24:22.258Z
 episodeType: full
 episodeNumber: '20'
