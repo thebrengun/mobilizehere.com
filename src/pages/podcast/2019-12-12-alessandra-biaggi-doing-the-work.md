@@ -2,7 +2,7 @@
 legacyURL: ''
 templateKey: podcast
 title: 'Alessandra Biaggi: Doing the Work'
-image: /assets/mobilize_logo.jpg
+image: /assets/artworks-000219287490-b5zwuw-t500x500.jpg
 description: >-
   Alessandra Biaggi speaks with Mobilize producer Betsy Nagler about what it's
   like being in office as a progressive leader as opposed to running for office
