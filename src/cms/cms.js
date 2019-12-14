@@ -1,5 +1,4 @@
 import CMS from 'netlify-cms';
-import isEpisodeConfig from './widgets/IsEpisode/IsEpisode.js';
 import LegacyURL from './widgets/LegacyURL/LegacyURL.js';
 import listConfig from './widgets/List/List.js';
 import PodcastPreview from './widgets/PodcastPreview/PodcastPreview.js';

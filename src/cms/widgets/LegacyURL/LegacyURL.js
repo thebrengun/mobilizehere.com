@@ -2,7 +2,7 @@ import React from 'react';
 
 class LegacyURLControl extends React.Component {
 	render() {
-		const {value, onChange} = this.props;
+		const {value} = this.props;
 
 		return (
 			<div className="css-1d8xcao">

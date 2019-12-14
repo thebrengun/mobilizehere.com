@@ -13,7 +13,7 @@ const PreviewCompatibleImage = (props) => {
   }
 
   if (!!image && typeof image === 'string')
-    return <img src={image} {...props} />
+    return <img src={image} alt={props.alt} {...props} />
 
   return null
 }

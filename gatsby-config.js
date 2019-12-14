@@ -164,6 +164,7 @@ module.exports = {
             }
           `,
           output: '/podcast.rss',
+          title: 'Mobilize',
           serialize: ({ query: { about, episodes } }) => {
             const { itunesArtwork, website } = about.edges[0].node.frontmatter;
             return episodes.edges.map(

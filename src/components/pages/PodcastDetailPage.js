@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PlayerBtn from '../Player/PlayerBtn';
-import Img from 'gatsby-image';
 import PreviewCompatibleImage from '../PreviewCompatibleImage.js';
 
 import '../../css/podcast-detail-page.scss'
