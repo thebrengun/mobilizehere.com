@@ -28,7 +28,7 @@ episodeType: full
 episodeNumber: '21'
 url: >-
   https://mobilize-podcast.s3.amazonaws.com/Mobilize+-+Episode+21+-+Kristin+Mink+-+What+unity+is%2C+and+what+it+isn't.mp3
-length: '48500000'
+length: '50855936'
 duration: '20:55'
 explicit: 'no'
 ---
