@@ -1,7 +1,7 @@
 ---
 legacyURL: ''
 templateKey: podcast
-title: Title not yet decided
+title: 'What unity is, and what it isn''t'
 image: /assets/mobilize_logo.jpg
 description: >-
   Mobilize Producer Betsy Nagler speaks with Kristin Mink.
@@ -26,9 +26,10 @@ description: >-
 date: 2020-02-18T19:45:42.376Z
 episodeType: full
 episodeNumber: '21'
-url: '1'
-length: '1'
-duration: '1'
+url: >-
+  https://mobilize-podcast.s3.amazonaws.com/Mobilize+-+Episode+21+-+Kristin+Mink+-+What+unity+is%2C+and+what+it+isn't.mp3
+length: '48500000'
+duration: '20:55'
 explicit: 'no'
 ---
 
