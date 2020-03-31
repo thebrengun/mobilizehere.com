@@ -2,7 +2,7 @@
 legacyURL: ''
 templateKey: podcast
 title: 'What unity is, and what it isn''t'
-image: /assets/mobilize_logo.jpg
+image: /assets/021.jpeg
 description: >-
   Kristin Mink revisited the studio with her little baby Nova. She speaks with
   Mobilize producer Betsy Nagler about her work as an activist, how her eventual
