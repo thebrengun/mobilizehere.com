@@ -2,7 +2,7 @@
 legacyURL: ''
 templateKey: podcast
 title: Masks 4 America
-image: /assets/mobilize_logo.jpg
+image: /assets/022.jpeg
 description: >+
   Kristin Mink speaks with Mobilize producer Cory Choy about the Masks 4 America
   Initiative - a coalition of activists, medical professionals, and suppliers
