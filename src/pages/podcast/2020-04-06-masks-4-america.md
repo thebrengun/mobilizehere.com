@@ -14,9 +14,9 @@ date: 2020-04-06T03:58:55.990Z
 episodeType: full
 episodeNumber: '22'
 url: >-
-  https://mobilize-podcast.s3.amazonaws.com/Mobilize+Episode+22+-+Masks+4+America.wav
+  https://mobilize-podcast.s3.amazonaws.com/Mobilize+Episode+22+-+Masks+4+America.mp3
 length: '47651525'
-duration: '19:51'
+duration: '19:54'
 explicit: 'no'
 ---
 You can donate at <https://www.gofundme.com/f/masks4america>
