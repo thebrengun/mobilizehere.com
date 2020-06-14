@@ -255,6 +255,7 @@ module.exports = {
          */
         modulePath: `${__dirname}/src/cms/cms.js`,
         publicPath: `admin`,
+        enableIdentityWidget: false,
       },
     },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
