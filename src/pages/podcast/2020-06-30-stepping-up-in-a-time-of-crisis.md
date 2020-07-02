@@ -2,7 +2,7 @@
 legacyURL: ''
 templateKey: podcast
 title: Stepping Up In A Time Of Crisis
-image: /assets/mobilize_logo.jpg
+image: /assets/026.jpeg
 description: >-
   In this episode of Mobilize, producer Betsy Nagler speaks with State Senator
   Alessandra Biaggi and Assemblymember Catalina Cruz, two truly progressive
