@@ -2,7 +2,7 @@
 legacyURL: ''
 templateKey: podcast
 title: Changing The Party From Within
-image: /assets/mobilize_logo.jpg
+image: /assets/027.jpeg
 description: >-
   Producer Betsy Nagler speaks with 2016 Bernie Sanders delegate and local
   Democratic party candidate Rachel Eve Stein about working within the
