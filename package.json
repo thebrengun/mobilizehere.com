@@ -5,7 +5,7 @@
   "author": "Brennan McVicar",
   "dependencies": {
     "bulma": "^0.7.2",
-    "gatsby": "^2.0.103",
+    "gatsby": "^2.20.21",
     "gatsby-plugin-feed": "^2.0.12",
     "gatsby-plugin-google-analytics": "^2.0.12",
     "gatsby-plugin-manifest": "^2.0.15",
@@ -21,7 +21,7 @@
     "lodash-webpack-plugin": "^0.11.4",
     "netlify-cms": "^2.3.3",
     "node-sass": "^4.11.0",
-    "parcel-bundler": "^1.11.0",
+    "parcel-bundler": "^1.12.5",
     "prop-types": "^15.6.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
