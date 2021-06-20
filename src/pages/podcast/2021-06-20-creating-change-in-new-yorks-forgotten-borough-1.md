@@ -1,7 +1,7 @@
 ---
 legacyURL: ''
 templateKey: podcast
-title: creating change in new york's forgotten borough
+title: Creating Change in New York's Forgotten Borough
 image: /assets/mobilize_logo.jpg
 description: >-
   Producer Betsy Nagler speaks with Democratic activist and organizer, Lorie
