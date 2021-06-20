@@ -4,11 +4,12 @@ templateKey: podcast
 title: Creating Change in New York's Forgotten Borough
 image: /assets/027.jpg
 description: >-
-  Producer Betsey Naglar sits down with Democratic activist and organizer and
-  co-founder of Staten Island Women Who March, Lorie Honors who's now running
-  for Staten Island Borough President, about how she got involved in activism,
-  what she seeks to accomplish as Borough President, and where she sees New
-  York's most conservative borough heading now in hopefully the Post-Trump era.
+  Producer Betsy Nagler speaks with Democratic activist and organizer, Lorie
+  Honor, one of the founding members of Staten Island Women Who March, who's now
+  running for Staten Island Borough President. They discuss how Lorie got
+  involved in activism, what she seeks to accomplish as Borough President, and
+  where she sees New York's most conservative borough heading now that we are
+  (hopefully) in the Post-Trump era.
 date: 2021-06-20T13:50:01.581Z
 episodeType: full
 episodeNumber: '28'
