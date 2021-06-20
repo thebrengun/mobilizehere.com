@@ -2,7 +2,7 @@
 legacyURL: ''
 templateKey: podcast
 title: creating change in new york's forgotten borough
-image: /assets/027.jpg
+image: /assets/mobilize_logo.jpg
 description: >-
   Producer Betsy Nagler speaks with Democratic activist and organizer, Lorie
   Honor, one of the founding members of Staten Island Women Who March, who's now
