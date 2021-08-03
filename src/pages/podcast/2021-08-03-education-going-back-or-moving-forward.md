@@ -9,7 +9,7 @@ description: >-
   and switch to virtual and remote learning for the 2020 school year. But with
   the production of the COVID-19 vaccine completed, the 2021 school year coming
   into view, and with new regulations put out by the CDC, many wonder what
-  schools will do for the coming year. Mobilize intern, Tom Lezon, sat down with
+  schools will do for the coming year. Mobilize intern Tom Lezon sat down with
   four teachers from New York and New Jersey to see what they and their
   establishments are planning to do to prepare for the upcoming school year and
   what it'll mean for the country going forward.
