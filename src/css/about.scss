@@ -23,7 +23,7 @@
 	@media screen and (max-width: $break-small) {
 		display: block;
 		max-width: 100%;
-		margin: ($lz-padding / 2) auto;
+		margin: ($lz-padding * 0.5) auto;
 	}
 }
 
@@ -36,7 +36,7 @@
 
 	span {
 		text-align: center;
-		margin: ($lz-padding / 2) 0;
+		margin: ($lz-padding * 0.5) 0;
 		flex-basis: 33%;
 		@media screen and (max-width: $break-small) {
 			flex-basis: 50%;
