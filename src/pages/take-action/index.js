@@ -3,7 +3,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../../components/Layout.js';
 import { StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 class TakeAction extends React.PureComponent {
 	render() {
@@ -19,8 +19,8 @@ class TakeAction extends React.PureComponent {
 						({title, color, image, url}, i) => 
 							<div className="lz-col" key={`${title}-${i}`}>
 								<a href={url} target="_blank" rel="noopener noreferrer">
-									<Img 
-										fluid={image.childImageSharp.fluid} 
+									<GatsbyImage 
+										image={image.childImageSharp.gatsbyImageData} 
 										alt={url} 
 										className="img-responsive cover-art" 
 										backgroundColor={color} 
@@ -30,38 +30,34 @@ class TakeAction extends React.PureComponent {
 					)}
 				</div>
 			</Layout>
-		);
+        );
 	}
 }
 
 function StaticTakeAction() {
-	const query = graphql`
-		query Resources {
-			allMarkdownRemark(limit: 1000, filter: {fileAbsolutePath: {regex: "\/src\/data\/resources\/"}}) {
-				edges {
-					node {
-						id
-						frontmatter {
-							title
-							color
-							image {
-								childImageSharp {
-									fluid(maxWidth: 350) {
-										src
-										srcSet
-										sizes
-										aspectRatio
-										tracedSVG
-									}
-								}
-							}
-							url
-						}
-					}
-				}
-			}
-		}
-	`;
+	const query = graphql`query Resources {
+  allMarkdownRemark(
+    limit: 1000
+    filter: {fileAbsolutePath: {regex: "/src/data/resources/"}}
+  ) {
+    edges {
+      node {
+        id
+        frontmatter {
+          title
+          color
+          image {
+            childImageSharp {
+              gatsbyImageData(width: 350, placeholder: TRACED_SVG, layout: CONSTRAINED)
+            }
+          }
+          url
+        }
+      }
+    }
+  }
+}
+`;
 	return (
 		<StaticQuery 
 			query={query} 

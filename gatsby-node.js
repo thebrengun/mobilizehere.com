@@ -6,89 +6,81 @@ const createPaginatedPages = require("gatsby-paginate");
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
 
-  return graphql(`
-    {
-      pages: allMarkdownRemark(
-        limit: 1000
-        filter: { fileAbsolutePath: { regex: "/src/pages/" } }
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              templateKey
-            }
-          }
+  return graphql(`{
+  pages: allMarkdownRemark(
+    limit: 1000
+    filter: {fileAbsolutePath: {regex: "/src/pages/"}}
+  ) {
+    edges {
+      node {
+        id
+        fields {
+          slug
         }
-      }
-      episodes: allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { frontmatter: { templateKey: { eq: "podcast" } } }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              legacyURL
-              templateKey
-              title
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 350) {
-                    src
-                    srcSet
-                    sizes
-                    aspectRatio
-                    tracedSVG
-                  }
-                }
-              }
-              description
-              date
-              episodeType
-              episodeNumber
-              url
-              length
-              duration
-              explicit
-            }
-          }
-        }
-      }
-      gallery: allFile(filter: { absolutePath: { regex: "/gallery/full/" } }) {
-        edges {
-          node {
-            id
-            childImageSharp {
-              thumbnails: resize(width: 400, height: 400) {
-                src
-                width
-                height
-                aspectRatio
-                originalName
-                tracedSVG
-              }
-              fullsize: fluid(maxWidth: 700) {
-                src
-                presentationWidth
-                presentationHeight
-                aspectRatio
-                originalName
-                tracedSVG
-              }
-            }
-          }
+        frontmatter {
+          templateKey
         }
       }
     }
-  `).then((result) => {
+  }
+  episodes: allMarkdownRemark(
+    sort: {order: DESC, fields: [frontmatter___date]}
+    filter: {frontmatter: {templateKey: {eq: "podcast"}}}
+    limit: 1000
+  ) {
+    edges {
+      node {
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          legacyURL
+          templateKey
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                width: 350,
+                formats: [ JPG ],
+                placeholder: TRACED_SVG,
+                layout: CONSTRAINED
+              )
+            }
+          }
+          description
+          date
+          episodeType
+          episodeNumber
+          url
+          length
+          duration
+          explicit
+        }
+      }
+    }
+  }
+  gallery: allFile(filter: {absolutePath: {regex: "/gallery/full/"}}) {
+    edges {
+      node {
+        id
+        childImageSharp {
+          thumbnails: gatsbyImageData(
+            width: 400,
+            aspectRatio: 1,
+            placeholder: BLURRED,
+            layout: CONSTRAINED
+          ),
+          fullsize: gatsbyImageData(
+            placeholder: BLURRED,
+            layout: FULL_WIDTH
+          )
+        }
+      }
+    }
+  }
+}
+`).then((result) => {
     if (result.errors) {
       result.errors.forEach((e) => console.error(e.toString()));
       return Promise.reject(result.errors);

@@ -18,43 +18,41 @@ class PodcastTemplate extends React.PureComponent {
 	}
 }
 
-export const query = graphql`
-	query PodcastEpisodeById($id: String!) {
-		markdownRemark(id: { eq: $id }) {
-			fields {
-				slug
-			}
-			html
-			frontmatter {
-				legacyURL
-				title
-				image {
-					default: childImageSharp {
-						fluid(maxWidth: 600) {
-							src
-							srcSet
-							sizes
-							aspectRatio
-							tracedSVG
-						}
-					}
-					og: childImageSharp {
-						fixed(width: 630, height: 630, toFormat: PNG, cropFocus: CENTER) {
-							src
-						}
-					}
-				}
-				description
-				date
-				episodeType
-				episodeNumber
-				url
-				length
-				duration
-				explicit
-			}
-		}
-	}
+export const query = graphql`query PodcastEpisodeById($id: String!) {
+  markdownRemark(id: {eq: $id}) {
+    fields {
+      slug
+    }
+    html
+    frontmatter {
+      legacyURL
+      title
+      image {
+        default: childImageSharp {
+          gatsbyImageData(placeholder: TRACED_SVG, layout: FULL_WIDTH)
+        }
+        og: childImageSharp {
+          gatsbyImageData(
+            width: 630,
+            aspectRatio: 1,
+            formats: [ PNG ],
+            transformOptions: {
+              cropFocus: CENTER
+            }
+          )
+        }
+      }
+      description
+      date
+      episodeType
+      episodeNumber
+      url
+      length
+      duration
+      explicit
+    }
+  }
+}
 `;
 
 export default PodcastTemplate;
