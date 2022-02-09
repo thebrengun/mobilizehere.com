@@ -11,7 +11,7 @@ import PageBtns from '../components/PageBtns.js';
 import PlayerBtn from '../components/Player/PlayerBtn';
 import closeDrawerImg from '../assets/images/template/nav-close.jpg';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 class Podcast extends ResponsiveGridOrder {
 	renderDrawer = () => {
@@ -78,19 +78,23 @@ class Podcast extends ResponsiveGridOrder {
 				const altText = `Cover Art for ${title}`;
 
 				return (
-					<button className="lz-col" key={'podcast' + i} onClick={handleClick}>
-						<Img 
-							fluid={image.childImageSharp.fluid} 
+                    <button className="lz-col" key={'podcast' + i} onClick={handleClick}>
+						<GatsbyImage 
+							image={image.childImageSharp.gatsbyImageData} 
 							alt={altText} 
 							className={`cover-art ${isActive ? ' selected' : ''}`}
 						/>
 						<Noscript>
 							<Link to={slug} className="no-script-tile-link">
-								<Img fluid={image.childImageSharp.fluid} alt={altText} className={classNames} />
+								<GatsbyImage
+									image={image.childImageSharp.gatsbyImageData}
+									alt={altText}
+									className={classNames}
+								/>
 							</Link>
 						</Noscript>
 					</button>
-				);
+                );
 			}
 		);
 	}

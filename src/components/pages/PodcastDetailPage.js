@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import PlayerBtn from '../Player/PlayerBtn';
 import PreviewCompatibleImage from '../PreviewCompatibleImage.js';
+import { getSrc } from 'gatsby-plugin-image';
 
 import '../../css/podcast-detail-page.scss'
 
@@ -9,7 +10,7 @@ function PodcastDetailPageComponent({episode}) {
 	const { title, image, description, date, episodeType, episodeNumber, url, __content, slug } = episode;
 	const d = new Date(date);
 	const dateStr = `${d.toDateString()}`;
-	const ogImage = `https://www.mobilizehere.com${image.og.fixed.src}`;
+	const ogImage = `https://www.mobilizehere.com${getSrc(image.og)}`;
 
 	return (
 		<div className="podcast-detail-page">

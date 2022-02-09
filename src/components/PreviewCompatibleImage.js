@@ -1,19 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-const PreviewCompatibleImage = (props) => {
-
-  const { image } = props;
-
-  if (!!image && !!image.fluid) {
+const PreviewCompatibleImage = ({ image, ...props }) => {
+  if (image && image.gatsbyImageData) {
     return (
-      <Img fluid={image.fluid} {...props} />
+      <GatsbyImage image={image.gatsbyImageData} {...props} />
     )
   }
 
-  if (!!image && typeof image === 'string')
-    return <img src={image} alt={props.alt} {...props} />
+  if (image && typeof image === 'string') {
+    return <img src={image} {...props} />
+  }
 
   return null
 }
