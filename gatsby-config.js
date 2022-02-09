@@ -2,13 +2,13 @@ module.exports = {
   siteMetadata: {
     title: 'Mobilize',
     description: '',
-    siteUrl: 'https://www.mobilizehere.com'
+    siteUrl: 'https://www.mobilizehere.com',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-image',
-    'gatsby-plugin-sharp', 
+    'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
@@ -48,7 +48,7 @@ module.exports = {
             resolve: 'gatsby-remark-relative-images',
             options: {
               name: 'uploads',
-            }
+            },
           },
           {
             resolve: 'gatsby-remark-images',
@@ -57,7 +57,7 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 1050,
-            }
+            },
           },
           {
             resolve: 'gatsby-remark-copy-linked-files',
@@ -91,11 +91,16 @@ module.exports = {
           }
         `,
         setup: ({ query: { about } }) => {
-          const { 
-            name, email, website, keywords, itunesArtwork, itunesSummary 
-          } = about.edges[0].node.frontmatter;
+          const {
+            name,
+            email,
+            website,
+            keywords,
+            itunesArtwork,
+            itunesSummary,
+          } = about.edges[0].node.frontmatter
 
-          return ({
+          return {
             no_cdata_fields: ['title', 'description', 'copyright', 'language'],
             title: name,
             link: website,
@@ -110,33 +115,40 @@ module.exports = {
               title: name,
             },
             custom_namespaces: {
-              'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
+              itunes: 'http://www.itunes.com/dtds/podcast-1.0.dtd',
             },
             custom_elements: [
-              {'itunes:author': name},
-              {'itunes:summary': itunesSummary},
-              {'itunes:owner': [
-                {'itunes:name': name},
-                {'itunes:email': email}
-              ]},
-              {'itunes:image': {
-                _attr: {
-                  href: itunesArtwork
-                }
-              }},
-              {'itunes:keywords': keywords.join(',')},
-              {'itunes:category': {
-                _attr: {
-                  text: 'News &amp; Politics'
-                }
-              }},
-              {'itunes:type': 'episodic'},
-              {'itunes:explicit': 'no'},
-            ]
-          });
+              { 'itunes:author': name },
+              { 'itunes:summary': itunesSummary },
+              {
+                'itunes:owner': [
+                  { 'itunes:name': name },
+                  { 'itunes:email': email },
+                ],
+              },
+              {
+                'itunes:image': {
+                  _attr: {
+                    href: itunesArtwork,
+                  },
+                },
+              },
+              { 'itunes:keywords': keywords.join(',') },
+              {
+                'itunes:category': {
+                  _attr: {
+                    text: 'News &amp; Politics',
+                  },
+                },
+              },
+              { 'itunes:type': 'episodic' },
+              { 'itunes:explicit': 'no' },
+            ],
+          }
         },
-        feeds: [{
-          query: `
+        feeds: [
+          {
+            query: `
             {
               episodes: allMarkdownRemark(
                   sort: { order: DESC, fields: [frontmatter___date] },
@@ -164,18 +176,23 @@ module.exports = {
               }
             }
           `,
-          output: '/podcast.rss',
-          title: 'Mobilize',
-          serialize: ({ query: { about, episodes } }) => {
-            const { itunesArtwork, website } = about.edges[0].node.frontmatter;
-            return episodes.edges.map(
-              ({node}) => {
-                const { 
-                  title, description, date, 
-                  episodeType, episodeNumber, 
-                  url, length, duration, explicit 
-                } = node.frontmatter;
-                const { slug } = node.fields;
+            output: '/podcast.rss',
+            title: 'Mobilize',
+            serialize: ({ query: { about, episodes } }) => {
+              const { itunesArtwork, website } = about.edges[0].node.frontmatter
+              return episodes.edges.map(({ node }) => {
+                const {
+                  title,
+                  description,
+                  date,
+                  episodeType,
+                  episodeNumber,
+                  url,
+                  length,
+                  duration,
+                  explicit,
+                } = node.frontmatter
+                const { slug } = node.fields
                 return {
                   no_cdata_fields: ['title', 'description'],
                   title: title,
@@ -186,56 +203,60 @@ module.exports = {
                   `,
                   enclosure: {
                     __attr: {
-                      length: length
+                      length: length,
                     },
-                    url: url, 
+                    url: url,
                     length: length,
                     size: length,
                     type: 'audio/mpeg',
                   },
                   guid: url,
                   custom_elements: [
-                    {'pubDate': new Date(date).toUTCString()},
-                    {'itunes:title': title},
-                    {'itunes:summary': `
+                    { pubDate: new Date(date).toUTCString() },
+                    { 'itunes:title': title },
+                    {
+                      'itunes:summary': `
                       ${description}
 
                       https://www.mobilizehere.com${slug}
-                    `},
-                    {'itunes:episodeType': episodeType},
-                    {'itunes:episode': episodeNumber},
-                    {'itunes:image': {
-                      _attr: {
-                        href: itunesArtwork
-                      }
-                    }},
-                    {'itunes:duration': duration},
-                    {'itunes:explicit': explicit}
-                  ]
-                };
-              }
-            );
+                    `,
+                    },
+                    { 'itunes:episodeType': episodeType },
+                    { 'itunes:episode': episodeNumber },
+                    {
+                      'itunes:image': {
+                        _attr: {
+                          href: itunesArtwork,
+                        },
+                      },
+                    },
+                    { 'itunes:duration': duration },
+                    { 'itunes:explicit': explicit },
+                  ],
+                }
+              })
+            },
           },
-        }]
-      }
+        ],
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Mobilize",
-        short_name: "Mobilize",
-        start_url: "/",
-        background_color: "#fafeff",
-        theme_color: "#2096c3",
-        display: "standalone",
-        icon: "src/assets/icons/splash.png",
+        name: 'Mobilize',
+        short_name: 'Mobilize',
+        start_url: '/',
+        background_color: '#fafeff',
+        theme_color: '#2096c3',
+        display: 'standalone',
+        icon: 'src/assets/icons/splash.png',
       },
     },
     'gatsby-plugin-offline',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-93560224-1",
+        trackingId: 'UA-93560224-1',
         // Puts tracking script in the head instead of the body
         head: false,
         // Setting this parameter is optional
@@ -244,7 +265,7 @@ module.exports = {
         respectDNT: true,
         sampleRate: 5,
         siteSpeedSampleRate: 10,
-        cookieDomain: "mobilizehere.com",
+        cookieDomain: 'mobilizehere.com',
       },
     },
     {

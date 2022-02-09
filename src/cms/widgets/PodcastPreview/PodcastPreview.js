@@ -1,37 +1,37 @@
-import React from "react";
-import { Provider } from "react-redux";
-import showdown from "showdown";
-import store from "../../../reducers/store.js";
-import PodcastDetailPage from "../../../components/pages/PodcastDetailPage.js";
-import MainPlayer from "../../../components/Player/Player.js";
+import React from 'react'
+import { Provider } from 'react-redux'
+import showdown from 'showdown'
+import store from '../../../reducers/store.js'
+import PodcastDetailPage from '../../../components/pages/PodcastDetailPage.js'
+import MainPlayer from '../../../components/Player/Player.js'
 
 class PodcastPreview extends React.PureComponent {
   constructor() {
-    super();
-    this.converter = new showdown.Converter();
+    super()
+    this.converter = new showdown.Converter()
   }
 
   render() {
-    const { makeHtml } = this.converter;
-    const { entry, getAsset } = this.props;
+    const { makeHtml } = this.converter
+    const { entry, getAsset } = this.props
 
     const data = {
-      id: entry.getIn(["data", "id"]),
-      title: entry.getIn(["data", "title"]),
+      id: entry.getIn(['data', 'id']),
+      title: entry.getIn(['data', 'title']),
       image: {
-        default: getAsset(entry.getIn(["data", "image"])).toString(),
-        og: getAsset(entry.getIn(["data", "image"])).toString(),
+        default: getAsset(entry.getIn(['data', 'image'])).toString(),
+        og: getAsset(entry.getIn(['data', 'image'])).toString(),
       },
-      description: entry.getIn(["data", "description"]),
-      date: entry.getIn(["data", "date"]),
-      episodeType: entry.getIn(["data", "episodeType"]),
-      episodeNumber: entry.getIn(["data", "episodeNumber"]),
-      length: entry.getIn(["data", "length"]),
-      url: entry.getIn(["data", "url"]),
-      duration: entry.getIn(["data", "duration"]),
-      explicit: entry.getIn(["data", "explicit"]),
-      __content: makeHtml.call(this.converter, entry.getIn(["data", "body"])),
-    };
+      description: entry.getIn(['data', 'description']),
+      date: entry.getIn(['data', 'date']),
+      episodeType: entry.getIn(['data', 'episodeType']),
+      episodeNumber: entry.getIn(['data', 'episodeNumber']),
+      length: entry.getIn(['data', 'length']),
+      url: entry.getIn(['data', 'url']),
+      duration: entry.getIn(['data', 'duration']),
+      explicit: entry.getIn(['data', 'explicit']),
+      __content: makeHtml.call(this.converter, entry.getIn(['data', 'body'])),
+    }
 
     return (
       <Provider store={store}>
@@ -40,11 +40,11 @@ class PodcastPreview extends React.PureComponent {
           <MainPlayer />
         </div>
       </Provider>
-    );
+    )
   }
 }
 
-export default PodcastPreview;
+export default PodcastPreview
 
 // - {label: "Title", name: "title", widget: "string"}
 // - {label: "Artwork", name: "image", widget: "image", default: "/assets/mobilize_logo.jpg"}

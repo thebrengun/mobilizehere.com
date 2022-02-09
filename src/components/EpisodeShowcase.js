@@ -1,26 +1,30 @@
-import React from "react";
-import PlayerBtn from "./Player/PlayerBtn";
-import { Link } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from 'react'
+import PlayerBtn from './Player/PlayerBtn'
+import { Link } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 function EpisodeShowcase({ data }) {
-  const latestEpisode = data.allMarkdownRemark.edges[0].node;
+  const latestEpisode = data.allMarkdownRemark.edges[0].node
   const { title, image, description, episodeType, episodeNumber } =
-    latestEpisode.frontmatter;
-  const { slug: permalink } = latestEpisode.fields;
+    latestEpisode.frontmatter
+  const { slug: permalink } = latestEpisode.fields
 
   return (
     <div className="episode-showcase">
       <div className="art-width">
-        <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt={`Artwork for ${title}`} className="cover-art" />
+        <GatsbyImage
+          image={image.childImageSharp.gatsbyImageData}
+          alt={`Artwork for ${title}`}
+          className="cover-art"
+        />
       </div>
       <div className="description">
         <h4>
           <Link to={`${permalink}`}>
             {`${
-              episodeType === "full" && episodeNumber
+              episodeType === 'full' && episodeNumber
                 ? `Episode ${episodeNumber}: `
-                : ""
+                : ''
             }${title}`}
           </Link>
         </h4>
@@ -36,7 +40,7 @@ function EpisodeShowcase({ data }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default EpisodeShowcase;
+export default EpisodeShowcase
