@@ -1,12 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { GatsbyImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const PreviewCompatibleImage = ({ image, ...props }) => {
   if (image && image.gatsbyImageData) {
-    return (
-      <GatsbyImage image={image.gatsbyImageData} {...props} />
-    )
+    return <GatsbyImage image={image.gatsbyImageData} {...props} />
   }
 
   if (image && typeof image === 'string') {
@@ -17,11 +15,11 @@ const PreviewCompatibleImage = ({ image, ...props }) => {
 }
 
 PreviewCompatibleImage.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
 }
 
 PreviewCompatibleImage.defaultProps = {
-  alt: ''
-};
+  alt: '',
+}
 
 export default PreviewCompatibleImage

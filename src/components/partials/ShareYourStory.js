@@ -1,24 +1,24 @@
-import React from "react";
-import fetch from "isomorphic-fetch";
-import "../../css/share-your-story.scss";
+import React from 'react'
+import fetch from 'isomorphic-fetch'
+import '../../css/share-your-story.scss'
 
 class ShareYourStory extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       formData: {
-        _subject: "Story Submission",
-        name: "",
-        email: "",
-        phone: "",
-        story: "",
+        _subject: 'Story Submission',
+        name: '',
+        email: '',
+        phone: '',
+        story: '',
       },
-      status: "UNSENT",
-      message: "Share your story with the Mobilize Podcast.",
-    };
+      status: 'UNSENT',
+      message: 'Share your story with the Mobilize Podcast.',
+    }
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(e) {
@@ -27,45 +27,45 @@ class ShareYourStory extends React.Component {
         ...this.state.formData,
         [e.target.name]: e.target.value,
       },
-    });
+    })
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
 
-    this.setState({ status: "SENDING", message: "Sending your story..." });
+    this.setState({ status: 'SENDING', message: 'Sending your story...' })
 
-    fetch("https://formspree.io/f/mobilizehere@gmail.com", {
-      method: "POST",
+    fetch('https://formspree.io/f/mobilizehere@gmail.com', {
+      method: 'POST',
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(this.state.formData),
     })
-      .then((response) => this.setState({ status: "SENT", message: "Thanks!" }))
+      .then((response) => this.setState({ status: 'SENT', message: 'Thanks!' }))
       .catch((error) =>
         this.setState({
-          status: "ERROR",
-          message: "Hmm...Something went wrong.",
+          status: 'ERROR',
+          message: 'Hmm...Something went wrong.',
         })
-      );
+      )
   }
 
   render() {
     return (
       <div
         className={[
-          "share-your-story",
-          this.state.status === "SENDING" ? "sending" : "",
-          this.state.status === "SENT" ? "sent" : "",
-          this.state.status === "ERROR" ? "error" : "",
-        ].join(" ")}
+          'share-your-story',
+          this.state.status === 'SENDING' ? 'sending' : '',
+          this.state.status === 'SENT' ? 'sent' : '',
+          this.state.status === 'ERROR' ? 'error' : '',
+        ].join(' ')}
       >
         <h2>
-          {this.state.status === "SENT"
-            ? "Thanks For Sharing!"
-            : "Share Your Story"}
+          {this.state.status === 'SENT'
+            ? 'Thanks For Sharing!'
+            : 'Share Your Story'}
         </h2>
         <form onSubmit={this.handleSubmit}>
           <div className="message">{this.state.message}</div>
@@ -126,7 +126,7 @@ class ShareYourStory extends React.Component {
                 <input
                   type="submit"
                   value={
-                    this.state.status === "SENDING" ? "Sending..." : "Send"
+                    this.state.status === 'SENDING' ? 'Sending...' : 'Send'
                   }
                 />
               </span>
@@ -134,8 +134,8 @@ class ShareYourStory extends React.Component {
           </div>
         </form>
       </div>
-    );
+    )
   }
 }
 
-export default ShareYourStory;
+export default ShareYourStory

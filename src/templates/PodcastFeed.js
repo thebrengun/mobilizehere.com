@@ -1,9 +1,16 @@
-exports.createPodcastFeed = createPodcastFeed;
+exports.createPodcastFeed = createPodcastFeed
 
-function createPodcastFeed({ name, email, website: websiteHttps, image, itunesArtwork, __content, podcast }) {
-	const website = websiteHttps.replace('https://', '//');
-	return (
-`<?xml version="1.0" encoding="utf-8"?>
+function createPodcastFeed({
+  name,
+  email,
+  website: websiteHttps,
+  image,
+  itunesArtwork,
+  __content,
+  podcast,
+}) {
+  const website = websiteHttps.replace('https://', '//')
+  return `<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>${name}</title>
@@ -30,9 +37,19 @@ function createPodcastFeed({ name, email, website: websiteHttps, image, itunesAr
     <itunes:category text="News &amp; Politics" />
     <itunes:category text="Society &amp; Culture" />
     <itunes:explicit>no</itunes:explicit>
-    ${podcast.episodes.map(
-    	({ image, url, title, description, date, length, duration, explicit }) => 
-    `<item>
+    ${podcast.episodes
+      .map(
+        ({
+          image,
+          url,
+          title,
+          description,
+          date,
+          length,
+          duration,
+          explicit,
+        }) =>
+          `<item>
       <title>${title}</title>
       <description>
         ${description}
@@ -45,19 +62,22 @@ function createPodcastFeed({ name, email, website: websiteHttps, image, itunesAr
         ${'https://www.mobilizehere.com'}
       </itunes:summary>
       <itunes:image href="${image.replace('https://', 'http://')}" />
-      <enclosure length="${length}" type="audio/mpeg" url="${url.replace('https://', 'http://')}" />
+      <enclosure length="${length}" type="audio/mpeg" url="${url.replace(
+            'https://',
+            'http://'
+          )}" />
       <guid>${url}</guid>
       <pubDate>${new Date(date).toUTCString()}</pubDate>
       <itunes:duration>${duration}</itunes:duration>
       <itunes:explicit>${explicit}</itunes:explicit>
     </item>`
-    ).join('\n    ')}
+      )
+      .join('\n    ')}
   </channel>
 </rss>`
-	);
 }
 
 function removeTagsFromString(htmlString) {
-  const htmlExp = /<[^>]*>/g;
-  return htmlString.replace(htmlExp, '');
+  const htmlExp = /<[^>]*>/g
+  return htmlString.replace(htmlExp, '')
 }

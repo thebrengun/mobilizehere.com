@@ -37,31 +37,31 @@ import full17 from '../assets/images/gallery/full/gallery-image17.jpg'
 import full18 from '../assets/images/gallery/full/gallery-image18.jpg'
 
 const defaultState = [
-	{thumb: thumb01, full: full01},
-	{thumb: thumb02, full: full02},
-	{thumb: thumb03, full: full03},
-	{thumb: thumb04, full: full04},
-	{thumb: thumb05, full: full05},
-	{thumb: thumb06, full: full06},
-	{thumb: thumb07, full: full07},
-	{thumb: thumb08, full: full08},
-	{thumb: thumb09, full: full09},
-	{thumb: thumb10, full: full10},
-	{thumb: thumb11, full: full11},
-	{thumb: thumb12, full: full12},
-	{thumb: thumb13, full: full13},
-	{thumb: thumb14, full: full14},
-	{thumb: thumb15, full: full15},
-	{thumb: thumb16, full: full16},
-	{thumb: thumb17, full: full17},
-	{thumb: thumb18, full: full18}
-];
+  { thumb: thumb01, full: full01 },
+  { thumb: thumb02, full: full02 },
+  { thumb: thumb03, full: full03 },
+  { thumb: thumb04, full: full04 },
+  { thumb: thumb05, full: full05 },
+  { thumb: thumb06, full: full06 },
+  { thumb: thumb07, full: full07 },
+  { thumb: thumb08, full: full08 },
+  { thumb: thumb09, full: full09 },
+  { thumb: thumb10, full: full10 },
+  { thumb: thumb11, full: full11 },
+  { thumb: thumb12, full: full12 },
+  { thumb: thumb13, full: full13 },
+  { thumb: thumb14, full: full14 },
+  { thumb: thumb15, full: full15 },
+  { thumb: thumb16, full: full16 },
+  { thumb: thumb17, full: full17 },
+  { thumb: thumb18, full: full18 },
+]
 
 const gallery = (state = defaultState, action) => {
-	switch(action.type) {
-		default:
-			return state;
-	}
-};
+  switch (action.type) {
+    default:
+      return state
+  }
+}
 
 export default gallery
