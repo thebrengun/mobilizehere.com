@@ -12,6 +12,6 @@ episodeType: full
 episodeNumber: "30"
 url: https://mobilize-podcast.s3.amazonaws.com/Mobilize_Episode30_AnUpdateWithCatalinaCruz.mp3
 length: "35268796"
-duration: 18:01
+duration: "18:01"
 explicit: no
 ---
