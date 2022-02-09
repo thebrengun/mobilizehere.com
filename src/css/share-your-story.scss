@@ -3,17 +3,17 @@
 .share-your-story {
 	background: $orange;
 	color: darken($orange, 45%);
-	padding: $lz-padding ($lz-padding / 2);
+	padding: $lz-padding ($lz-padding * 0.5);
 
 	h1, h2, h3, h4, h5, h6 {
 		color: darken($orange, 45%);
 		margin: 0;
-		margin-bottom: $lz-padding / 2;
+		margin-bottom: $lz-padding * 0.5;
 	}
 
 	.message {
 		display: none;
-		padding: 0 ($lz-padding / 2);
+		padding: 0 ($lz-padding * 0.5);
 		text-align: center;
 		color: darken($orange, 45%);
 	}
@@ -60,7 +60,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		margin: 0 ($lz-padding / 2);
+		margin: 0 ($lz-padding * 0.5);
 
 		@media screen and (max-width: $break-small) {
 			flex-basis: 100%;
@@ -68,7 +68,7 @@
 
 		span {
 			display: flex;
-			margin: ($lz-padding / 4) 0;
+			margin: ($lz-padding * 0.25) 0;
 			align-items: center;
 
 			@media screen and (max-width: $break-small) {
@@ -80,7 +80,7 @@
 				width: 15%;
 				flex-shrink: 0;
 				text-align: right;
-				padding-right: $lz-padding / 2;
+				padding-right: $lz-padding * 0.5;
 			}
 		}
 
@@ -124,9 +124,9 @@
 	}
 
 	textarea {
-		margin: ($lz-padding / 4) 0;
+		margin: ($lz-padding * 0.25) 0;
 		resize: none;
 		height: 4em;
-		padding: $lz-padding / 4;
+		padding: $lz-padding * 0.25;
 	}
 }

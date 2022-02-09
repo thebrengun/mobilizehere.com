@@ -1,5 +1,7 @@
 /* Color Definitions */
 
+@use "sass:math";
+
 $light-blue: #fafeff;
 $darker-blue: #1D789F; /* Was #2096c3 but failed a11y*/
 $light-gray: #646464;
@@ -18,8 +20,8 @@ $lz-container-max-width: 700px;
 
 $lz-padding: 30px;
 
-$col-width: ($lz-container-max-width / 4) - ((3 * $lz-padding) / 4);
-$gutter-width: ($lz-container-max-width - ($col-width * 4)) / 3;
+$col-width: ($lz-container-max-width * 0.25) - ((3 * $lz-padding) * 0.25);
+$gutter-width: math.div($lz-container-max-width - ($col-width * 4), 3);
 
 @mixin hide-mobile() {
 	@media screen and (max-width: $break-small) {
