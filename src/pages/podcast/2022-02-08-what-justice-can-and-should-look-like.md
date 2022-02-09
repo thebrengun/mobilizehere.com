@@ -2,7 +2,7 @@
 legacyURL: ""
 templateKey: podcast
 title: What Justice Can and Should Look Like
-image: assets/31.jpg
+image: /assets/31.jpg
 description: Producer Betsy Nagler sits down with Zealous Executive Director
   Scott Hechinger to talk about bringing together community organizations,
   public defenders and artists to rewrite the narrative on criminal justice in
@@ -12,6 +12,6 @@ episodeType: full
 episodeNumber: "31"
 url: https://mobilize-podcast.s3.amazonaws.com/Mobilize_Episode31_ScottHechinger.mp3
 length: "44894364"
-duration: 23:08
+duration: "23:08"
 explicit: no
 ---
