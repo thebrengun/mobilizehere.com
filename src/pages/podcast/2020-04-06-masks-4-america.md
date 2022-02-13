@@ -16,7 +16,7 @@ episodeNumber: '22'
 url: >-
   https://mobilize-podcast.s3.amazonaws.com/Mobilize+Episode+22+-+Masks+4+America.mp3
 length: '47651525'
-duration: '19:54'
+duration: 1194
 explicit: 'no'
 ---
 You can donate at <https://www.gofundme.com/f/masks4america>

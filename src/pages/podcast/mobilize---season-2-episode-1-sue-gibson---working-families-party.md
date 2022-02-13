@@ -10,6 +10,6 @@ episodeNumber: '14'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+14+-+Sue+Gibson%3A+A+Lifetime+of+Activism.mp3
 length: '2998543395'
-duration: '23:23'
+duration: 1403
 explicit: 'no'
 ---

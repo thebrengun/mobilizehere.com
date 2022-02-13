@@ -14,7 +14,7 @@ episodeNumber: '18'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+18+-+Eve+Proper_.mp3
 length: '44576839'
-duration: '18:16'
+duration: 1096
 explicit: 'no'
 ---
 ### Transcript

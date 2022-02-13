@@ -9,6 +9,6 @@ episodeType: 'bonus'
 episodeNumber: ''
 url: 'https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+TrumpCare.mp3'
 length: '1390715'
-duration: '00:30'
+duration: 30
 explicit: 'no'
 ---

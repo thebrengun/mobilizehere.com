@@ -9,6 +9,6 @@ episodeType: 'bonus'
 episodeNumber: ''
 url: 'https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+March+For+Our+Lives'
 length: '1391803'
-duration: '01:26'
+duration: 86
 explicit: 'no'
 ---

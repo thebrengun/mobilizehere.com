@@ -10,7 +10,7 @@ episodeNumber: '11'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+11+-+Resistbot.mp3
 length: '30349803'
-duration: '26:31'
+duration: 1591
 explicit: 'no'
 trackId: 'https://soundcloud.com/user-548478055/mobilize-episode-11-resistbot'
 ---

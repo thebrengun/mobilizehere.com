@@ -10,6 +10,6 @@ episodeNumber: '1'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+Episode+1+-+Why+We+Fight.mp3
 length: '17917491'
-duration: '18:39'
+duration: 1119
 explicit: 'no'
 ---

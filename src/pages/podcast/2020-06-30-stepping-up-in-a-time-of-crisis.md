@@ -16,7 +16,7 @@ episodeNumber: '26'
 url: >-
   https://mobilize-podcast.s3.amazonaws.com/Mobilize+Episode+26+-+Stepping+Up+In+A+Time+of+Crisis.mp3
 length: '64001044'
-duration: '26:39'
+duration: 1599
 explicit: 'no'
 ---
 

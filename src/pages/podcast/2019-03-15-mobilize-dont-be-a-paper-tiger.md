@@ -22,7 +22,7 @@ episodeNumber: '19'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+19+-+Don't+Be+A+Paper+Tiger.mp3
 length: '36750528'
-duration: '25:31'
+duration: 1531
 explicit: 'no'
 ---
 ### Transcript

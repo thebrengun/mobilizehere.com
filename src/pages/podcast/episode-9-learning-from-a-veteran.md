@@ -11,6 +11,6 @@ episodeNumber: '9'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+9+-+Learning+From+A+Veteran.mp3
 length: '35850060'
-duration: '24:26'
+duration: 1466
 explicit: 'no'
 ---

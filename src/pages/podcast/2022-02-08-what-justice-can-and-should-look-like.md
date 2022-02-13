@@ -12,6 +12,6 @@ episodeType: full
 episodeNumber: "31"
 url: https://mobilize-podcast.s3.amazonaws.com/Mobilize_Episode31_ScottHechinger.mp3
 length: "44894364"
-duration: "23:08"
+duration: 1388
 explicit: no
 ---

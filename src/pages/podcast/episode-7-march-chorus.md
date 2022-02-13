@@ -10,6 +10,6 @@ episodeNumber: '7'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+7+-+March+Chorus.mp3
 length: '61931038'
-duration: '42:56'
+duration: 2576
 explicit: 'no'
 ---

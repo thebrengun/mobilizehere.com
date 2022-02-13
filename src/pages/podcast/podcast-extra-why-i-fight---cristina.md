@@ -9,6 +9,6 @@ episodeType: 'bonus'
 episodeNumber: ''
 url: 'https://s3.amazonaws.com/mobilize-podcast/why-i-fight-cristina.mp3'
 length: '769879'
-duration: '00:48'
+duration: 48
 explicit: 'no'
 ---

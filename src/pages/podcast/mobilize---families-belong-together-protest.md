@@ -10,6 +10,6 @@ episodeNumber: ''
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Families+Belong+Together+Protest.mp3
 length: '4352904'
-duration: '01:35'
+duration: 95
 explicit: 'yes'
 ---

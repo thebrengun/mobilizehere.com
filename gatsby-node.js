@@ -164,7 +164,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       frontmatter: Frontmatter
     }
     type Frontmatter {
-      duration: String
+      duration: Int
     }
   `
   createTypes(typeDefs)

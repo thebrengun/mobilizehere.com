@@ -16,7 +16,7 @@ episodeNumber: '25'
 url: >-
   https://mobilize-podcast.s3.amazonaws.com/Mobilize+Episode+25+-+We+Are+All+Interconnected.mp3
 length: '69496162'
-duration: '28:57'
+duration: 1737
 explicit: 'no'
 ---
 
