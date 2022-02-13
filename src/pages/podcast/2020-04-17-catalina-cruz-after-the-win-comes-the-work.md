@@ -14,7 +14,7 @@ episodeNumber: '23'
 url: >-
   https://mobilize-podcast.s3.amazonaws.com/Mobilize+-+Episode+23+-+Catalina+Cruz+-+After+the+Win+Comes+the+Work.mp3
 length: '40297533'
-duration: '16:47'
+duration: 1007
 explicit: 'no'
 ---
 

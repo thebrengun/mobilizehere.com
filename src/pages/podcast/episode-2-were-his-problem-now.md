@@ -11,7 +11,7 @@ episodeNumber: '2'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+Episode+2+-+We're+His+Problem+Now.mp3
 length: '41705220'
-duration: '28:57'
+duration: 1737
 explicit: 'no'
 trackId: '311602489'
 ---

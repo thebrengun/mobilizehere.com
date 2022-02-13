@@ -10,6 +10,6 @@ episodeNumber: '4'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+Episode+4+-+Protest+at+JFK.mp3
 length: '57729600'
-duration: '40:05'
+duration: 2405
 explicit: 'yes'
 ---

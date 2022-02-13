@@ -10,7 +10,7 @@ episodeNumber: '6'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+6+-+Calling+the+Resistance.mp3
 length: '29336122'
-duration: '20:19'
+duration: 1219
 explicit: 'no'
 trackId: '320878659'
 ---

@@ -11,6 +11,6 @@ episodeNumber: '16'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+16+-+New+Leadership+and+New+Solutions.mp3
 length: '3'
-duration: '25:28'
+duration: 1528
 explicit: 'no'
 ---

@@ -10,6 +10,6 @@ episodeNumber: '15'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+15+-+Mazeda+Uddin%3A+Knowledge+Is+Power.mp3
 length: '44026560'
-duration: '18:20'
+duration: 1100
 explicit: 'no'
 ---

@@ -13,7 +13,7 @@ episodeNumber: '27'
 url: >-
   https://mobilize-podcast.s3.amazonaws.com/Mobilize+Episode+27+-+Changing+The+Party+From+Within.mp3
 length: '29495808'
-duration: '20:28'
+duration: 1228
 explicit: 'no'
 ---
 

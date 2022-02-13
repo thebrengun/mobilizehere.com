@@ -10,6 +10,6 @@ episodeNumber: '3'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+Episode+3+-+Going+Out+To+Cannon+Ball.mp3
 length: '40143744'
-duration: '27:52'
+duration: 1672
 explicit: 'no'
 ---

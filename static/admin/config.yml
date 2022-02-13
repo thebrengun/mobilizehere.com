@@ -25,7 +25,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Episode Number", name: "episodeNumber", widget: "string", default: '', required: false, pattern: ['^[0-9]*$', 'Must be a number']}
       - {label: "Media URL", name: "url", widget: "string"}
       - {label: "File Size (in bytes)", name: "length", widget: "string", default: '', required: true, pattern: ['^[0-9]*$', 'Must be a number']}
-      - {label: "Duration (mm:ss)", name: "duration", widget: "string"}
+      - {label: "Duration (seconds)", name: "duration", widget: "number", value_type: "int", min: 0, default: 0}
       - {label: "Explicit (yes/no)", name: "explicit", widget: "string", default: "no"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
   - name: "resource"

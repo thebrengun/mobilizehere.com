@@ -9,6 +9,6 @@ episodeType: 'bonus'
 episodeNumber: ''
 url: 'https://s3.amazonaws.com/mobilize-podcast/TrumpCare_Insanely+Wealthy.mp3'
 length: '901406'
-duration: '00:37'
+duration: 37
 explicit: 'no'
 ---

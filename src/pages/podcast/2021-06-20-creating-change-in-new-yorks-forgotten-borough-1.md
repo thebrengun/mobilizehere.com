@@ -16,7 +16,7 @@ episodeNumber: '28'
 url: >-
   https://mobilize-podcast.s3.amazonaws.com/Mobilize+-+Episode+28+-+Creating+Change+in+NYs+Forgotten+Borough.mp3
 length: '38619000'
-duration: '20:35'
+duration: 1235
 explicit: 'no'
 ---
 

@@ -9,6 +9,6 @@ episodeType: 'full'
 episodeNumber: '8'
 url: 'https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+8+-+Con+Con.mp3'
 length: '29988415'
-duration: '20:46'
+duration: 1246
 explicit: 'no'
 ---

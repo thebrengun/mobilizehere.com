@@ -10,6 +10,6 @@ episodeNumber: '17'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+17+-+Catalina+Cruz+-+A+Dreamer+for+Queens.mp3
 length: '60089000'
-duration: '25:20'
+duration: 1520
 explicit: 'no'
 ---

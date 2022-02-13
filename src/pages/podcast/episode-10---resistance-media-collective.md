@@ -10,6 +10,6 @@ episodeNumber: '10'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+10+-+Resistance+Media+Collective.mp3
 length: '39874684'
-duration: '27:14'
+duration: 1634
 explicit: 'no'
 ---

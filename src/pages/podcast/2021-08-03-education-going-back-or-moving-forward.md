@@ -19,7 +19,7 @@ episodeNumber: '29'
 url: >-
   https://mobilize-podcast.s3.amazonaws.com/Mobilize+-+Episode+29+-+Education%3A+Going+Back%3F+Or+Moving+Forward.mp3
 length: '26012000'
-duration: '27:44'
+duration: 1664
 explicit: 'no'
 ---
 

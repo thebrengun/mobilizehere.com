@@ -10,7 +10,7 @@ episodeNumber: ''
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+RiseUp+-+By+Charlotte+Littlehales.mp3
 length: '2566268'
-duration: '02:40'
+duration: 160
 explicit: 'no'
 ---
 <p>Want to perform Rise Up? Download the sheet music by clicking the image below to download a PDF. Or use this link: <a href="https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf">https://www.mobilizehere.com/assets/Rise-Up-Choir-Sheet-Music-Sibelius.pdf</a></p>

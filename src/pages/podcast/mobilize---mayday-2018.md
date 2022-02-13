@@ -9,6 +9,6 @@ episodeType: 'bonus'
 episodeNumber: ''
 url: 'https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Mayday+2018.wav'
 length: '37'
-duration: '2:11'
+duration: 131
 explicit: 'no'
 ---

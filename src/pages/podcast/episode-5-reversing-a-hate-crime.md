@@ -10,6 +10,6 @@ episodeNumber: '5'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+Episode+5+-+Reversing+a+Hate+Crime.mp3
 length: '33498874'
-duration: '23:13'
+duration: 1393
 explicit: 'yes'
 ---

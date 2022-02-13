@@ -11,6 +11,6 @@ episodeNumber: '13'
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+Episode+13+-+Rise+and+Resist.mp3
 length: '48029760'
-duration: '20:00'
+duration: 1200
 explicit: 'no'
 ---

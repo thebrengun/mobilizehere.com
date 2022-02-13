@@ -10,6 +10,6 @@ episodeNumber: ''
 url: >-
   https://s3.amazonaws.com/mobilize-podcast/Mobilize+-+DACA+Protests-+Trump+Tower.mp3
 length: '0'
-duration: '00:1:06'
+duration: 66
 explicit: 'no'
 ---
