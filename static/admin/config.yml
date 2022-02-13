@@ -3,6 +3,7 @@ backend:
   repo: mobilizehere/mobilizehere.com
   branch: master # Branch to update (master by default)
 
+local_backend: true
 media_folder: "static/assets" # Folder where user uploaded files should go
 public_folder: "/assets" # Not the public folder, rather where GraphQL will query images
 publish_mode: editorial_workflow
