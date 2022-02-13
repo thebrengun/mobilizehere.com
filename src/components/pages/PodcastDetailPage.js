@@ -6,6 +6,18 @@ import { getSrc } from 'gatsby-plugin-image'
 
 import '../../css/podcast-detail-page.scss'
 
+function secondsToTimeStr(seconds) {
+  let start = 11
+  let subStrLen = 8
+
+  if (seconds < 3600) {
+    start = 14
+    subStrLen = 5
+  }
+
+  return new Date(1000 * seconds).toISOString().substr(start, subStrLen)
+}
+
 function PodcastDetailPageComponent({ episode }) {
   const {
     title,
@@ -15,6 +27,7 @@ function PodcastDetailPageComponent({ episode }) {
     episodeType,
     episodeNumber,
     url,
+    duration,
     __content,
     slug,
   } = episode
@@ -50,6 +63,7 @@ function PodcastDetailPageComponent({ episode }) {
         className="pd-art pull-right"
       />
       <h3 className="pd-date">{dateStr}</h3>
+      <div className="pd-duration">Duration: {secondsToTimeStr(duration)}</div>
       <p>{description}</p>
       <PlayerBtn
         episode={episode}
