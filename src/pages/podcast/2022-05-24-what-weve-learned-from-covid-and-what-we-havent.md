@@ -3,8 +3,9 @@ legacyURL: ""
 templateKey: podcast
 title: What We've Learned From Covid, And What We Haven't
 image: /assets/32.jpg
-description: "A follow-up with the medical workers we first talked with in 2020
-  about how they’re continuing to weather the pandemic. "
+description: A follow-up with the medical workers we first talked with in 2020
+  about how they’re continuing to weather the pandemic, and the future
+  implications it has for society at large.
 date: 2022-05-24T19:31:19.501Z
 episodeType: full
 episodeNumber: "32"
