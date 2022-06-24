@@ -1,7 +1,7 @@
 ---
 legacyURL: ""
 templateKey: podcast
-title: Republicans - "We're Up In Yours" 2
+title: Republicans - "We're Up In Yours" - 2
 image: /assets/mobilize_logo.jpg
 description: With Roe v. Wade overturned, lady Republicans tell you their
   opinions on abortion.
