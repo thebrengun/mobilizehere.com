@@ -1,7 +1,7 @@
 ---
 legacyURL: ""
 templateKey: podcast
-title: "\"Because, I'm A Republican\" - 1"
+title: "\"Because, I'm A Republican!\" - 1"
 image: /assets/mobilize_logo.jpg
 description: Lady Republicans provide their justifications on why they support
   the overturn of Roe v. Wade.
