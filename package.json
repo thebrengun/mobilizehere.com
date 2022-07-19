@@ -5,11 +5,11 @@
   "author": "Brennan McVicar",
   "dependencies": {
     "bulma": "^0.9.3",
-    "gatsby": "^4.7.1",
+    "gatsby": "^4.8.0",
     "gatsby-plugin-feed": "^4.7.0",
     "gatsby-plugin-google-analytics": "^4.7.0",
     "gatsby-plugin-image": "^2.7.0",
-    "gatsby-plugin-manifest": "^4.7.0",
+    "gatsby-plugin-manifest": "^4.8.0",
     "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-plugin-netlify-cms": "^6.7.0",
     "gatsby-plugin-offline": "^5.7.0",
