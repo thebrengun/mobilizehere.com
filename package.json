@@ -5,7 +5,7 @@
   "author": "Brennan McVicar",
   "dependencies": {
     "bulma": "^0.9.3",
-    "gatsby": "^4.7.1",
+    "gatsby": "^4.14.0",
     "gatsby-plugin-feed": "^4.7.0",
     "gatsby-plugin-google-analytics": "^4.7.0",
     "gatsby-plugin-image": "^2.7.0",
